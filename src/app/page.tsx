@@ -18,7 +18,7 @@ export default async function Home() {
       <section
         id="produtos"
         aria-labelledby="produtos-titulo"
-        className="scroll-mt-4 py-12 lg:py-20"
+        className="bg-surface-raised mt-12 scroll-mt-4 py-12 lg:mt-20 lg:py-20"
       >
         <Container>
           <h2 id="produtos-titulo" className="font-display text-head mb-5">

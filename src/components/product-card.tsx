@@ -22,7 +22,7 @@ export function ProductCard({ product }: { product: Product }) {
         href={href}
         tabIndex={-1}
         aria-hidden="true"
-        className="bg-surface-raised relative block aspect-square overflow-hidden"
+        className="bg-surface relative block aspect-square overflow-hidden"
       >
         <Image
           src={image.src}
