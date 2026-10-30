@@ -39,7 +39,9 @@ Uma base clara, uma tinta escura, o marinho só na ação. Tokens em `src/app/gl
 
 ## 3. Tipografia
 
-- **Instrument Serif** → `font-display`: títulos, wordmark e preço na página do produto.
+- **DM Serif Display** → `font-display`: títulos, wordmark e preço na página do produto. Escolhida
+  pelo dono em 30/10/2026; a Instrument Serif ficava condensada e "espremida". Espaçamento entre
+  letras sempre normal (nada de tracking negativo).
 - **Instrument Sans** (400/500/600) → `font-sans`: todo o resto.
 - Passos: `display` (40 → 72px), `head` (32 → 56px), `lead` (19 → 22px), `body` (16 → 17px),
   `small` (13 → 14px).

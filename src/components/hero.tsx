@@ -14,7 +14,7 @@ export function Hero({ counts }: { counts: Record<ProductCategory, number> }) {
     <>
       <section aria-labelledby="titulo">
         <Container className="grid gap-8 pt-6 pb-10 md:grid-cols-12 md:items-center lg:pt-10 lg:pb-16">
-          <div className="md:order-2 md:col-span-7">
+          <div className="md:order-2 md:col-span-6">
             <div className="bg-surface-raised relative aspect-[16/10] overflow-hidden">
               <Image
                 src={abertura}
@@ -26,11 +26,8 @@ export function Hero({ counts }: { counts: Record<ProductCategory, number> }) {
               />
             </div>
           </div>
-          <div className="md:order-1 md:col-span-5">
-            <h1
-              id="titulo"
-              className="font-display text-display tracking-[-0.015em] text-balance"
-            >
+          <div className="md:order-1 md:col-span-6">
+            <h1 id="titulo" className="font-display text-display text-balance">
               Cosméticos japoneses e coreanos
             </h1>
             <p className="text-lead mt-5 max-w-[40ch]">

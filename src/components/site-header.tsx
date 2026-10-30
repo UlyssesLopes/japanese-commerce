@@ -9,19 +9,16 @@ import { Container } from "./container";
 export function SiteHeader() {
   return (
     <header className="bg-surface">
-      <p className="bg-surface-raised text-small text-ink-muted px-4 py-2 text-center">
-        Pedidos pelo WhatsApp: pagamento e entrega combinados na conversa
-      </p>
       <Container className="flex h-16 items-center justify-between gap-6 lg:h-20">
         <Link
           href="/"
-          className="font-display text-ink text-[1.625rem] leading-none tracking-[-0.01em] lg:text-[1.875rem]"
+          className="font-display text-ink text-[1.5rem] leading-none whitespace-nowrap md:text-[1.375rem] lg:text-[1.75rem]"
         >
           {siteConfig.name}
         </Link>
 
         <nav aria-label="Categorias" className="hidden md:block">
-          <ul className="flex gap-8">
+          <ul className="flex gap-6 lg:gap-8">
             {categories.map((c) => (
               <li key={c.slug}>
                 <Link

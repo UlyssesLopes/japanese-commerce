@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Sans, Instrument_Serif } from "next/font/google";
+import { DM_Serif_Display, Instrument_Sans } from "next/font/google";
 
 import { CartProvider } from "@/components/cart/cart-provider";
 import { SiteFooter } from "@/components/site-footer";
@@ -9,10 +9,9 @@ import { getCartCatalog } from "@/features/catalog/queries";
 
 import "./globals.css";
 
-const heading = Instrument_Serif({
+const heading = DM_Serif_Display({
   subsets: ["latin"],
   weight: "400",
-  style: ["normal", "italic"],
   variable: "--font-heading",
 });
 

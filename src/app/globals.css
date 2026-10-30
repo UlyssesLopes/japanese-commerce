@@ -39,9 +39,9 @@
   --text-lead: clamp(1.1875rem, 1.12rem + 0.3vw, 1.375rem);
   --text-lead--line-height: 1.4;
   --text-head: clamp(2rem, 1.45rem + 2.4vw, 3.5rem);
-  --text-head--line-height: 1;
-  --text-display: clamp(2.5rem, 1.6rem + 3.6vw, 4.5rem);
-  --text-display--line-height: 1;
+  --text-head--line-height: 1.1;
+  --text-display: clamp(2.25rem, 1.7rem + 2.2vw, 3.5rem);
+  --text-display--line-height: 1.05;
 }
 
 body {
