@@ -187,7 +187,7 @@ export function HowToBuy() {
                     {q}
                     <span
                       aria-hidden="true"
-                      className="bg-surface-raised text-brand flex size-8 shrink-0 items-center justify-center rounded-full transition-transform group-open:rotate-45"
+                      className="bg-surface-raised text-brand text-lead flex size-8 shrink-0 items-center justify-center rounded-full transition-transform group-open:rotate-45"
                     >
                       +
                     </span>
