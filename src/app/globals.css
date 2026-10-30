@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/*
+ * Tokens semânticos — valores definidos no DESIGN.md (§2 e §3).
+ * Componentes usam só os nomes semânticos (bg-surface, text-ink...),
+ * nunca cores literais.
+ */
+:root {
+  --surface: #ffffff;
+  --surface-raised: #f2f3f6;
+  --ink: #121729;
+  --ink-muted: #565c70;
+  --brand: #14275e;
+  --brand-hover: #0c1a45;
+  --brand-ink: #ffffff;
+  --brand-soft: #9fb2ec;
+  --focus: #2f55d4;
+}
+
+@theme inline {
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-soft: var(--brand-soft);
+  --color-focus: var(--focus);
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-heading), Georgia, serif;
+
+  --text-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --text-small--line-height: 1.45;
+  --text-body: clamp(1rem, 0.97rem + 0.12vw, 1.0625rem);
+  --text-body--line-height: 1.5;
+  --text-lead: clamp(1.1875rem, 1.12rem + 0.3vw, 1.375rem);
+  --text-lead--line-height: 1.4;
+  --text-head: clamp(2rem, 1.45rem + 2.4vw, 3.5rem);
+  --text-head--line-height: 1;
+  --text-display: clamp(2.75rem, 1.2rem + 6.4vw, 6.5rem);
+  --text-display--line-height: 0.95;
+}
+
+body {
+  background: var(--surface);
+  color: var(--ink);
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+
+a,
+button {
+  touch-action: manipulation;
+}
+
+::selection {
+  background: var(--brand);
+  color: var(--brand-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
