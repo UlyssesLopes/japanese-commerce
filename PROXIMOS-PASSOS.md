@@ -7,9 +7,24 @@
 
 ## Onde estamos
 
-Fundação pronta: projeto Next.js 16 criado, skills de design instaladas e revisadas, modelo de
-produto, regras de elegibilidade, gerador de mensagem do WhatsApp e docs-âncora. Ainda **não há
-nenhuma tela de verdade**, de propósito: o visual espera as referências do dono.
+**Sessão pausada em 30/10/2026, no meio da Fase 1, esperando o dono aprovar a primeira fatia.**
+
+- Fase 0 (fundação) pronta: Next.js 16, modelo de produto com os 21 itens (todos `draft`), regras de
+  elegibilidade, mensagem do WhatsApp, docs.
+- Fase 1: referências analisadas (`docs/referencias.md`), direção aprovada pelo dono,
+  `DESIGN.md` escrito, tokens e fontes reais em `globals.css`, e a **primeira fatia construída**:
+  `SiteHeader`, `Hero` (faixa marinho + gravura do Goyō), `ProductCard` e `ProductSection`
+  (produtos agrupados por categoria), `SiteFooter` com o crédito da imagem. Componentes em
+  `src/components/`.
+- Verificado nesta sessão: `pnpm check` (17 testes) e `pnpm build` passando; screenshots em
+  390/768/1440 revisados em duas rodadas; auditoria `web-design-guidelines` aplicada.
+- Tudo está no GitHub: https://github.com/UlyssesLopes/japanese-commerce (branch `main`).
+- **Nada foi mostrado ao dono ainda além do resumo em texto.** Ao retomar, a primeira coisa é
+  mostrar as screenshots (rodar `pnpm build && pnpm start`, depois o inspector da Taste ou o
+  `playwright-cli` em 390/768/1440) e colher a aprovação ou os ajustes.
+
+Arquivos locais que não estão no git e precisam existir para retomar: `.env.local` (WhatsApp da
+Carol e `CATALOG_SHOW_DRAFTS=true`; modelo em `.env.example`) e `product_photos/original/`.
 
 ## ⏳ Esperando o dono
 
