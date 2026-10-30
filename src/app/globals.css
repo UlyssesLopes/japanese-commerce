@@ -7,15 +7,14 @@
  */
 :root {
   --surface: #ffffff;
-  --surface-raised: #f2f3f6;
-  --placeholder: #dadfe9;
-  --ink: #121729;
-  --ink-muted: #565c70;
-  --brand: #14275e;
-  --brand-hover: #0c1a45;
+  --surface-raised: #fbf2f3;
+  --placeholder: #f4dfe3;
+  --ink: #1f1a1c;
+  --ink-muted: #6e5f64;
+  --brand: #c2416b;
+  --brand-hover: #a3304f;
   --brand-ink: #ffffff;
-  --brand-soft: #9fb2ec;
-  --focus: #2f55d4;
+  --focus: #a3304f;
 }
 
 @theme inline {
@@ -27,7 +26,6 @@
   --color-brand: var(--brand);
   --color-brand-hover: var(--brand-hover);
   --color-brand-ink: var(--brand-ink);
-  --color-brand-soft: var(--brand-soft);
   --color-focus: var(--focus);
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-heading), Georgia, serif;

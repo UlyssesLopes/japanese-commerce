@@ -10,7 +10,7 @@ versão.
 
 A estrutura segue o varejo que o dono gostou de usar (YesStyle, Samashipp, Panvel): fundo branco,
 produto em primeiro plano, categorias à mão, preço e botão no card. Da Shino Yama fica só o toque de
-tipografia (serifa nos títulos) e o marinho como cor de ação.
+tipografia (serifa nos títulos).
 
 Não fazer:
 
@@ -23,19 +23,20 @@ Não fazer:
 
 ## 2. Cor
 
-Uma base clara, uma tinta escura, o marinho só na ação. Tokens em `src/app/globals.css`.
+Paleta "rosa suave", escolhida pelo dono em 30/10/2026 (o marinho com cinza ficou apagado,
+"cocozento"). Base branca, tinta quase preta, rosa queimado na ação. Tokens em `src/app/globals.css`.
 
-| Token            | Valor     | Uso                                                        |
-| ---------------- | --------- | ---------------------------------------------------------- |
-| `surface`        | `#ffffff` | Fundo do site.                                             |
-| `surface-raised` | `#f2f3f6` | Fundo das fotos, faixa de aviso, rodapé, filtros inativos. |
-| `placeholder`    | `#dadfe9` | Hover dos filtros e controles claros.                      |
-| `ink`            | `#121729` | Todo texto, inclusive títulos e wordmark.                  |
-| `ink-muted`      | `#565c70` | Marca no card, notas, "Preço em definição".                |
-| `brand`          | `#14275e` | Marinho: botões principais e filtro ativo. Nada mais.      |
-| `brand-hover`    | `#0c1a45` | Hover dos botões.                                          |
-| `brand-ink`      | `#ffffff` | Texto sobre o marinho.                                     |
-| `focus`          | `#2f55d4` | Anel de foco.                                              |
+| Token            | Valor     | Uso                                                         |
+| ---------------- | --------- | ----------------------------------------------------------- |
+| `surface`        | `#ffffff` | Fundo do site.                                              |
+| `surface-raised` | `#fbf2f3` | Fundo das fotos, rodapé, filtros inativos.                  |
+| `placeholder`    | `#f4dfe3` | Hover dos filtros e controles claros.                       |
+| `ink`            | `#1f1a1c` | Todo texto, inclusive títulos e wordmark.                   |
+| `ink-muted`      | `#6e5f64` | Marca no card, notas, "Preço em definição".                 |
+| `brand`          | `#c2416b` | Rosa queimado: botões principais e filtro ativo. Nada mais. |
+| `brand-hover`    | `#a3304f` | Hover dos botões.                                           |
+| `brand-ink`      | `#ffffff` | Texto sobre o rosa.                                         |
+| `focus`          | `#a3304f` | Anel de foco.                                               |
 
 ## 3. Tipografia
 
