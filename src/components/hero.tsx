@@ -1,49 +1,88 @@
 import Image from "next/image";
+import Link from "next/link";
 
-import goyo from "../../public/editorial/goyo-mulher-se-maquiando.jpg";
+import { categories } from "@/features/catalog/categories";
+import { exampleImages } from "@/features/catalog/example-images";
+import type { ProductCategory } from "@/types/product";
+
+import abertura from "../../public/exemplos/abertura.png";
 
 import { Container } from "./container";
 
-export function Hero() {
+export function Hero({ counts }: { counts: Record<ProductCategory, number> }) {
   return (
-    <section className="bg-brand text-brand-ink">
-      <Container className="grid gap-10 py-12 md:grid-cols-12 md:items-center md:gap-8 md:py-16 lg:py-20">
-        <div className="md:col-span-7">
-          <h1 className="font-display text-display tracking-[-0.02em] text-balance">
-            Trazidos do Japão
-            <br />
-            <em className="text-brand-soft">na nossa mala.</em>
-          </h1>
-          <p className="text-lead mt-8 max-w-[34ch]">
-            Skincare, cabelos e maquiagem de marcas japonesas e coreanas,
-            escolhidos um a um numa viagem. Monte sua sacola e finalize a compra
-            pelo WhatsApp.
-          </p>
-          <a
-            href="#produtos"
-            className="bg-brand-ink text-brand hover:bg-brand-soft mt-10 inline-flex h-12 items-center px-7 font-medium transition-colors"
-          >
-            Ver os produtos
-          </a>
-        </div>
-
-        <figure className="md:col-span-5">
-          <div className="overflow-hidden">
-            <Image
-              src={goyo}
-              alt="Gravura japonesa: uma mulher de quimono vermelho segura um espelho e passa pó no colo."
-              priority
-              sizes="(min-width: 768px) 40vw, 100vw"
-              // Recorte que esconde a moldura do museu em volta da gravura.
-              className="aspect-[4/3] w-full scale-[1.18] object-cover object-[50%_32%] md:aspect-[4/5] md:object-[50%_45%]"
-              placeholder="blur"
-            />
+    <>
+      <section aria-labelledby="titulo">
+        <Container className="grid gap-8 pt-6 pb-10 md:grid-cols-12 md:items-center lg:pt-10 lg:pb-16">
+          <div className="md:order-2 md:col-span-7">
+            <div className="bg-surface-raised relative aspect-[16/10] overflow-hidden">
+              <Image
+                src={abertura}
+                alt="Mulher aplicando sérum facial com conta-gotas"
+                priority
+                fill
+                sizes="(min-width: 768px) 58vw, 100vw"
+                className="object-cover object-[30%_50%]"
+              />
+            </div>
           </div>
-          <figcaption className="text-small text-brand-ink/80 mt-3">
-            Hashiguchi Goyō, <cite>Mulher se maquiando</cite>, 1918.
-          </figcaption>
-        </figure>
-      </Container>
-    </section>
+          <div className="md:order-1 md:col-span-5">
+            <h1
+              id="titulo"
+              className="font-display text-display tracking-[-0.015em] text-balance"
+            >
+              Cosméticos japoneses e coreanos
+            </h1>
+            <p className="text-lead mt-5 max-w-[40ch]">
+              Skincare, cabelos e maquiagem de marcas como Tsubaki, IHADA,
+              &amp;honey e medicube. Monte sua sacola e finalize o pedido pelo
+              WhatsApp.
+            </p>
+            <a
+              href="#produtos"
+              className="bg-brand text-brand-ink hover:bg-brand-hover mt-8 inline-flex h-12 items-center px-7 font-medium transition-colors"
+            >
+              Ver produtos
+            </a>
+          </div>
+        </Container>
+      </section>
+
+      <section aria-labelledby="categorias-titulo">
+        <Container>
+          <h2 id="categorias-titulo" className="sr-only">
+            Categorias
+          </h2>
+          <ul className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:gap-4">
+            {categories.map((c) => (
+              <li key={c.slug}>
+                <Link
+                  href={`/?categoria=${c.slug}#produtos`}
+                  className="group block"
+                >
+                  <span className="bg-surface-raised relative block aspect-[4/3] overflow-hidden">
+                    <Image
+                      src={exampleImages[c.slug][0].src}
+                      alt=""
+                      fill
+                      sizes="(min-width: 768px) 25vw, 50vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    />
+                  </span>
+                  <span className="mt-2 flex items-baseline justify-between gap-2">
+                    <span className="font-medium group-hover:underline">
+                      {c.label}
+                    </span>
+                    <span className="text-small text-ink-muted">
+                      {counts[c.slug]}
+                    </span>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+    </>
   );
 }

@@ -6,6 +6,7 @@ import { products } from "@/data/products";
 import { productSchema, type Product } from "@/types/product";
 
 import { isVisible } from "./eligibility";
+import { fixtureStates } from "./fixtures";
 
 /**
  * Única porta de entrada para dados de catálogo. Hoje lê o seed local;
@@ -31,4 +32,17 @@ export async function getProductBySlug(
   "use cache";
   cacheLife("hours");
   return validated.find((p) => p.slug === slug && isVisible(p, visibility));
+}
+
+/**
+ * Catálogo que a sacola usa no navegador. Com `CATALOG_SHOW_DRAFTS`, inclui
+ * os produtos de exemplo de `/dev/estados` para testar a sacola localmente.
+ */
+export async function getCartCatalog(): Promise<Product[]> {
+  "use cache";
+  cacheLife("hours");
+  const visible = validated.filter((p) => isVisible(p, visibility));
+  return visibility.includeDrafts
+    ? [...visible, ...fixtureStates.map((s) => s.product)]
+    : visible;
 }

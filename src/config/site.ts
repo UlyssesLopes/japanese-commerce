@@ -5,8 +5,7 @@
 export const siteConfig = {
   name: "Japanese Beauty Studio",
   shortName: "JBS",
-  description:
-    "Uma curadoria de cuidados para pele e cabelos, trazida do Japão.",
+  description: "Skincare, cabelos e maquiagem de marcas japonesas e coreanas.",
   locale: "pt-BR",
   currency: "BRL",
   timeZone: "America/Sao_Paulo",

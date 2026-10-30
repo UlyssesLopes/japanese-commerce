@@ -1,6 +1,6 @@
 # Japanese Beauty Studio (nome provisório)
 
-Vitrine online para vender cosméticos japoneses e coreanos trazidos do Japão. O cliente monta a sacola e envia o
+Vitrine online para vender cosméticos japoneses e coreanos. O cliente monta a sacola e envia o
 pedido pelo WhatsApp com uma mensagem pronta.
 
 **Status:** fundação pronta, telas ainda não construídas. Ver [`PROXIMOS-PASSOS.md`](PROXIMOS-PASSOS.md).

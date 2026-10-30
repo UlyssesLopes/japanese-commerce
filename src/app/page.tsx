@@ -1,52 +1,52 @@
+import { Suspense } from "react";
+
 import { Container } from "@/components/container";
 import { Hero } from "@/components/hero";
-import { ProductSection } from "@/components/product-section";
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
-import { categories } from "@/features/catalog/categories";
+import { HowToBuy } from "@/components/how-to-buy";
+import { CategoryChips, ProductBrowser } from "@/components/product-browser";
+import { ProductGrid } from "@/components/product-grid";
+import { countByCategory } from "@/features/catalog/filter";
 import { getVisibleProducts } from "@/features/catalog/queries";
 
 export default async function Home() {
   const products = await getVisibleProducts();
-  const sections = categories
-    .map((c) => ({
-      ...c,
-      products: products.filter((p) => p.category === c.slug),
-    }))
-    .filter((s) => s.products.length > 0);
 
   return (
     <>
-      <a
-        href="#conteudo"
-        className="focus:bg-brand focus:text-brand-ink sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-10 focus:px-4 focus:py-3"
+      <Hero counts={countByCategory(products)} />
+
+      <section
+        id="produtos"
+        aria-labelledby="produtos-titulo"
+        className="scroll-mt-4 py-12 lg:py-20"
       >
-        Pular para o conteúdo
-      </a>
-      <SiteHeader />
-      <main id="conteudo" className="flex-1">
-        <Hero />
-        <Container
-          id="produtos"
-          className="scroll-mt-6 space-y-24 pt-16 lg:space-y-40 lg:pt-24"
-        >
-          {sections.length > 0 ? (
-            sections.map((s) => (
-              <ProductSection
-                key={s.slug}
-                id={s.slug}
-                title={s.label}
-                products={s.products}
-              />
-            ))
+        <Container>
+          <h2 id="produtos-titulo" className="font-display text-head mb-5">
+            Produtos
+          </h2>
+          {products.length > 0 ? (
+            // O filtro lê a URL no navegador; antes disso, mostra tudo.
+            <Suspense
+              fallback={
+                <>
+                  <CategoryChips active={null} />
+                  <div className="mt-[3.25rem]">
+                    <ProductGrid products={products} />
+                  </div>
+                </>
+              }
+            >
+              <ProductBrowser products={products} />
+            </Suspense>
           ) : (
             <p className="text-lead">
-              Os produtos estão sendo fotografados e chegam aqui em breve.
+              Os produtos estão sendo fotografados e aparecem aqui em breve.
             </p>
           )}
         </Container>
-      </main>
-      <SiteFooter />
+      </section>
+
+      <HowToBuy />
     </>
   );
 }

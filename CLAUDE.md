@@ -2,10 +2,12 @@
 
 # Japanese Beauty Studio (nome provisório)
 
-Pequeno e-commerce para vender cosméticos **japoneses e coreanos** trazidos pelo dono numa viagem ao
-Japão. Estoque limitado: 21 produtos, quase todos com 1 unidade (`src/data/products.ts`). Nos textos do
-site, dizer "trazidos do Japão", nunca "todos japoneses". **Não é uma marca de
-longo prazo nem um marketplace**: o objetivo é vender esse estoque com uma vitrine bonita e confiável.
+Pequeno e-commerce de cosméticos **japoneses e coreanos**. Estoque limitado: 21 produtos, quase todos
+com 1 unidade (`src/data/products.ts`). **O site é só uma loja**: mostra os produtos e leva à compra.
+Não conta a história de como os produtos chegaram (nada de "viagem", "na mala") e não usa imagem
+cultural decorativa (gueixa, gravura, cerejeira). Nunca chamar tudo de "japonês": há marcas coreanas.
+**Não é uma marca de longo prazo nem um marketplace**: o objetivo é vender esse estoque com uma vitrine
+bonita e confiável.
 
 **Antes de qualquer tarefa, leia `PROXIMOS-PASSOS.md`** — é onde está o estado atual do projeto, o que
 vem a seguir e as decisões já tomadas. Atualize-o ao terminar uma etapa.

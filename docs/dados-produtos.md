@@ -35,8 +35,8 @@ legível na foto e precisa ser conferido no verso ou no fundo da embalagem.
 
 - **Fora do site:** DHC Vitamina B-Mix (2 unidades). É suplemento alimentar, não cosmético, e segue outra
   regra da Anvisa. Decisão do dono em 30/10/2026.
-- **Cinco marcas são coreanas**, mesmo tendo sido compradas no Japão. O texto do site deve dizer
-  "trazidos do Japão", nunca "cosméticos japoneses" para tudo.
+- **Cinco marcas são coreanas**, mesmo tendo sido compradas no Japão. O site fala em "cosméticos japoneses
+  e coreanos", nunca "cosméticos japoneses" para tudo.
 - **Rótulos com promessas** (clareamento: "白玉美肌", "白を科学する"; "previne acne" no IHADA; "nº 1 em
   vendas") **não são copiados** para o site. São alegações do fabricante, não verificadas, e algumas
   seriam irregulares no Brasil.
@@ -73,13 +73,24 @@ Definido em `src/types/product.ts`. Pontos importantes:
 
 A elegibilidade está em `src/features/catalog/eligibility.ts` e tem testes.
 
+## Como colocar a foto real de um produto
+
+1. Salvar a foto em `public/produtos/<slug>.jpg` (o slug está em `src/data/products.ts`), quadrada ou 4:5.
+2. No produto, preencher `images: [{ src: "/produtos/<slug>.jpg", alt: "<o que aparece na foto>", width: <px>, height: <px> }]`.
+3. Pronto: a foto ilustrativa e a etiqueta "Foto ilustrativa" somem sozinhas.
+4. Marcar a coluna "Foto final" no inventário acima e registrar a foto no manifesto abaixo.
+
+Enquanto um produto não tem foto, o site usa uma **foto ilustrativa** da categoria
+(`src/features/catalog/example-images.ts`), sempre com a etiqueta "Foto ilustrativa". Ela não mostra
+o produto e não substitui a foto real no checklist de publicação.
+
 ## Manifesto de imagens
 
 Toda imagem usada no site precisa de uma linha aqui.
 
-| Produto               | Arquivo                                         | Origem                                                                         | Detentor dos direitos                   | Permissão                | Crédito exigido                               | Aprovada        |
-| --------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------ | --------------------------------------- | ------------------------ | --------------------------------------------- | --------------- |
-| (editorial, abertura) | `public/editorial/goyo-mulher-se-maquiando.jpg` | [The Met, obj. 908751](https://www.metmuseum.org/art/collection/search/908751) | Domínio público (Hashiguchi Goyō, 1918) | CC0 (Open Access do Met) | Não exigido; creditado na legenda e no rodapé | Aguardando o dono |
+| Produto               | Arquivo                                                                                    | Origem                            | Detentor dos direitos | Permissão | Crédito exigido | Aprovada                          |
+| --------------------- | ------------------------------------------------------------------------------------------ | --------------------------------- | --------------------- | --------- | --------------- | --------------------------------- |
+| (todas, ilustrativas) | `public/exemplos/*.png` (abertura, cabelos-1..3, skincare-1..3, maquiagem-1..3, kits-1..2) | [StockSnap](https://stocksnap.io) | Autores no StockSnap  | CC0       | Não exigido     | Provisório, até as fotos próprias |
 
 **Padrão recomendado: fotos próprias** dos produtos (fundo neutro, luz natural, mesmo enquadramento
 para todos, proporção 4:5). O detentor dos direitos é o dono, a foto mostra o item real que o cliente
