@@ -1,0 +1,7 @@
+# Nunca enviar segredos nem arquivos pessoais no deploy pela CLI
+.env*
+!.env.example
+product_photos/
+.taste-skill/
+.playwright-cli/
+.claude/

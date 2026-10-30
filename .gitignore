@@ -48,3 +48,6 @@ next-env.d.ts
 
 # Fotos de identificação dos produtos (pessoais, não vão para o site)
 /product_photos/
+
+.vercel
+.env*

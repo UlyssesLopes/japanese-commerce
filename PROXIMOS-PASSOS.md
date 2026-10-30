@@ -33,6 +33,12 @@
 Arquivos locais que não estão no git e precisam existir para retomar: `.env.local` (WhatsApp da
 Carol e `CATALOG_SHOW_DRAFTS=true`; modelo em `.env.example`) e `product_photos/original/`.
 
+**No ar para demonstração:** https://japanese-commerce.vercel.app (projeto `japanese-commerce` na
+Vercel, conta ulysseslopes, deploy pela CLI). **Atenção:** `CATALOG_SHOW_DRAFTS=true` está ligado
+também em **produção** na Vercel (30/10/2026, a pedido do dono, para mostrar à Carol). Por isso os
+rascunhos e a página `/dev/estados` aparecem no ar. **Desligar antes do lançamento**
+(`vercel env rm CATALOG_SHOW_DRAFTS production` e novo deploy).
+
 ## ⏳ Esperando o dono
 
 - [ ] **Fotos dos 21 produtos** (o dono vai fazer). Cada foto entra trocando a ilustrativa.
@@ -112,25 +118,26 @@ Carol e `CATALOG_SHOW_DRAFTS=true`; modelo em `.env.example`) e `product_photos/
 
 ## Registro de decisões
 
-| Data       | Decisão                                                                                | Por quê                                                                                             |
-| ---------- | -------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| 30/10/2026 | Vender só o estoque trazido do Japão                                                   | Objetivo do dono; não é uma marca de longo prazo.                                                   |
-| 30/10/2026 | "Checkout" = mensagem pronta no WhatsApp                                               | Sem pagamento online, sem dados pessoais no site, fechamento manual.                                |
-| 30/10/2026 | Tudo em português (site e docs)                                                        | Preferência do dono.                                                                                |
-| 30/10/2026 | Hospedagem na Vercel                                                                   | Preferência do dono; casa com Next.js.                                                              |
-| 30/10/2026 | Sem busca, ordenação ou filtros complexos                                              | Catálogo de ~10 itens. Filtro por categoria e marca basta.                                          |
-| 30/10/2026 | Skills: Taste v2, Vercel Web Design Guidelines, Playwright CLI                         | Taste para direção e inspeção; Vercel para auditoria; Playwright para ver o que foi feito.          |
-| 30/10/2026 | Não instalar "image to code"                                                           | O Claude já lê imagens; o valor está nos prints de referência, não numa skill.                      |
-| 30/10/2026 | awesome-design-md: usar só o formato                                                   | Os exemplos são de SaaS, o oposto do tom de boutique.                                               |
-| 30/10/2026 | Categorias: Cabelos, Skincare, Maquiagem, Kits (DHC fora do site)                      | Reflete o estoque real; "Tratamentos" se sobrepunha a Cabelos e Skincare.                           |
-| 30/10/2026 | Fotos nomeadas pelo slug do produto                                                    | Liga foto ↔ produto sem tabela extra.                                                               |
-| 30/10/2026 | Fotos próprias dos produtos como padrão                                                | Autenticidade, direito de uso e consistência visual.                                                |
-| 30/10/2026 | Direção: varejo claro (YesStyle/Samashipp/Panvel) + tipografia e marinho da Shino Yama | Pedido do dono: estética da Shino Yama, usabilidade da Samashipp. Ver `docs/referencias.md`.        |
-| 30/10/2026 | WhatsApp de pedidos: número da Carol, só em variável de ambiente                       | Fora do código e do git.                                                                            |
-| 30/10/2026 | `CATALOG_SHOW_DRAFTS` para ver rascunhos localmente                                    | Revisar o layout com o catálogo real sem mudar o status de nenhum produto. Nunca na Vercel.         |
-| 30/10/2026 | Nada de referência ao Claude/IA em commits e PRs                                       | Regra do dono (ver `CLAUDE.md`, seção Git).                                                         |
-| 30/10/2026 | Site é só uma loja: sem história de viagem, sem gueixa/gravura/cerejeira               | Feedback do dono ao ver a primeira versão ("é um e-commerce e apenas isso"). Gravura removida.      |
-| 30/10/2026 | Visual claro; marinho só em botões e filtro ativo                                      | Dono: "parece um site com um azul pesado". Linha dos sites clean das referências.                   |
-| 30/10/2026 | Fotos ilustrativas CC0 por categoria até as fotos reais                                | Pedido do dono. Sempre com a etiqueta "Foto ilustrativa"; trocam sozinhas quando a foto real entra. |
-| 30/10/2026 | Sem página `/produtos` separada; lista e filtro ficam na home                          | 21 itens cabem numa página; menos navegação.                                                        |
-| 30/10/2026 | Sacola com `<dialog>` nativo, sem Radix                                                | Acessível de graça (foco, Esc) e uma dependência a menos.                                           |
+| Data       | Decisão                                                                                | Por quê                                                                                                            |
+| ---------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| 30/10/2026 | Vender só o estoque trazido do Japão                                                   | Objetivo do dono; não é uma marca de longo prazo.                                                                  |
+| 30/10/2026 | "Checkout" = mensagem pronta no WhatsApp                                               | Sem pagamento online, sem dados pessoais no site, fechamento manual.                                               |
+| 30/10/2026 | Tudo em português (site e docs)                                                        | Preferência do dono.                                                                                               |
+| 30/10/2026 | Hospedagem na Vercel                                                                   | Preferência do dono; casa com Next.js.                                                                             |
+| 30/10/2026 | Sem busca, ordenação ou filtros complexos                                              | Catálogo de ~10 itens. Filtro por categoria e marca basta.                                                         |
+| 30/10/2026 | Skills: Taste v2, Vercel Web Design Guidelines, Playwright CLI                         | Taste para direção e inspeção; Vercel para auditoria; Playwright para ver o que foi feito.                         |
+| 30/10/2026 | Não instalar "image to code"                                                           | O Claude já lê imagens; o valor está nos prints de referência, não numa skill.                                     |
+| 30/10/2026 | awesome-design-md: usar só o formato                                                   | Os exemplos são de SaaS, o oposto do tom de boutique.                                                              |
+| 30/10/2026 | Categorias: Cabelos, Skincare, Maquiagem, Kits (DHC fora do site)                      | Reflete o estoque real; "Tratamentos" se sobrepunha a Cabelos e Skincare.                                          |
+| 30/10/2026 | Fotos nomeadas pelo slug do produto                                                    | Liga foto ↔ produto sem tabela extra.                                                                              |
+| 30/10/2026 | Fotos próprias dos produtos como padrão                                                | Autenticidade, direito de uso e consistência visual.                                                               |
+| 30/10/2026 | Direção: varejo claro (YesStyle/Samashipp/Panvel) + tipografia e marinho da Shino Yama | Pedido do dono: estética da Shino Yama, usabilidade da Samashipp. Ver `docs/referencias.md`.                       |
+| 30/10/2026 | WhatsApp de pedidos: número da Carol, só em variável de ambiente                       | Fora do código e do git.                                                                                           |
+| 30/10/2026 | `CATALOG_SHOW_DRAFTS` para ver rascunhos localmente                                    | Revisar o layout com o catálogo real sem mudar o status de nenhum produto. Nunca na Vercel.                        |
+| 30/10/2026 | Nada de referência ao Claude/IA em commits e PRs                                       | Regra do dono (ver `CLAUDE.md`, seção Git).                                                                        |
+| 30/10/2026 | Site é só uma loja: sem história de viagem, sem gueixa/gravura/cerejeira               | Feedback do dono ao ver a primeira versão ("é um e-commerce e apenas isso"). Gravura removida.                     |
+| 30/10/2026 | Visual claro; marinho só em botões e filtro ativo                                      | Dono: "parece um site com um azul pesado". Linha dos sites clean das referências.                                  |
+| 30/10/2026 | Fotos ilustrativas CC0 por categoria até as fotos reais                                | Pedido do dono. Sempre com a etiqueta "Foto ilustrativa"; trocam sozinhas quando a foto real entra.                |
+| 30/10/2026 | Sem página `/produtos` separada; lista e filtro ficam na home                          | 21 itens cabem numa página; menos navegação.                                                                       |
+| 30/10/2026 | Sacola com `<dialog>` nativo, sem Radix                                                | Acessível de graça (foco, Esc) e uma dependência a menos.                                                          |
+| 30/10/2026 | Demo na Vercel com rascunhos visíveis em produção                                      | Dono quis mostrar o site completo à Carol. Nada é comprável e o site não é indexado; desligar antes do lançamento. |
