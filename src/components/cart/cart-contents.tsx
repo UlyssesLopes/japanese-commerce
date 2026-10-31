@@ -8,6 +8,7 @@ import { siteConfig } from "@/config/site";
 import { maxQuantity, toOrderLines } from "@/features/cart/cart";
 import { useCart } from "@/features/cart/store";
 import { displayImage } from "@/features/catalog/example-images";
+import { applyCoupon } from "@/features/coupons/coupons";
 import {
   buildOrderMessage,
   buildWhatsAppUrl,
@@ -15,11 +16,13 @@ import {
 import { formatPrice } from "@/lib/currency";
 
 import { useResolvedCart } from "./cart-provider";
+import { CouponField } from "./coupon-field";
 
 /** Lista da sacola com total e envio pelo WhatsApp (drawer e /sacola). */
 export function CartContents({ onNavigate }: { onNavigate?: () => void }) {
   const cart = useResolvedCart();
-  const { setQuantity, remove, keep } = useCart();
+  const { setQuantity, remove, keep, coupon } = useCart();
+  const discount = applyCoupon(cart.subtotalCents, coupon);
 
   // Itens que saíram de venda somem da sacola salva.
   const removedKey = cart.removed.join(",");
@@ -46,7 +49,12 @@ export function CartContents({ onNavigate }: { onNavigate?: () => void }) {
   const whatsappUrl = siteConfig.whatsappNumber
     ? buildWhatsAppUrl(
         siteConfig.whatsappNumber,
-        buildOrderMessage(toOrderLines(cart.lines)),
+        buildOrderMessage(
+          toOrderLines(cart.lines),
+          coupon
+            ? { code: coupon.code, discountCents: discount.discountCents }
+            : undefined,
+        ),
       )
     : null;
 
@@ -136,13 +144,29 @@ export function CartContents({ onNavigate }: { onNavigate?: () => void }) {
         })}
       </ul>
 
-      <div className="bg-surface-raised p-4">
-        <div className="flex items-baseline justify-between">
-          <p>Subtotal</p>
-          <p className="text-lead font-semibold tabular-nums">
-            {formatPrice(cart.subtotalCents)}
-          </p>
-        </div>
+      <div className="bg-surface-raised flex flex-col gap-4 p-4">
+        <CouponField blockedReason={discount.blockedReason} />
+
+        <dl className="flex flex-col gap-1">
+          <div className="flex items-baseline justify-between">
+            <dt>Subtotal</dt>
+            <dd className="tabular-nums">{formatPrice(cart.subtotalCents)}</dd>
+          </div>
+          {discount.discountCents > 0 && (
+            <div className="text-brand flex items-baseline justify-between">
+              <dt>Desconto ({coupon?.code})</dt>
+              <dd className="tabular-nums">
+                −{formatPrice(discount.discountCents)}
+              </dd>
+            </div>
+          )}
+          <div className="flex items-baseline justify-between">
+            <dt className="font-medium">Total</dt>
+            <dd className="text-lead font-semibold tabular-nums">
+              {formatPrice(discount.totalCents)}
+            </dd>
+          </div>
+        </dl>
         <p className="text-small text-ink-muted mt-1">
           Pagamento e entrega são combinados pelo WhatsApp.
         </p>

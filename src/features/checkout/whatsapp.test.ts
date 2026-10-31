@@ -18,6 +18,27 @@ describe("buildOrderMessage", () => {
   });
 });
 
+describe("buildOrderMessage com cupom", () => {
+  const lines = [
+    { brand: "IHADA", name: "Lotion", quantity: 1, unitPriceCents: 10000 },
+  ];
+
+  it("mostra o cupom, o desconto e o total", () => {
+    const message = buildOrderMessage(lines, {
+      code: "DEZ",
+      discountCents: 1000,
+    });
+    expect(message).toContain("Subtotal: R$ 100,00".replace(" 1", " 1"));
+    expect(message).toContain("Cupom DEZ: −R$ 10,00");
+    expect(message).toContain("Total: R$ 90,00");
+  });
+
+  it("sem desconto, não menciona cupom", () => {
+    const message = buildOrderMessage(lines, { code: "DEZ", discountCents: 0 });
+    expect(message).not.toContain("Cupom");
+  });
+});
+
 describe("buildWhatsAppUrl", () => {
   it("usa só dígitos no número e codifica o texto", () => {
     const url = buildWhatsAppUrl("+55 (11) 99999-9999", "Olá & tchau");

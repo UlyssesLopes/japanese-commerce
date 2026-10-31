@@ -3,6 +3,8 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
+import type { AppliedCoupon } from "@/types/coupon";
+
 import type { CartItem } from "./cart";
 
 type CartState = {
@@ -13,6 +15,8 @@ type CartState = {
   remove: (slug: string) => void;
   /** Mantém só os itens que ainda existem (após revalidar no catálogo). */
   keep: (slugs: string[]) => void;
+  coupon: AppliedCoupon | null;
+  setCoupon: (coupon: AppliedCoupon | null) => void;
   open: () => void;
   close: () => void;
 };
@@ -48,6 +52,8 @@ export const useCart = create<CartState>()(
         })),
       remove: (slug) =>
         set((s) => ({ items: s.items.filter((i) => i.slug !== slug) })),
+      coupon: null,
+      setCoupon: (coupon) => set({ coupon }),
       keep: (slugs) =>
         set((s) => ({ items: s.items.filter((i) => slugs.includes(i.slug)) })),
       open: () => set({ isOpen: true }),
@@ -56,7 +62,7 @@ export const useCart = create<CartState>()(
     {
       name: "sacola",
       version: 1,
-      partialize: (s) => ({ items: s.items }),
+      partialize: (s) => ({ items: s.items, coupon: s.coupon }),
       skipHydration: true,
     },
   ),
