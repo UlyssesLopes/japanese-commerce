@@ -7,6 +7,7 @@ import { formatPrice } from "@/lib/currency";
 import type { Product } from "@/types/product";
 
 import { AddToCartButton } from "./cart/add-to-cart-button";
+import { QuickAddButton } from "./cart/quick-add-button";
 import { IllustrativeTag } from "./illustrative-tag";
 
 export function ProductCard({ product }: { product: Product }) {
@@ -19,21 +20,24 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     // O produto sob o mouse sobe e os outros da grade se apagam.
     <article className="group hover:bg-surface -m-3 flex w-[calc(100%+1.5rem)] flex-1 flex-col p-3 transition-[translate,opacity,background-color,box-shadow] duration-500 ease-out group-hover/grid:opacity-65 hover:-translate-y-1 hover:opacity-100 hover:shadow-[0_14px_32px_-20px_rgb(36_35_31/0.3)]">
-      <Link
-        href={href}
-        tabIndex={-1}
-        aria-hidden="true"
-        className="bg-surface relative block aspect-square overflow-hidden"
-      >
-        <Image
-          src={image.src}
-          alt=""
-          fill
-          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-        />
-        {image.illustrative && <IllustrativeTag />}
-      </Link>
+      <div className="relative">
+        <Link
+          href={href}
+          tabIndex={-1}
+          aria-hidden="true"
+          className="bg-surface relative block aspect-square overflow-hidden"
+        >
+          <Image
+            src={image.src}
+            alt=""
+            fill
+            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+          />
+          {image.illustrative && <IllustrativeTag />}
+        </Link>
+        {isPurchasable(product) && <QuickAddButton product={product} />}
+      </div>
 
       <div className="flex flex-1 flex-col pt-3">
         <p translate="no" className="text-small text-ink-muted font-medium">

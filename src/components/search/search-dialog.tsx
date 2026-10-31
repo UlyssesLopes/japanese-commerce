@@ -79,7 +79,14 @@ export function SearchButton() {
         className="bg-surface text-ink backdrop:bg-ink/30 open:animate-rise fixed inset-x-0 top-0 m-0 max-h-dvh w-full max-w-none overflow-y-auto rounded-b-3xl p-3 shadow-[0_24px_60px_-24px_rgb(36_35_31/0.45)] md:top-8 md:mx-auto md:max-h-[85dvh] md:max-w-2xl md:rounded-3xl md:p-4"
       >
         <div className="flex items-center gap-2">
-          <div className="bg-surface-raised focus-within:ring-brand/40 flex h-14 min-w-0 flex-1 items-center gap-3 rounded-full px-5 ring-2 ring-transparent transition-shadow">
+          <div
+            // Campo "afundado": degradê de cima para baixo e sombra interna, sem borda.
+            style={{
+              backgroundImage:
+                "linear-gradient(to bottom, var(--placeholder), var(--surface-raised) 70%)",
+            }}
+            className="flex h-14 min-w-0 flex-1 items-center gap-3 rounded-full px-5 shadow-[inset_0_2px_6px_rgb(36_35_31/0.12),inset_0_-1px_0_rgb(255_255_255/0.6)] transition-shadow focus-within:shadow-[inset_0_3px_10px_rgb(36_35_31/0.18),inset_0_-1px_0_rgb(255_255_255/0.6)]"
+          >
             <span className="text-ink-muted">
               <SearchIcon />
             </span>
