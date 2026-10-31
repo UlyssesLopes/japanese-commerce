@@ -76,35 +76,37 @@ export function SearchButton() {
         onClick={(e) => {
           if (e.target === e.currentTarget) close();
         }}
-        className="bg-surface text-ink backdrop:bg-ink/40 fixed inset-x-0 top-0 m-0 max-h-dvh w-full max-w-none overflow-y-auto p-0 md:top-6 md:mx-auto md:max-h-[85dvh] md:max-w-2xl"
+        className="bg-surface text-ink backdrop:bg-ink/30 open:animate-rise fixed inset-x-0 top-0 m-0 max-h-dvh w-full max-w-none overflow-y-auto rounded-b-3xl p-3 shadow-[0_24px_60px_-24px_rgb(36_35_31/0.45)] md:top-8 md:mx-auto md:max-h-[85dvh] md:max-w-2xl md:rounded-3xl md:p-4"
       >
-        <div className="focus-within:border-ink border-placeholder flex items-center gap-3 border-b-2 px-4 py-3 transition-colors md:px-6">
-          <span className="text-ink-muted">
-            <SearchIcon />
-          </span>
-          <input
-            ref={inputRef}
-            type="search"
-            name="busca"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Buscar por marca, produto ou categoria…"
-            aria-label="Buscar produtos"
-            autoComplete="off"
-            spellCheck={false}
-            className="text-lead placeholder:text-ink-muted h-12 min-w-0 flex-1 bg-transparent outline-none focus-visible:outline-none [&::-webkit-search-cancel-button]:hidden"
-          />
+        <div className="flex items-center gap-2">
+          <div className="bg-surface-raised focus-within:ring-brand/40 flex h-14 min-w-0 flex-1 items-center gap-3 rounded-full px-5 ring-2 ring-transparent transition-shadow">
+            <span className="text-ink-muted">
+              <SearchIcon />
+            </span>
+            <input
+              ref={inputRef}
+              type="search"
+              name="busca"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Buscar por marca, produto ou categoria…"
+              aria-label="Buscar produtos"
+              autoComplete="off"
+              spellCheck={false}
+              className="text-lead placeholder:text-ink-muted h-12 min-w-0 flex-1 bg-transparent outline-none focus-visible:outline-none [&::-webkit-search-cancel-button]:hidden"
+            />
+          </div>
           <button
             type="button"
             onClick={close}
             aria-label="Fechar busca"
-            className="hover:text-brand -mr-2 flex size-11 items-center justify-center text-2xl"
+            className="hover:bg-surface-raised flex size-12 shrink-0 items-center justify-center rounded-full text-2xl transition-colors"
           >
             ×
           </button>
         </div>
 
-        <div className="bg-surface-raised px-4 py-4 md:px-6">
+        <div className="px-2 pt-4 pb-2">
           {query.trim() === "" ? (
             <div>
               <p className="text-small text-ink-muted">Sugestões</p>
@@ -117,7 +119,7 @@ export function SearchButton() {
                         setQuery(s);
                         inputRef.current?.focus();
                       }}
-                      className="bg-surface hover:bg-placeholder inline-flex h-10 items-center rounded-full px-4 transition-colors"
+                      className="bg-surface-raised hover:bg-placeholder inline-flex h-10 items-center rounded-full px-4 transition-colors"
                     >
                       {s}
                     </button>
@@ -132,7 +134,7 @@ export function SearchButton() {
                   ? `Nenhum produto encontrado para “${query.trim()}”.`
                   : `${results.length} ${results.length === 1 ? "produto" : "produtos"}`}
               </p>
-              <ul className="mt-3 flex flex-col gap-2">
+              <ul className="mt-2 flex flex-col gap-1">
                 {results.map((p) => {
                   const image = displayImage(p);
                   return (
@@ -140,9 +142,9 @@ export function SearchButton() {
                       <Link
                         href={`/produtos/${p.slug}`}
                         onClick={close}
-                        className="bg-surface hover:bg-placeholder flex items-center gap-4 p-2 transition-colors"
+                        className="hover:bg-surface-raised flex items-center gap-4 rounded-2xl p-2 transition-colors"
                       >
-                        <span className="bg-surface-raised relative size-16 shrink-0 overflow-hidden">
+                        <span className="bg-surface-raised relative size-16 shrink-0 overflow-hidden rounded-xl">
                           <Image
                             src={image.src}
                             alt=""
