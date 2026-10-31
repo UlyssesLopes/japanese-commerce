@@ -96,11 +96,11 @@ export function SearchButton() {
               name="busca"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Buscar por marca, produto ou categoria…"
+              placeholder="Buscar produtos ou marcas…"
               aria-label="Buscar produtos"
               autoComplete="off"
               spellCheck={false}
-              className="text-lead placeholder:text-ink-muted h-12 min-w-0 flex-1 bg-transparent outline-none focus-visible:outline-none [&::-webkit-search-cancel-button]:hidden"
+              className="text-lead placeholder:text-ink-muted/70 placeholder:text-body h-12 min-w-0 flex-1 bg-transparent outline-none placeholder:font-light focus-visible:outline-none [&::-webkit-search-cancel-button]:hidden"
             />
           </div>
           <button
