@@ -18,7 +18,7 @@ legível na foto e precisa ser conferido no verso ou no fundo da embalagem.
 | 007 | fino                | Premium Touch Hair Mask                        | 230 g             | 3    | cabelos   | Japão           | ☑          | R$ 199,90 | ☑          |
 | 008 | TSUBAKI             | Premium Moist & Repair (kit shampoo + cond.)   | —                 | 1    | kits      | Japão           | ☐          | ☐         | ☐          |
 | 009 | IHADA               | Emulsion Hidratante Facial                     | 135 ml            | 1    | skincare  | Japão           | ☑          | R$ 129,90 | ☑          |
-| 010 | IHADA               | Loção Medicinal Totemo Shittori (refil)        | —                 | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
+| 010 | IHADA               | Emulsion Hidratante Facial (refil)             | 135 ml            | 1    | skincare  | Japão           | ☑          | R$ 99,90  | ☑          |
 | 011 | SANA Nameraka Honpo | Loção de Isoflavona de Soja Sappari            | —                 | 1    | skincare  | Japão           | ☑          | R$ 79,90  | ☑          |
 | 012 | anciente            | Sérum Vitamin C Derivatives × Glutathione      | 55 ml             | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
 | 013 | SECRET SCIENCE+     | White Deep Serum                               | 55 ml             | 1    | skincare  | Japão           | ☑          | R$ 119,90 | ☑          |
@@ -99,9 +99,9 @@ Toda imagem usada no site precisa de uma linha aqui.
 reel reuls" em vez de "real results"), sinal de imagem gerada ou editada por IA. Pela regra 6 do
 `CLAUDE.md`, confirmar a origem e o direito de uso, ou trocar por uma foto própria do produto.
 
-**IHADA (30/10/2026):** as fotos enviadas mostram a linha clareadora da IHADA (薬用美白化粧水), enquanto as
-fotos de identificação mostram a Emulsion (乳液 しっとり) e o refil da Lotion (化粧水 とてもしっとり). Por
-decisão do dono, a foto foi usada na Emulsion. Trocar se o cliente estranhar a diferença.
+**IHADA (30/10/2026):** os dois IHADA foram publicados com as fotos e o texto (Emulsion) enviados pelo dono.
+As fotos mostram a linha clareadora da IHADA; as fotos de identificação mostram a Emulsion (乳液) e o
+refil da Lotion (化粧水). Trocar se algum cliente estranhar a diferença.
 
 **Padrão recomendado: fotos próprias** dos produtos (fundo neutro, luz natural, mesmo enquadramento
 para todos, proporção 4:5). O detentor dos direitos é o dono, a foto mostra o item real que o cliente

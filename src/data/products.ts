@@ -260,9 +260,38 @@ export const products: Product[] = [
     slug: "ihada-locao-medicinal-totemo-shittori-refil",
     sku: "IHA-LOC-TSH-RF",
     brand: "IHADA",
-    name: "Loção Medicinal Totemo Shittori",
+    name: "Emulsion Hidratante Facial",
     subtitle: "Refil",
     category: "skincare",
+    volume: "135 ml",
+    // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
+    images: [
+      {
+        src: "/produtos/ihada-locao-medicinal-totemo-shittori-refil.jpg",
+        alt: "Refil IHADA, da Shiseido",
+        width: 1312,
+        height: 1199,
+      },
+    ],
+    priceCents: 9990,
+    description:
+      "Emulsão hidratante japonesa da Shiseido, desenvolvida para nutrir, suavizar e ajudar a proteger a pele contra o ressecamento.",
+    indication:
+      "Ideal para peles secas, sensíveis ou desidratadas que precisam de hidratação prolongada e proteção da barreira cutânea.",
+    benefits: [
+      "Hidratação prolongada: ajuda a manter a pele hidratada por mais tempo.",
+      "Proteção da barreira cutânea: auxilia na redução da perda de umidade.",
+      "Maciez e conforto: suaviza a sensação de ressecamento e repuxamento.",
+      "Textura leitosa: espalha facilmente e ajuda a deixar a pele macia, sem a textura de um creme muito espesso.",
+    ],
+    usageInstructions:
+      "Aplicar no rosto após a limpeza e a loção hidratante. Pode ser utilizada de manhã e à noite.",
+    highlight:
+      "A Lotion proporciona hidratação aquosa, enquanto a Emulsion ajuda a manter essa hidratação na pele. Os dois produtos podem ser utilizados juntos!",
+    countryOfOrigin: "Japão",
+    note: "Produto original, comprado pessoalmente no Japão!",
+    contentVerified: true,
+    publicationStatus: "published",
   },
   {
     ...base,
