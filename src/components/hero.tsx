@@ -48,9 +48,12 @@ export function Hero({
             <p className="text-ink-muted text-small mt-3 font-light tracking-[0.3em] uppercase">
               {siteConfig.slogan}
             </p>
-            <p className="text-lead mt-5 max-w-[40ch]">
-              Skincare, cabelos e maquiagem de marcas como Tsubaki, IHADA,
-              &amp;honey e medicube. Monte sua sacola e finalize o pedido pelo
+            <p className="font-display mt-6 max-w-[26ch] text-[clamp(1.5rem,1.2rem+1vw,2rem)] leading-snug">
+              Os favoritos da beleza japonesa e coreana, escolhidos para o seu
+              ritual de todo dia.
+            </p>
+            <p className="text-ink-muted mt-3 max-w-[44ch]">
+              Poucas unidades de cada. Escolha, monte sua sacola e finalize pelo
               WhatsApp.
             </p>
             <a
