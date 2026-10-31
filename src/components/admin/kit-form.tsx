@@ -14,7 +14,7 @@ import type { AdminKit, AdminProduct } from "@/features/admin/types";
 import { formatPrice } from "@/lib/currency";
 import type { Product } from "@/types/product";
 
-import { DeleteZone, SaveBar } from "./form-parts";
+import { DeleteZone, SaveBar, submitKeepingValues } from "./form-parts";
 import { ImageManager } from "./image-manager";
 import { Check, Field, inputClass, textareaClass, Section, Thumb } from "./ui";
 
@@ -79,7 +79,7 @@ export function KitForm({
   }
 
   return (
-    <form action={action}>
+    <form onSubmit={submitKeepingValues(action)}>
       <input type="hidden" name="items" value={JSON.stringify(lines)} />
 
       <Section title="Kit" description="Nome e texto que aparecem na vitrine.">

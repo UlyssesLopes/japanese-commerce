@@ -1,5 +1,6 @@
 "use server";
 
+import { refresh } from "next/cache";
 import { redirect } from "next/navigation";
 
 import { AdminApiError, adminFetch, login, logout } from "@/features/admin/api";
@@ -56,6 +57,7 @@ export async function saveProduct(
     return failure(e);
   }
   if (!id) redirect(`/admin/produtos/${savedId}`);
+  refresh();
   return { saved: true };
 }
 
@@ -105,6 +107,7 @@ export async function saveKit(
     return failure(e);
   }
   if (!id) redirect(`/admin/kits/${savedId}`);
+  refresh();
   return { saved: true };
 }
 
@@ -139,6 +142,7 @@ export async function saveCoupon(
     return failure(e);
   }
   if (!code) redirect("/admin/cupons");
+  refresh();
   return { saved: true };
 }
 
@@ -169,5 +173,6 @@ export async function saveSettings(
   } catch (e) {
     return failure(e);
   }
+  refresh();
   return { saved: true };
 }

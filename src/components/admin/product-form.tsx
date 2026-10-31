@@ -10,7 +10,7 @@ import { slugify } from "@/features/admin/slug";
 import type { AdminProduct } from "@/features/admin/types";
 import type { Product } from "@/types/product";
 
-import { DeleteZone, SaveBar } from "./form-parts";
+import { DeleteZone, SaveBar, submitKeepingValues } from "./form-parts";
 import { ImageManager } from "./image-manager";
 import { Check, Field, inputClass, textareaClass, Pill, Section } from "./ui";
 
@@ -72,7 +72,7 @@ export function ProductForm({ product }: { product?: AdminProduct }) {
   });
 
   return (
-    <form action={action}>
+    <form onSubmit={submitKeepingValues(action)}>
       <Section
         title="Identificação"
         description="Como o produto aparece na vitrine e na busca."

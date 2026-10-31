@@ -17,6 +17,9 @@ const nextConfig: NextConfig = {
   experimental: {
     // Fotos do backoffice (já reduzidas no navegador) passam por Server Action.
     serverActions: { bodySizeLimit: "4mb" },
+    // Página já visitada é reaproveitada no navegador por até 30 s (padrão: 5 min),
+    // para mudanças do backoffice aparecerem logo ao navegar pela loja.
+    staleTimes: { static: 30 },
   },
   turbopack: {
     rules: {

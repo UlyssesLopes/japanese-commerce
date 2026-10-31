@@ -1,10 +1,25 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { startTransition, useState, useTransition } from "react";
 
 import type { ActionState } from "@/features/admin/types";
 
 import { buttonClass, ErrorNote } from "./ui";
+
+/**
+ * Envia o formulário sem o "reset" automático do React 19. Com
+ * `<form action>`, depois de salvar os campos voltam ao valor inicial da tela
+ * (o de antes da edição), parecendo que nada foi salvo e, num segundo
+ * "Salvar", gravando os dados antigos por cima. Aqui os campos ficam como
+ * foram salvos; a ação chama `refresh()` para a tela reler o servidor.
+ */
+export function submitKeepingValues(action: (data: FormData) => void) {
+  return (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    startTransition(() => action(data));
+  };
+}
 
 /** Barra de salvar, presa ao pé da tela enquanto o formulário rola. */
 export function SaveBar({

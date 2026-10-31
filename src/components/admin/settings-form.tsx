@@ -10,7 +10,7 @@ import {
 } from "@/features/checkout/delivery";
 import { formatPrice } from "@/lib/currency";
 
-import { SaveBar } from "./form-parts";
+import { SaveBar, submitKeepingValues } from "./form-parts";
 import { ImageManager } from "./image-manager";
 import { Field, inputClass, Section, textareaClass } from "./ui";
 
@@ -33,7 +33,7 @@ export function SettingsForm({ settings }: { settings: StoreSettings }) {
   };
 
   return (
-    <form action={action}>
+    <form onSubmit={submitKeepingValues(action)}>
       <Section
         title="Entrega e retirada"
         description="Aparece na sacola, na página Entregas e pagamento e na mensagem do WhatsApp."

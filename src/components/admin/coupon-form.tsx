@@ -12,7 +12,7 @@ import {
 } from "@/features/coupons/coupons";
 import { formatPrice } from "@/lib/currency";
 
-import { DeleteZone, SaveBar } from "./form-parts";
+import { DeleteZone, SaveBar, submitKeepingValues } from "./form-parts";
 import { Check, Field, inputClass, Section } from "./ui";
 
 /** Subtotal de exemplo para a prévia: um produto de R$ 249,90. */
@@ -62,7 +62,7 @@ export function CouponForm({ coupon }: { coupon?: AdminCoupon }) {
   const result = preview ? applyCoupon(SAMPLE_SUBTOTAL, preview) : null;
 
   return (
-    <form action={action}>
+    <form onSubmit={submitKeepingValues(action)}>
       <Section
         title="Cupom"
         description="O cliente digita o código na sacola. Letras, números e hífen."
