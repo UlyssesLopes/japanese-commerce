@@ -7,30 +7,30 @@ de identificação em `product_photos/original/` (cada arquivo tem o slug do pro
 pessoais, ficam fora do git e **não são usadas no site**. Tamanho com "—" significa que não estava
 legível na foto e precisa ser conferido no verso ou no fundo da embalagem.
 
-| ID  | Marca               | Produto                                          | Tamanho           | Qtd. | Categoria | Origem da marca | Verificado | Preço     | Foto final |
-| --- | ------------------- | ------------------------------------------------ | ----------------- | ---- | --------- | --------------- | ---------- | --------- | ---------- |
-| 001 | THERATIS TERA       | Premium Night Moist Shampoo (embalagem original) | —                 | 1    | cabelos   | Japão           | ☑          | R$ 139,90 | ☑          |
-| 002 | THERATIS TERA       | Premium Night Moist Shampoo (refil)              | —                 | 1    | cabelos   | Japão           | ☑          | R$ 99,90  | ☑          |
-| 003 | &honey              | Rich Luxe Repair Shampoo                         | —                 | 1    | cabelos   | Japão           | ☑          | R$ 139,90 | ☑          |
-| 004 | &honey              | Rich Luxe Repair Shampoo (refil)                 | 350 ml            | 1    | cabelos   | Japão           | ☑          | R$ 99,90  | ☑          |
-| 005 | NARTH               | Moist Shampoo (refil)                            | —                 | 1    | cabelos   | Japão           | ☐          | ☐         | ☐          |
-| 006 | TSUBAKI             | Premium Volume & Repair Condicionador (refil)    | —                 | 1    | cabelos   | Japão           | ☑          | R$ 99,90  | ☑          |
-| 007 | fino                | Premium Touch Hair Mask                          | 230 g             | 3    | cabelos   | Japão           | ☑          | R$ 199,90 | ☑          |
-| 008 | TSUBAKI             | Premium Moist & Repair (kit shampoo + cond.)     | —                 | 1    | kits      | Japão           | ☐          | ☐         | ☐          |
-| 009 | IHADA               | Emulsion Hidratante Facial                       | 135 ml            | 1    | skincare  | Japão           | ☑          | R$ 129,90 | ☑          |
-| 010 | IHADA               | Emulsion Hidratante Facial (refil)               | 135 ml            | 1    | skincare  | Japão           | ☑          | R$ 99,90  | ☑          |
-| 011 | SANA Nameraka Honpo | Loção de Isoflavona de Soja Sappari              | —                 | 1    | skincare  | Japão           | ☑          | R$ 79,90  | ☑          |
-| 012 | anciente            | Sérum Vitamin C Derivatives × Glutathione        | 55 ml             | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
-| 013 | SECRET SCIENCE+     | White Deep Serum                                 | 55 ml             | 1    | skincare  | Japão           | ☑          | R$ 119,90 | ☑          |
-| 014 | VARI:HOPE           | 8 Days Pure Vitamin C Creme Facial               | —                 | 1    | skincare  | Coreia          | ☑          | R$ 159,90 | ☑          |
-| 015 | medicube            | Zero Pore Pad 2.0                                | 155 g (70 discos) | 1    | skincare  | Coreia          | ☑          | R$ 249,90 | ☑          |
-| 016 | Devé                | Cleansing Oil Óleo de Limpeza Facial             | 180 ml            | 1    | skincare  | Japão           | ☑          | R$ 88,90  | ☑          |
-| 017 | SHESOME             | Collagen Essence Mask Sheet                      | 25 ml             | 3    | skincare  | Coreia          | ☐          | ☐         | ☐          |
-| 018 | SHESOME             | Hyaluronic Acid with Peach Essence Mask Sheet    | 25 ml             | 3    | skincare  | Coreia          | ☐          | ☐         | ☐          |
-| 019 | LOVE MAKER          | Máscara de Cílios (Rímel), Natural Black         | —                 | 1    | maquiagem | Japão           | ☑          | R$ 59,90  | ☑          |
-| 020 | Glint by VDIVOV     | Lipcerin                                         | 15 ml             | 1    | maquiagem | Coreia          | ☑          | R$ 69,90  | ☑          |
-| 021 | twinkle pop         | Glitter Layering Eye Palette (cor a conferir)    | 4,6 g             | 1    | maquiagem | Coreia          | ☑          | R$ 54,90  | ☑          |
-| 022 | Diane               | Lotus Shine Spray Oil Óleo Capilar               | 80 g              | 1    | cabelos   | Japão           | ☑          | R$ 109,90 | ☑          |
+| ID  | Marca               | Produto                                       | Tamanho           | Qtd. | Categoria | Origem da marca | Verificado | Preço     | Foto final |
+| --- | ------------------- | --------------------------------------------- | ----------------- | ---- | --------- | --------------- | ---------- | --------- | ---------- |
+| 001 | THERATIS TERA       | Premium Night Moist Shampoo                   | —                 | 1    | cabelos   | Japão           | ☑          | R$ 139,90 | ☑          |
+| 002 | THERATIS TERA       | Premium Night Moist Shampoo (refil)           | —                 | 1    | cabelos   | Japão           | ☑          | R$ 99,90  | ☑          |
+| 003 | &honey              | Rich Luxe Repair Shampoo                      | —                 | 1    | cabelos   | Japão           | ☑          | R$ 139,90 | ☑          |
+| 004 | &honey              | Rich Luxe Repair Shampoo (refil)              | 350 ml            | 1    | cabelos   | Japão           | ☑          | R$ 99,90  | ☑          |
+| 005 | NARTH               | Moist Shampoo (refil)                         | —                 | 1    | cabelos   | Japão           | ☐          | ☐         | ☐          |
+| 006 | TSUBAKI             | Premium Volume & Repair Condicionador (refil) | —                 | 1    | cabelos   | Japão           | ☑          | R$ 99,90  | ☑          |
+| 007 | fino                | Premium Touch Hair Mask                       | 230 g             | 3    | cabelos   | Japão           | ☑          | R$ 199,90 | ☑          |
+| 008 | TSUBAKI             | Premium Moist & Repair (kit shampoo + cond.)  | —                 | 1    | kits      | Japão           | ☐          | ☐         | ☐          |
+| 009 | IHADA               | Emulsion Hidratante Facial                    | 135 ml            | 1    | skincare  | Japão           | ☑          | R$ 129,90 | ☑          |
+| 010 | IHADA               | Very Moist Lotion Refil                       | 150 ml            | 1    | skincare  | Japão           | ☑          | R$ 99,90  | ☑          |
+| 011 | SANA Nameraka Honpo | Loção de Isoflavona de Soja Sappari           | —                 | 1    | skincare  | Japão           | ☑          | R$ 79,90  | ☑          |
+| 012 | anciente            | Vitamin C + Glutathione Sérum Facial          | 55 ml             | 1    | skincare  | Japão           | ☑          | R$ 159,90 | ☑          |
+| 013 | SECRET SCIENCE+     | White Deep Serum                              | 55 ml             | 1    | skincare  | Japão           | ☑          | R$ 119,90 | ☑          |
+| 014 | VARI:HOPE           | 8 Days Pure Vitamin C Creme Facial            | —                 | 1    | skincare  | Coreia          | ☑          | R$ 159,90 | ☑          |
+| 015 | medicube            | Zero Pore Pad 2.0                             | 155 g (70 discos) | 1    | skincare  | Coreia          | ☑          | R$ 249,90 | ☑          |
+| 016 | Devé                | Cleansing Oil Óleo de Limpeza Facial          | 180 ml            | 1    | skincare  | Japão           | ☑          | R$ 88,90  | ☑          |
+| 017 | SHESOME             | Collagen Essence Mask Sheet                   | 25 ml             | 3    | skincare  | Coreia          | ☐          | ☐         | ☐          |
+| 018 | SHESOME             | Hyaluronic Acid with Peach Essence Mask Sheet | 25 ml             | 3    | skincare  | Coreia          | ☐          | ☐         | ☐          |
+| 019 | LOVE MAKER          | Máscara de Cílios (Rímel), Natural Black      | —                 | 1    | maquiagem | Japão           | ☑          | R$ 59,90  | ☑          |
+| 020 | Glint by VDIVOV     | Lipcerin                                      | 15 ml             | 1    | maquiagem | Coreia          | ☑          | R$ 69,90  | ☑          |
+| 021 | twinkle pop         | Glitter Layering Eye Palette (cor a conferir) | 4,6 g             | 1    | maquiagem | Coreia          | ☑          | R$ 54,90  | ☑          |
+| 022 | Diane               | Lotus Shine Spray Oil Óleo Capilar            | 80 g              | 1    | cabelos   | Japão           | ☑          | R$ 109,90 | ☑          |
 
 ### Observações
 
@@ -99,9 +99,8 @@ Toda imagem usada no site precisa de uma linha aqui.
 reel reuls" em vez de "real results"), sinal de imagem gerada ou editada por IA. Pela regra 6 do
 `CLAUDE.md`, confirmar a origem e o direito de uso, ou trocar por uma foto própria do produto.
 
-**IHADA (30/10/2026):** os dois IHADA foram publicados com as fotos e o texto (Emulsion) enviados pelo dono.
-As fotos mostram a linha clareadora da IHADA; as fotos de identificação mostram a Emulsion (乳液) e o
-refil da Lotion (化粧水). Trocar se algum cliente estranhar a diferença.
+**IHADA (30/10/2026):** o refil (010) recebeu a foto correta (Very Moist Lotion, 化粧水 とてもしっとり). A Emulsion
+(009) continua com a foto da linha clareadora enviada antes; trocar quando houver foto da caixa certa.
 
 **Padrão recomendado: fotos próprias** dos produtos (fundo neutro, luz natural, mesmo enquadramento
 para todos, proporção 4:5). O detentor dos direitos é o dono, a foto mostra o item real que o cliente

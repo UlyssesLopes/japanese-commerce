@@ -26,7 +26,7 @@ export const products: Product[] = [
     slug: "theratis-tera-premium-ex-night-moist-treatment",
     sku: "THE-TERA-TRT",
     brand: "THERATIS TERA",
-    name: "Premium Night Moist Shampoo (Embalagem Original)",
+    name: "Premium Night Moist Shampoo",
     category: "cabelos",
     // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
     images: [
@@ -102,7 +102,7 @@ export const products: Product[] = [
     slug: "andhoney-rich-luxe-repair-shampoo",
     sku: "AHN-RICH-SHP",
     brand: "&honey",
-    name: "Rich Luxe Repair Shampoo (Embalagem Original)",
+    name: "Rich Luxe Repair Shampoo",
     category: "cabelos",
     // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
     images: [
@@ -314,33 +314,33 @@ export const products: Product[] = [
     slug: "ihada-locao-medicinal-totemo-shittori-refil",
     sku: "IHA-LOC-TSH-RF",
     brand: "IHADA",
-    name: "Emulsion Hidratante Facial Refil",
+    name: "Very Moist Lotion Refil",
     category: "skincare",
-    volume: "135 ml",
+    volume: "150 ml",
     // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
     images: [
       {
         src: "/produtos/ihada-locao-medicinal-totemo-shittori-refil.jpg",
-        alt: "Refil IHADA, da Shiseido",
+        alt: "Refil azul da loção IHADA Very Moist (とてもしっとり), da Shiseido",
         width: 1312,
         height: 1199,
       },
     ],
     priceCents: 9990,
     description:
-      "Emulsão hidratante japonesa da Shiseido, desenvolvida para nutrir, suavizar e ajudar a proteger a pele contra o ressecamento.",
+      "Loção hidratante facial japonesa da Shiseido, desenvolvida para proporcionar hidratação intensa e ajudar a proteger a barreira natural da pele.",
     indication:
-      "Ideal para peles secas, sensíveis ou desidratadas que precisam de hidratação prolongada e proteção da barreira cutânea.",
+      "Ideal para peles secas, sensíveis, desidratadas ou que apresentam sensação de repuxamento.",
     benefits: [
-      "Hidratação prolongada: ajuda a manter a pele hidratada por mais tempo.",
-      "Proteção da barreira cutânea: auxilia na redução da perda de umidade.",
-      "Maciez e conforto: suaviza a sensação de ressecamento e repuxamento.",
-      "Textura leitosa: espalha facilmente e ajuda a deixar a pele macia, sem a textura de um creme muito espesso.",
+      "Hidratação intensa: ajuda a manter a pele macia e hidratada.",
+      "Proteção da barreira cutânea: auxilia na retenção da umidade e na prevenção do ressecamento.",
+      "Fórmula delicada: desenvolvida para minimizar irritações em peles sensíveis.",
+      "Textura leve: hidrata sem a sensação de um creme pesado.",
     ],
     usageInstructions:
-      "Aplicar no rosto após a limpeza e a loção hidratante. Pode ser utilizada de manhã e à noite.",
+      "Após a limpeza facial, aplicar uma pequena quantidade com as mãos, espalhando suavemente pelo rosto. Pode ser utilizada de manhã e à noite, antes do creme hidratante.",
     highlight:
-      "A Lotion proporciona hidratação aquosa, enquanto a Emulsion ajuda a manter essa hidratação na pele. Os dois produtos podem ser utilizados juntos!",
+      "Embalagem refil: ideal para repor o produto no frasco original.",
     countryOfOrigin: "Japão",
     note: "Produto original, comprado pessoalmente no Japão!",
     contentVerified: true,
@@ -388,9 +388,35 @@ export const products: Product[] = [
     slug: "anciente-serum-vitamina-c-glutationa",
     sku: "ANC-VC-GLU",
     brand: "anciente",
-    name: "Sérum Vitamin C Derivatives × Glutathione",
+    name: "Vitamin C + Glutathione Sérum Facial",
     category: "skincare",
     volume: "55 ml",
+    // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
+    images: [
+      {
+        src: "/produtos/anciente-serum-vitamina-c-glutationa.jpg",
+        alt: "Caixa amarela e holográfica do sérum anciente Vitamin C Derivatives × Glutathione, 55 ml",
+        width: 1199,
+        height: 1312,
+      },
+    ],
+    priceCents: 15990,
+    description:
+      "Um sérum japonês que combina derivados de vitamina C e glutationa para deixar a pele mais iluminada, hidratada e com aparência uniforme.",
+    indication:
+      "Ideal para quem tem pele opaca, tom irregular, marcas de acne ou deseja melhorar a luminosidade do rosto.",
+    benefits: [
+      "Vitamina C: ação antioxidante, ajudando a melhorar a luminosidade e a aparência de manchas.",
+      "Glutationa: antioxidante que complementa o cuidado com a uniformidade do tom.",
+      "Ingredientes hidratantes: ajudam a manter a pele macia, viçosa e hidratada.",
+    ],
+    usageInstructions:
+      "Aplicar algumas gotas no rosto limpo, antes do hidratante, pela manhã ou à noite. Começar em dias alternados se a pele for sensível.",
+    precautions: ["Durante o dia, utilizar protetor solar."],
+    countryOfOrigin: "Japão",
+    note: "Produto original, comprado pessoalmente no Japão!",
+    contentVerified: true,
+    publicationStatus: "published",
   },
   {
     ...base,
