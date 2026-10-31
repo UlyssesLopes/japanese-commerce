@@ -59,12 +59,19 @@ Railway: o teste grátis da conta expirou; falta o dono ativar um plano (Hobby) 
 **Kits (pedido do dono, 31/10):** a API já monta kits com produtos da loja (`/api/admin/kits`): nome,
 endereço, descrição, preço próprio, fotos, status e a lista de produtos com quantidade. O kit não tem
 estoque próprio: a API calcula quantos kits completos o estoque dos produtos permite e mostra a soma
-dos preços avulsos para comparar. Falta:
+dos preços avulsos para comparar. Falta a seção/página de kits no site (`/api/kits`) e kit na
+sacola/mensagem do WhatsApp. Kit e produto avulso usam as mesmas unidades: vendeu um, o outro fica
+indisponível ao atualizar o estoque.
 
-- tela **Kits** no `/admin`: buscar produto, adicionar com quantidade, mostrar soma avulsa vs. preço
-  do kit e quantos kits dá para vender;
-- seção/página de kits no site (`/api/kits`) e kit na sacola/mensagem do WhatsApp. Kit e produto
-  avulso usam as mesmas unidades: vendeu um, o outro fica indisponível ao atualizar o estoque.
+**Backoffice `/admin` (31/10, branch `backoffice`, só local, aguardando aprovação):** login com a
+senha única (cookie httpOnly; o token nunca vai ao navegador), Visão geral (o que falta para vender),
+Produtos (lista com busca/filtro e edição completa com fotos), Kits (montar com busca, quantidade,
+soma avulsa e quantos dá para vender), Cupons (com prévia de como fica na sacola). A loja foi para o
+grupo de rotas `(loja)`; `src/proxy.ts` manda quem não tem sessão para `/admin/entrar`. Variável
+`BACKEND_URL` (só servidor). Para rodar local: Postgres em Docker na porta **5433** (a 5432 da máquina
+já está ocupada), API com `JDBC_DATABASE_URL=jdbc:postgresql://localhost:5433/zivora`
+`ADMIN_PASSWORD=zivora-local` e `./mvnw spring-boot:run`. O site ainda lê o catálogo do seed:
+mudanças no admin só aparecem na loja depois de ligar `catalog/queries.ts` à API.
 
 ## ✅ Checklist para finalizar (31/10/2026)
 

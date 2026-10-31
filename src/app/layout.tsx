@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Instrument_Sans } from "next/font/google";
 
-import { CartProvider } from "@/components/cart/cart-provider";
-import { RevealObserver } from "@/components/reveal-observer";
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
 import { siteConfig } from "@/config/site";
-import { getCartCatalog, getVisibleProducts } from "@/features/catalog/queries";
 
 import "./globals.css";
 
@@ -33,12 +28,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default async function RootLayout({ children }: LayoutProps<"/">) {
-  const [catalog, searchCatalog] = await Promise.all([
-    getCartCatalog(),
-    getVisibleProducts(),
-  ]);
-
+export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="pt-BR"
@@ -55,20 +45,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
         />
       </head>
       <body className="text-body flex min-h-full flex-col font-sans">
-        <CartProvider catalog={catalog} searchCatalog={searchCatalog}>
-          <a
-            href="#conteudo"
-            className="focus:bg-brand focus:text-brand-ink sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-10 focus:px-4 focus:py-3"
-          >
-            Pular para o conteúdo
-          </a>
-          <SiteHeader />
-          <main id="conteudo" className="flex-1">
-            {children}
-          </main>
-          <SiteFooter />
-          <RevealObserver />
-        </CartProvider>
+        {children}
       </body>
     </html>
   );
