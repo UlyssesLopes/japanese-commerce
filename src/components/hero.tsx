@@ -48,7 +48,7 @@ export function Hero({
             <p className="text-ink-muted text-small mt-3 font-light tracking-[0.3em] uppercase">
               {siteConfig.slogan}
             </p>
-            <p className="font-display mt-6 max-w-[26ch] text-[clamp(1.5rem,1.2rem+1vw,2rem)] leading-snug">
+            <p className="text-lead mt-6 max-w-[38ch]">
               Os favoritos da beleza japonesa e coreana, escolhidos para o seu
               ritual de todo dia.
             </p>
