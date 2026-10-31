@@ -57,6 +57,13 @@ const steps = [
   },
 ];
 
+/** Cores do quadro da marca, uma por passo (sobre a faixa oliva). */
+const stepColors = [
+  "bg-tile-rose text-ink",
+  "bg-tile-taupe text-ink",
+  "bg-surface text-ink",
+];
+
 const questions = [
   {
     q: "Preciso criar conta ou pagar pelo site?",
@@ -101,114 +108,145 @@ export function HowToBuy() {
     : null;
 
   return (
-    <section
-      id="como-comprar"
-      aria-labelledby="como-comprar-titulo"
-      className="scroll-mt-4 py-14 lg:py-24"
-    >
-      <Container>
-        <h2 id="como-comprar-titulo" className="font-display text-head">
-          Como comprar
-        </h2>
-        <p className="text-lead text-ink-muted mt-3 max-w-[52ch]">
-          Sem cadastro e sem pagamento pelo site. Em três passos o seu pedido
-          chega até a gente.
-        </p>
+    <section id="como-comprar" aria-labelledby="como-comprar-titulo">
+      {/* Faixa da marca: os três passos em cores diferentes do quadro. */}
+      <div className="bg-brand text-brand-ink scroll-mt-4 py-16 lg:py-24">
+        <Container>
+          <div className="reveal max-w-[60ch]">
+            <h2 id="como-comprar-titulo" className="font-display text-head">
+              Como comprar
+            </h2>
+            <p className="text-lead mt-3 opacity-80">
+              Sem cadastro e sem pagamento pelo site. Em três passos o seu
+              pedido chega até a gente.
+            </p>
+          </div>
 
-        <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:gap-12">
-          <ol className="grid gap-4 lg:col-span-7">
+          <ol className="mt-10 grid gap-4 md:grid-cols-3 lg:mt-14 lg:gap-6">
             {steps.map((s, i) => (
               <li
                 key={s.title}
-                className="bg-surface-raised reveal flex gap-5 p-5 lg:p-6"
+                className={`reveal relative flex flex-col p-6 lg:p-8 ${stepColors[i]}`}
               >
-                <span className="bg-surface text-brand relative flex size-14 shrink-0 items-center justify-center rounded-full">
-                  {s.icon}
+                <span className="flex items-start justify-between">
+                  <span
+                    className={`text-brand flex size-14 items-center justify-center rounded-full ${i === steps.length - 1 ? "bg-surface-raised" : "bg-surface"}`}
+                  >
+                    {s.icon}
+                  </span>
                   <span
                     aria-hidden="true"
-                    className="bg-brand text-small text-brand-ink absolute -top-1 -right-1 flex size-6 items-center justify-center rounded-full font-semibold"
+                    className="font-display text-[4rem] leading-none opacity-30"
                   >
                     {i + 1}
                   </span>
                 </span>
-                <div>
-                  <h3 className="text-lead font-medium">{s.title}</h3>
-                  <p className="text-ink-muted mt-1">{s.text}</p>
-                </div>
+                <h3 className="font-display mt-8 text-[1.75rem] leading-tight">
+                  {s.title}
+                </h3>
+                <p className="mt-2 opacity-80">{s.text}</p>
               </li>
             ))}
           </ol>
 
-          <figure className="reveal lg:col-span-5">
-            <div className="bg-surface-raised p-5 lg:p-6">
-              <figcaption className="text-small text-ink-muted flex items-center justify-between gap-3">
-                <span>
-                  {hasItems
-                    ? "A mensagem do seu pedido"
-                    : "Exemplo da mensagem enviada"}
-                </span>
-                <span className="text-ink font-medium">WhatsApp</span>
-              </figcaption>
-              <p
-                aria-live="polite"
-                className="bg-surface text-small mt-4 ml-auto max-w-[34ch] rounded-2xl rounded-br-sm p-4 leading-relaxed whitespace-pre-line"
-              >
-                {message}
+          {/* Demonstração: a mensagem como ela chega no WhatsApp. */}
+          <div className="mt-14 grid items-center gap-10 lg:mt-20 lg:grid-cols-12">
+            <div className="reveal lg:col-span-5">
+              <h3 className="font-display text-[2rem] leading-tight">
+                {hasItems
+                  ? "Seu pedido, pronto para enviar"
+                  : "É assim que o seu pedido chega"}
+              </h3>
+              <p className="mt-3 max-w-[44ch] opacity-80">
+                {hasItems
+                  ? "Esta é a mensagem com os itens da sua sacola. Revise e envie pelo WhatsApp."
+                  : "A sacola escreve a mensagem por você, com os produtos e o subtotal. É só enviar e combinar o resto na conversa."}
               </p>
               {hasItems ? (
                 <button
                   type="button"
                   onClick={openCart}
-                  className="bg-brand text-brand-ink hover:bg-brand-hover mt-5 h-11 w-full px-4 font-medium transition-colors"
+                  className="bg-surface text-brand hover:bg-surface-raised mt-6 inline-flex h-12 items-center px-7 font-medium transition-colors"
                 >
                   Revisar a sacola e enviar
                 </button>
               ) : (
                 <a
                   href="#produtos"
-                  className="bg-brand text-brand-ink hover:bg-brand-hover mt-5 flex h-11 w-full items-center justify-center px-4 font-medium transition-colors"
+                  className="bg-surface text-brand hover:bg-surface-raised mt-6 inline-flex h-12 items-center px-7 font-medium transition-colors"
                 >
                   Escolher produtos
                 </a>
               )}
             </div>
-          </figure>
-        </div>
 
-        <div className="mt-14 grid gap-8 lg:mt-20 lg:grid-cols-12 lg:gap-12">
-          <h3 className="font-display text-[1.75rem] leading-tight lg:col-span-4">
-            Perguntas frequentes
-          </h3>
-          <div className="lg:col-span-8">
-            <div className="divide-placeholder divide-y">
-              {questions.map(({ q, a }) => (
-                <details key={q} className="group py-4">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">
-                    {q}
-                    <span
-                      aria-hidden="true"
-                      className="bg-surface-raised text-brand text-lead flex size-8 shrink-0 items-center justify-center rounded-full transition-transform group-open:rotate-45"
-                    >
-                      +
+            <figure className="reveal lg:col-span-6 lg:col-start-7">
+              <div className="bg-tile-charcoal mx-auto max-w-sm rounded-[2.25rem] p-3 shadow-2xl">
+                <div className="bg-chat overflow-hidden rounded-[1.75rem]">
+                  <figcaption className="bg-chat-header text-brand-ink flex items-center gap-3 px-4 py-3">
+                    <span className="bg-brand-ink text-brand font-display text-lead flex size-9 items-center justify-center rounded-full">
+                      Z
                     </span>
-                  </summary>
-                  <p className="text-ink-muted mt-2 max-w-[60ch]">{a}</p>
-                </details>
-              ))}
-            </div>
+                    <span className="leading-tight">
+                      <span className="block font-medium">
+                        {siteConfig.name}
+                      </span>
+                      <span className="text-small opacity-80">
+                        {hasItems ? "Seu pedido" : "Exemplo de pedido"}
+                      </span>
+                    </span>
+                  </figcaption>
+                  <div className="min-h-64 px-4 py-6">
+                    <p
+                      aria-live="polite"
+                      className="bg-chat-bubble text-ink text-small ml-auto max-w-[30ch] rounded-2xl rounded-tr-sm p-3 leading-relaxed whitespace-pre-line shadow-sm"
+                    >
+                      {message}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </figure>
+          </div>
+        </Container>
+      </div>
+
+      {/* Perguntas frequentes, de volta ao fundo claro. */}
+      <div className="py-16 lg:py-24">
+        <Container className="grid gap-8 lg:grid-cols-12 lg:gap-12">
+          <div className="reveal lg:col-span-4">
+            <h3 className="font-display text-head leading-tight">
+              Perguntas frequentes
+            </h3>
             {questionUrl && (
               <a
                 href={questionUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-surface-raised text-brand hover:bg-placeholder mt-6 inline-flex h-11 items-center px-6 font-medium transition-colors"
+                className="bg-brand text-brand-ink hover:bg-brand-hover mt-6 inline-flex h-11 items-center px-6 font-medium transition-colors"
               >
                 Tirar dúvida no WhatsApp
               </a>
             )}
           </div>
-        </div>
-      </Container>
+          <div className="divide-placeholder reveal divide-y lg:col-span-8">
+            {questions.map(({ q, a }) => (
+              <details key={q} className="group py-5">
+                <summary className="text-lead flex cursor-pointer list-none items-center justify-between gap-4">
+                  {q}
+                  <span
+                    aria-hidden="true"
+                    className="bg-brand text-brand-ink text-lead flex size-9 shrink-0 items-center justify-center rounded-full transition-transform group-open:rotate-45"
+                  >
+                    +
+                  </span>
+                </summary>
+                <p className="text-ink-muted mt-3 max-w-[60ch]">{a}</p>
+              </details>
+            ))}
+          </div>
+        </Container>
+      </div>
     </section>
   );
 }

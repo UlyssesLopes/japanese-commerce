@@ -20,6 +20,10 @@
   --tile-rose: #c9998a;
   --tile-taupe: #b8a68f;
   --tile-charcoal: #2a2925;
+  /* Demonstração da conversa (só no Como comprar). */
+  --chat: #efe7dc;
+  --chat-header: #3b3e2c;
+  --chat-bubble: #e4ecd3;
 }
 
 @theme inline {
@@ -35,6 +39,9 @@
   --color-tile-rose: var(--tile-rose);
   --color-tile-taupe: var(--tile-taupe);
   --color-tile-charcoal: var(--tile-charcoal);
+  --color-chat: var(--chat);
+  --color-chat-header: var(--chat-header);
+  --color-chat-bubble: var(--chat-bubble);
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-heading), Georgia, serif;
 
