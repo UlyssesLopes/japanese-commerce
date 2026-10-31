@@ -34,10 +34,9 @@ Arquivos locais que não estão no git e precisam existir para retomar: `.env.lo
 Carol e `CATALOG_SHOW_DRAFTS=true`; modelo em `.env.example`) e `product_photos/original/`.
 
 **No ar para demonstração:** https://japanese-commerce.vercel.app (projeto `japanese-commerce` na
-Vercel, conta ulysseslopes, deploy pela CLI). **Atenção:** `CATALOG_SHOW_DRAFTS=true` está ligado
-também em **produção** na Vercel (30/10/2026, a pedido do dono, para mostrar à Carol). Por isso os
-rascunhos e a página `/dev/estados` aparecem no ar. **Desligar antes do lançamento**
-(`vercel env rm CATALOG_SHOW_DRAFTS production` e novo deploy).
+Vercel, conta ulysseslopes, deploy pela CLI). A prévia de rascunhos (`CATALOG_SHOW_DRAFTS`) foi
+**desligada em produção em 31/10/2026** a pedido do dono: rascunhos e `/dev/estados` não aparecem
+mais no ar (continuam só no localhost).
 
 ## Fluxo para cada produto (combinado com o dono)
 
@@ -81,10 +80,6 @@ grupo de rotas `(loja)`; `src/proxy.ts` manda quem não tem sessão para `/admin
 `STOREFRONT_REVALIDATE_SECRET=revalidar-local ./mvnw spring-boot:run`; o `.env.local` do site já tem
 os valores locais correspondentes.
 
-Pendências:
-
-- antes do lançamento: remover `CATALOG_SHOW_DRAFTS` da Vercel.
-
 ## ✅ Checklist para finalizar (31/10/2026)
 
 ### Conteúdo (dono)
@@ -110,7 +105,7 @@ Pendências:
 
 - [ ] Subir o branch `preco-produto` (preço, hover no Chrome, correções da avaliação, categorias).
 - [ ] Refazer a seção "Como comprar" (a primeira tentativa foi descartada).
-- [ ] Antes do lançamento: tirar `CATALOG_SHOW_DRAFTS` da produção na Vercel e esconder `/dev/*`.
+- [x] Tirar `CATALOG_SHOW_DRAFTS` da produção na Vercel (31/10; `/dev/*` some junto).
 - [ ] Páginas de política de privacidade e de trocas/entregas.
 - [ ] SEO: metadata e imagem de compartilhamento (Open Graph), sitemap e liberar indexação.
 - [ ] Teste do fluxo completo no celular e teste automatizado (E2E) de sacola → WhatsApp.
