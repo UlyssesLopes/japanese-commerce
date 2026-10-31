@@ -94,12 +94,13 @@ terminar. Quem faz: **eu** (código/site), **dono** (decisão ou informação), 
       backoffice; troca em até 7 dias só com produto lacrado (defeito sempre). Prazo sugerido e
       aceito para começar: "até 3 dias úteis depois da confirmação do pagamento" (editável).
 - [ ] **Dono** confirma a situação dos produtos na Anvisa (ver `docs/prontidao-producao.md`).
-- [ ] **Eu**: páginas **Trocas e devoluções**, **Entregas e pagamento** e **Privacidade**, rodapé
-      com links e "Vendido por ZIVORA · WhatsApp", entrega/retirada com taxa na sacola e na
-      mensagem, tela **Configurações** no backoffice e seção **Quem vende** (só aparece com foto).
-      Feito no branch `loja-informacoes` (31/10), **aguardando aprovação do dono** para subir.
+- [x] **Eu**: páginas **Trocas e devoluções**, **Entregas e pagamento** e **Privacidade**, rodapé
+      com links, entrega/retirada com taxa na sacola e na mensagem, tela **Configurações** no
+      backoffice e seção **Quem vende** (faixa verde-oliva, foto redonda; só aparece com foto). O
+      número do WhatsApp não aparece escrito no site: só o link "WhatsApp" com ícone. **No ar desde
+      31/10.**
 - [ ] **Carol**: no backoffice → Configurações, definir o valor do frete grátis e enviar a foto
-      (e, se quiser, um texto) para a seção Quem vende.
+      e o texto da seção Quem vende (opções de texto sugeridas na conversa de 31/10).
 - [ ] **Eu**: refazer a seção **"Como comprar"** com essas informações (a primeira tentativa foi
       descartada).
 
