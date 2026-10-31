@@ -63,8 +63,8 @@ const questions = [
     a: "Não. O site só monta o seu pedido. Pagamento e entrega são combinados direto na conversa do WhatsApp.",
   },
   {
-    q: "Quantas unidades tem de cada produto?",
-    a: "A maioria dos produtos tem uma unidade só. A página de cada produto mostra quantas estão disponíveis, e a sacola não deixa passar desse número.",
+    q: "Os produtos são originais?",
+    a: "Sim. Todos os produtos são originais, comprados pessoalmente no Japão, nas embalagens de fábrica.",
   },
   {
     q: "Os produtos são todos japoneses?",
