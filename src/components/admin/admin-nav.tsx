@@ -8,6 +8,7 @@ export const adminLinks = [
   { href: "/admin/produtos", label: "Produtos" },
   { href: "/admin/kits", label: "Kits" },
   { href: "/admin/cupons", label: "Cupons" },
+  { href: "/admin/configuracoes", label: "Configurações" },
 ];
 
 function isActive(pathname: string | null, href: string) {

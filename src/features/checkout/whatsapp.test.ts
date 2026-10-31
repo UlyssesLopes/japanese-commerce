@@ -39,6 +39,44 @@ describe("buildOrderMessage com cupom", () => {
   });
 });
 
+describe("buildOrderMessage com entrega", () => {
+  // O preço formatado usa espaço não separável depois de "R$".
+  const plain = (text: string) => text.replace(/ /g, " ");
+  const lines = [
+    { brand: "IHADA", name: "Lotion", quantity: 1, unitPriceCents: 10000 },
+  ];
+
+  it("soma a taxa de entrega ao total, depois do cupom", () => {
+    const message = plain(
+      buildOrderMessage(
+        lines,
+        { code: "DEZ", discountCents: 1000 },
+        { method: "entrega", place: "Porto Alegre e região", feeCents: 450 },
+      ),
+    );
+    expect(message).toContain("Cupom DEZ: −R$ 10,00");
+    expect(message).toContain(
+      "Entrega em mãos (Porto Alegre e região): R$ 4,50",
+    );
+    expect(message).toContain("Total: R$ 94,50");
+  });
+
+  it("entrega grátis e retirada aparecem sem custo", () => {
+    expect(
+      buildOrderMessage(lines, undefined, { method: "entrega", feeCents: 0 }),
+    ).toContain("Entrega em mãos: grátis");
+    const retirada = plain(
+      buildOrderMessage(lines, undefined, {
+        method: "retirada",
+        place: "Estância Velha",
+        feeCents: 0,
+      }),
+    );
+    expect(retirada).toContain("Retirada (Estância Velha): sem custo");
+    expect(retirada).toContain("Total: R$ 100,00");
+  });
+});
+
 describe("buildWhatsAppUrl", () => {
   it("usa só dígitos no número e codifica o texto", () => {
     const url = buildWhatsAppUrl("+55 (11) 99999-9999", "Olá & tchau");

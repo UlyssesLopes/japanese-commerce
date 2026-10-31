@@ -7,15 +7,31 @@ export type WhatsAppOrderLine = {
   unitPriceCents: number;
 };
 
+export type WhatsAppCoupon = { code: string; discountCents: number };
+
+/** Entrega escolhida na sacola. `place` é a região ou o local de retirada. */
+export type WhatsAppDelivery = {
+  method: "entrega" | "retirada";
+  place?: string;
+  feeCents: number;
+};
+
+function deliveryLine(d: WhatsAppDelivery): string {
+  const where = d.place ? ` (${d.place})` : "";
+  if (d.method === "retirada") return `Retirada${where}: sem custo`;
+  return `Entrega em mãos${where}: ${
+    d.feeCents > 0 ? formatPrice(d.feeCents) : "grátis"
+  }`;
+}
+
 /**
  * Monta o texto que o cliente envia pelo WhatsApp. Não contém dados
  * pessoais: nome, endereço e pagamento são combinados na conversa.
  */
-export type WhatsAppCoupon = { code: string; discountCents: number };
-
 export function buildOrderMessage(
   lines: WhatsAppOrderLine[],
   coupon?: WhatsAppCoupon,
+  delivery?: WhatsAppDelivery,
 ): string {
   const items = lines.map(
     (l) =>
@@ -25,6 +41,9 @@ export function buildOrderMessage(
     (sum, l) => sum + l.unitPriceCents * l.quantity,
     0,
   );
+  const discount = coupon && coupon.discountCents > 0 ? coupon : undefined;
+  const total =
+    subtotal - (discount?.discountCents ?? 0) + (delivery?.feeCents ?? 0);
 
   return [
     "Olá! Tenho interesse nestes produtos:",
@@ -32,14 +51,15 @@ export function buildOrderMessage(
     ...items,
     "",
     `Subtotal: ${formatPrice(subtotal)}`,
-    ...(coupon && coupon.discountCents > 0
-      ? [
-          `Cupom ${coupon.code}: −${formatPrice(coupon.discountCents)}`,
-          `Total: ${formatPrice(subtotal - coupon.discountCents)}`,
-        ]
+    ...(discount
+      ? [`Cupom ${discount.code}: −${formatPrice(discount.discountCents)}`]
       : []),
+    ...(delivery ? [deliveryLine(delivery)] : []),
+    ...(discount || delivery ? [`Total: ${formatPrice(total)}`] : []),
     "",
-    "Podemos combinar entrega e pagamento?",
+    delivery
+      ? "Podemos combinar o pagamento e o dia?"
+      : "Podemos combinar entrega e pagamento?",
   ].join("\n");
 }
 

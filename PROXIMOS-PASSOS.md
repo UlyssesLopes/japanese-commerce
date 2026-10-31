@@ -87,13 +87,19 @@ terminar. Quem faz: **eu** (código/site), **dono** (decisão ou informação), 
 
 ### 1. Informações da loja (dono → eu)
 
-- [ ] **Dono** decide e me passa: venda como pessoa física ou MEI; nome/CNPJ e contato que aparecem
-      no site; formas de pagamento; frete (quem paga, como calcula) e regiões atendidas; prazo de
-      envio; política de troca e devolução (7 dias do CDC para compra online, produto aberto ou
-      fechado, quem paga o frete de volta).
+- [x] **Dono** decidiu (31/10): pessoa física, o site mostra "ZIVORA" + WhatsApp (seção "Quem vende"
+      com Caroline Serpa e foto); pagamento por Pix, cartão por link, transferência e dinheiro;
+      entrega em mãos em Porto Alegre e região metropolitana, retirada em Estância Velha, tudo
+      combinado pelo WhatsApp; taxa de entrega de 5% e frete grátis a partir de um valor definido no
+      backoffice; troca em até 7 dias só com produto lacrado (defeito sempre). Prazo sugerido e
+      aceito para começar: "até 3 dias úteis depois da confirmação do pagamento" (editável).
 - [ ] **Dono** confirma a situação dos produtos na Anvisa (ver `docs/prontidao-producao.md`).
-- [ ] **Eu**: páginas **Trocas e devoluções**, **Entregas e pagamento** e **Privacidade**, com links
-      no rodapé, e identificação do vendedor no rodapé.
+- [ ] **Eu**: páginas **Trocas e devoluções**, **Entregas e pagamento** e **Privacidade**, rodapé
+      com links e "Vendido por ZIVORA · WhatsApp", entrega/retirada com taxa na sacola e na
+      mensagem, tela **Configurações** no backoffice e seção **Quem vende** (só aparece com foto).
+      Feito no branch `loja-informacoes` (31/10), **aguardando aprovação do dono** para subir.
+- [ ] **Carol**: no backoffice → Configurações, definir o valor do frete grátis e enviar a foto
+      (e, se quiser, um texto) para a seção Quem vende.
 - [ ] **Eu**: refazer a seção **"Como comprar"** com essas informações (a primeira tentativa foi
       descartada).
 

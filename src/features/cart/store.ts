@@ -3,6 +3,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
+import type { DeliveryMethod } from "@/features/checkout/delivery";
 import type { AppliedCoupon } from "@/types/coupon";
 
 import type { CartItem } from "./cart";
@@ -17,6 +18,9 @@ type CartState = {
   keep: (slugs: string[]) => void;
   coupon: AppliedCoupon | null;
   setCoupon: (coupon: AppliedCoupon | null) => void;
+  /** Entrega em mãos ou retirada; nulo até o cliente escolher. */
+  delivery: DeliveryMethod | null;
+  setDelivery: (delivery: DeliveryMethod) => void;
   open: () => void;
   close: () => void;
 };
@@ -54,6 +58,8 @@ export const useCart = create<CartState>()(
         set((s) => ({ items: s.items.filter((i) => i.slug !== slug) })),
       coupon: null,
       setCoupon: (coupon) => set({ coupon }),
+      delivery: null,
+      setDelivery: (delivery) => set({ delivery }),
       keep: (slugs) =>
         set((s) => ({ items: s.items.filter((i) => slugs.includes(i.slug)) })),
       open: () => set({ isOpen: true }),
@@ -62,7 +68,11 @@ export const useCart = create<CartState>()(
     {
       name: "sacola",
       version: 1,
-      partialize: (s) => ({ items: s.items, coupon: s.coupon }),
+      partialize: (s) => ({
+        items: s.items,
+        coupon: s.coupon,
+        delivery: s.delivery,
+      }),
       skipHydration: true,
     },
   ),
