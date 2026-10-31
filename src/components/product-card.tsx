@@ -3,12 +3,14 @@ import Link from "next/link";
 
 import { displayImage } from "@/features/catalog/example-images";
 import { isPurchasable } from "@/features/catalog/eligibility";
+import { stockBadge } from "@/features/catalog/stock-badge";
 import { formatPrice } from "@/lib/currency";
 import type { Product } from "@/types/product";
 
 import { AddToCartButton } from "./cart/add-to-cart-button";
 import { QuickAddButton } from "./cart/quick-add-button";
 import { IllustrativeTag } from "./illustrative-tag";
+import { StockTag } from "./stock-tag";
 
 export function ProductCard({ product }: { product: Product }) {
   const image = displayImage(product);
@@ -36,6 +38,7 @@ export function ProductCard({ product }: { product: Product }) {
           />
           {image.illustrative && <IllustrativeTag />}
         </Link>
+        <StockTag label={stockBadge(product)} />
         {isPurchasable(product) && <QuickAddButton product={product} />}
       </div>
 

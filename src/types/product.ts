@@ -68,6 +68,9 @@ export const productSchema = z.object({
 
   featured: z.boolean(),
 
+  /** Mostrar o aviso de poucas unidades na foto (ligado no backoffice). */
+  lowStockBadge: z.boolean().optional(),
+
   /** Só em kits: os produtos da loja que vêm no kit. */
   kitItems: z
     .array(
