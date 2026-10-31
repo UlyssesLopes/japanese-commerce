@@ -49,7 +49,7 @@ export function HeroShowcase({ items }: { items: ShowcaseItem[] }) {
       <div className="relative">
         <Link
           href={`/produtos/${item.slug}`}
-          className="group bg-surface-raised relative block aspect-square overflow-hidden md:aspect-[5/4]"
+          className="group bg-surface-raised relative block aspect-square overflow-hidden md:aspect-[16/10]"
           aria-label={`Ver ${item.brand} ${item.name}`}
         >
           {items.map((it, i) => (
