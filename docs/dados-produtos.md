@@ -27,7 +27,7 @@ legível na foto e precisa ser conferido no verso ou no fundo da embalagem.
 | 016 | Devé                | Cleansing Oil Óleo de Limpeza Facial             | 180 ml            | 1    | skincare  | Japão           | ☑          | R$ 88,90  | ☑          |
 | 017 | SHESOME             | Collagen Essence Mask Sheet                      | 25 ml             | 3    | skincare  | Coreia          | ☐          | ☐         | ☐          |
 | 018 | SHESOME             | Hyaluronic Acid with Peach Essence Mask Sheet    | 25 ml             | 3    | skincare  | Coreia          | ☐          | ☐         | ☐          |
-| 019 | LOVE MAKER          | Mascara Volume, Natural Black (à prova d'água)   | —                 | 1    | maquiagem | Japão           | ☐          | ☐         | ☐          |
+| 019 | LOVE MAKER          | Máscara de Cílios (Rímel), Natural Black         | —                 | 1    | maquiagem | Japão           | ☑          | R$ 59,90  | ☑          |
 | 020 | Glint by VDIVOV     | Lipcerin                                         | 15 ml             | 1    | maquiagem | Coreia          | ☑          | R$ 69,90  | ☑          |
 | 021 | twinkle pop         | Glitter Layering Eye Palette (cor a conferir)    | 4,6 g             | 1    | maquiagem | Coreia          | ☑          | R$ 54,90  | ☑          |
 | 022 | Diane               | Lotus Shine Spray Oil Óleo Capilar               | 80 g              | 1    | cabelos   | Japão           | ☑          | R$ 109,90 | ☑          |

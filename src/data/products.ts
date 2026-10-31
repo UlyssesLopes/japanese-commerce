@@ -578,9 +578,36 @@ export const products: Product[] = [
     slug: "love-maker-mascara-volume-natural-black",
     sku: "LMK-MSC-VOL-BK",
     brand: "LOVE MAKER",
-    name: "Mascara Volume",
+    name: "Máscara de Cílios (Rímel)",
     subtitle: "Natural Black, à prova d'água",
     category: "maquiagem",
+    // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
+    images: [
+      {
+        src: "/produtos/love-maker-mascara-volume-natural-black.jpg",
+        alt: "Embalagem preta e dourada da máscara de cílios LOVE MAKER Volume, Natural Black",
+        width: 1199,
+        height: 1312,
+      },
+    ],
+    priceCents: 5990,
+    description:
+      "Máscara de cílios japonesa perfeita para destacar o olhar e deixar os cílios mais definidos e bonitos.",
+    indication:
+      "Ideal para quem deseja realçar os cílios e dar mais destaque à maquiagem dos olhos.",
+    benefits: [
+      "Definição: ajuda a destacar e separar os cílios.",
+      "Realce do olhar: proporciona um acabamento mais marcante.",
+      "Aplicação prática: ideal para complementar maquiagens do dia a dia ou ocasiões especiais.",
+      "Versatilidade: permite intensificar o efeito com camadas adicionais, conforme a fórmula.",
+    ],
+    usageInstructions:
+      "Aplicar da raiz às pontas dos cílios superiores, fazendo movimentos suaves. Repetir conforme o efeito desejado e remover com demaquilante adequado.",
+    highlight: "Um toque de maquiagem japonesa para valorizar o olhar!",
+    countryOfOrigin: "Japão",
+    note: "Produto original, comprado pessoalmente no Japão!",
+    contentVerified: true,
+    publicationStatus: "published",
   },
   {
     ...base,
