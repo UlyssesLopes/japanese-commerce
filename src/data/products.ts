@@ -298,8 +298,35 @@ export const products: Product[] = [
     slug: "varihope-8-days-pure-vitamin-c-cream",
     sku: "VHO-8D-VC",
     brand: "VARI:HOPE",
-    name: "8 Days Pure Vitamin C Cream",
+    name: "8 Days Pure Vitamin C Creme Facial",
     category: "skincare",
+    // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
+    images: [
+      {
+        src: "/produtos/varihope-8-days-pure-vitamin-c-cream.jpg",
+        alt: "Frasco e caixa do creme VARI:HOPE 8 Days Pure Vitamin C",
+        width: 1312,
+        height: 1199,
+      },
+    ],
+    priceCents: 16000,
+    description:
+      "Um creme coreano com vitamina C, desenvolvido para ajudar a deixar a pele mais iluminada, uniforme e com aparência saudável.",
+    indication:
+      "Ideal para quem deseja melhorar a aparência de manchas, marcas de acne, tom irregular e primeiros sinais de envelhecimento.",
+    benefits: [
+      "Ajuda a uniformizar o tom da pele.",
+      "Melhora gradualmente a aparência de manchas.",
+      "Proporciona mais luminosidade e viço.",
+      "Possui ação antioxidante.",
+      "Ajuda a hidratar e suavizar a aparência de linhas finas.",
+    ],
+    usageInstructions:
+      "Aplicar uma pequena quantidade no rosto limpo, após os produtos mais líquidos da rotina. Começar em dias alternados e aumentar a frequência conforme a tolerância da pele. Pode ser utilizado de manhã ou à noite. Durante o dia, é essencial usar protetor solar.",
+    countryOfOrigin: "Coreia do Sul",
+    note: "Produto original, comprado pessoalmente durante nossa viagem ao Japão!",
+    contentVerified: true,
+    publicationStatus: "published",
   },
   {
     ...base,
@@ -403,5 +430,46 @@ export const products: Product[] = [
     name: "Glitter Layering Eye Palette",
     category: "maquiagem",
     volume: "4,6 g",
+  },
+
+  // Cabelos (cadastrado depois do inventário inicial, a pedido do dono)
+  {
+    ...base,
+    id: "022",
+    slug: "diane-lotus-shine-spray-oil",
+    sku: "DIA-LOT-SPR",
+    brand: "Diane",
+    name: "Lotus Shine Spray Oil Óleo Capilar",
+    category: "cabelos",
+    volume: "80 g",
+    // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
+    images: [
+      {
+        src: "/produtos/diane-lotus-shine-spray-oil.jpg",
+        alt: "Spray de óleo capilar Diane Lotus, lilás, 80 g",
+        width: 1312,
+        height: 1199,
+      },
+    ],
+    priceCents: 10990,
+    description:
+      "Óleo capilar japonês em spray, desenvolvido para proporcionar brilho, maciez e um acabamento bonito aos cabelos, sem precisar aplicar o produto diretamente com as mãos.",
+    indication:
+      "Ideal para cabelos opacos, ressecados, com frizz ou que precisam de mais brilho e suavidade.",
+    benefits: [
+      "Brilho: proporciona um acabamento luminoso e saudável aos fios.",
+      "Controle do frizz: ajuda a alinhar os fios arrepiados.",
+      "Maciez: deixa o cabelo mais sedoso e agradável ao toque.",
+      "Aplicação prática: formato em spray que facilita a distribuição do óleo.",
+      "Acabamento: ajuda a melhorar a aparência das pontas ressecadas.",
+    ],
+    usageInstructions:
+      "Borrifar uma pequena quantidade no comprimento e nas pontas dos cabelos secos, mantendo distância dos fios. Espalhar suavemente, se necessário. Evitar a raiz e ajustar a quantidade conforme o tipo de cabelo.",
+    highlight:
+      "Ideal para finalizar o penteado e dar aquele toque extra de brilho e maciez!",
+    countryOfOrigin: "Japão",
+    note: "Produto original, comprado pessoalmente durante nossa viagem ao Japão!",
+    contentVerified: true,
+    publicationStatus: "published",
   },
 ];

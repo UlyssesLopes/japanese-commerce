@@ -2,7 +2,7 @@
 
 ## Inventário
 
-21 produtos e 25 unidades, levantados em 30/10/2026. Os nomes foram transcritos dos rótulos nas fotos
+22 produtos e 26 unidades (21 levantados em 30/10/2026; o Diane entrou depois, enviado pelo dono, quantidade 1 a confirmar). Os nomes foram transcritos dos rótulos nas fotos
 de identificação em `product_photos/original/` (cada arquivo tem o slug do produto). Essas fotos são
 pessoais, ficam fora do git e **não são usadas no site**. Tamanho com "—" significa que não estava
 legível na foto e precisa ser conferido no verso ou no fundo da embalagem.
@@ -22,7 +22,7 @@ legível na foto e precisa ser conferido no verso ou no fundo da embalagem.
 | 011 | SANA Nameraka Honpo | Loção de Isoflavona de Soja Sappari            | —                 | 1    | skincare  | Japão           | ☑          | R$ 80,00  | ☑          |
 | 012 | anciente            | Sérum Vitamin C Derivatives × Glutathione      | 55 ml             | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
 | 013 | SECRET SCIENCE+     | White Deep Serum                               | 55 ml             | 1    | skincare  | Japão           | ☑          | R$ 120,00 | ☑          |
-| 014 | VARI:HOPE           | 8 Days Pure Vitamin C Cream                    | —                 | 1    | skincare  | Coreia          | ☐          | ☐         | ☐          |
+| 014 | VARI:HOPE           | 8 Days Pure Vitamin C Creme Facial             | —                 | 1    | skincare  | Coreia          | ☑          | R$ 160,00 | ☑          |
 | 015 | medicube            | Zero Pore Pad 2.0                              | 155 g (70 discos) | 1    | skincare  | Coreia          | ☑          | R$ 250,00 | ☑          |
 | 016 | Deve                | Deep Cleans Cleansing Oil                      | 180 ml            | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
 | 017 | SHESOME             | Collagen Essence Mask Sheet                    | 25 ml             | 3    | skincare  | Coreia          | ☐          | ☐         | ☐          |
@@ -30,6 +30,7 @@ legível na foto e precisa ser conferido no verso ou no fundo da embalagem.
 | 019 | LOVE MAKER          | Mascara Volume, Natural Black (à prova d'água) | —                 | 1    | maquiagem | Japão           | ☐          | ☐         | ☐          |
 | 020 | Glint by VDIVOV     | Lipcerin                                       | 15 ml             | 1    | maquiagem | Coreia          | ☐          | ☐         | ☐          |
 | 021 | twinkle pop         | Glitter Layering Eye Palette (cor a conferir)  | 4,6 g             | 1    | maquiagem | Coreia          | ☐          | ☐         | ☐          |
+| 022 | Diane               | Lotus Shine Spray Oil Óleo Capilar             | 80 g              | 1    | cabelos   | Japão           | ☑          | R$ 109,90 | ☑          |
 
 ### Observações
 
