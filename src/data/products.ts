@@ -26,8 +26,38 @@ export const products: Product[] = [
     slug: "theratis-tera-premium-ex-night-moist-treatment",
     sku: "THE-TERA-TRT",
     brand: "THERATIS TERA",
-    name: "Premium EX Night Moist Treatment",
+    name: "Premium Night Moist Shampoo",
+    subtitle: "Embalagem original",
     category: "cabelos",
+    // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
+    images: [
+      {
+        src: "/produtos/theratis-tera-premium-ex-night-moist-treatment.jpg",
+        alt: "Frasco branco THERATIS TERA Premium EX Night Moist",
+        width: 1199,
+        height: 1312,
+      },
+    ],
+    priceCents: 13990,
+    description:
+      "Shampoo japonês com tecnologia de cuidado capilar noturno, desenvolvido para proporcionar cabelos mais hidratados, macios e alinhados.",
+    indication:
+      "Perfeito para cabelos ressecados, com frizz, pontas ásperas ou aparência danificada.",
+    benefits: [
+      "Hidratação intensa: ajuda a manter a umidade natural dos fios.",
+      "Reparação cosmética: melhora a aparência dos cabelos danificados.",
+      "Controle do frizz: proporciona fios mais alinhados e disciplinados.",
+      "Brilho e suavidade: deixa os cabelos com aspecto sedoso.",
+      "Cuidado noturno: ajuda a preparar os fios para uma rotina de cuidados enquanto você dorme.",
+    ],
+    usageInstructions:
+      "Aplicar nos cabelos molhados, massagear delicadamente até formar espuma e enxaguar completamente.",
+    highlight:
+      "Embalagem original com válvula dosadora, ideal para o uso diário e para receber futuras recargas.",
+    countryOfOrigin: "Japão",
+    note: "Produto original, comprado pessoalmente no Japão!",
+    contentVerified: true,
+    publicationStatus: "published",
   },
   {
     ...base,
@@ -35,9 +65,38 @@ export const products: Product[] = [
     slug: "theratis-tera-premium-ex-night-moist-treatment-refil",
     sku: "THE-TERA-TRT-RF",
     brand: "THERATIS TERA",
-    name: "Premium EX Night Moist Treatment",
+    name: "Premium Night Moist Shampoo",
     subtitle: "Refil",
     category: "cabelos",
+    // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
+    images: [
+      {
+        src: "/produtos/theratis-tera-premium-ex-night-moist-treatment-refil.jpg",
+        alt: "Refil preto THERATIS TERA Premium EX Night Moist",
+        width: 1199,
+        height: 1312,
+      },
+    ],
+    priceCents: 9990,
+    description:
+      "Shampoo japonês desenvolvido para cuidar dos cabelos ressecados e com frizz, proporcionando hidratação, maciez e brilho.",
+    indication:
+      "Ideal para cabelos secos, opacos, danificados ou que precisam de mais hidratação e alinhamento.",
+    benefits: [
+      "Hidratação: ajuda a combater o ressecamento dos fios.",
+      "Cuidado noturno: fórmula desenvolvida para complementar a rotina de reparação capilar.",
+      "Controle do frizz: auxilia no alinhamento dos cabelos.",
+      "Maciez e brilho: deixa os fios com aparência mais saudável e sedosa.",
+      "Limpeza suave: remove impurezas sem deixar os cabelos excessivamente ressecados.",
+    ],
+    usageInstructions:
+      "Aplicar nos cabelos molhados, massagear suavemente o couro cabeludo e enxaguar bem.",
+    highlight:
+      "Embalagem refil: prática para repor o produto no frasco original.",
+    countryOfOrigin: "Japão",
+    note: "Produto original, comprado pessoalmente no Japão!",
+    contentVerified: true,
+    publicationStatus: "published",
   },
   {
     ...base,
