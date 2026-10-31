@@ -110,8 +110,9 @@ terminar. Quem faz: **eu** (código/site), **dono** (decisão ou informação), 
       fotos próprias (regra 6 do `CLAUDE.md`).
 - [ ] Conferir preço, quantidade e textos de cada produto (ex.: quantidade do Diane; volume do Devé,
       180 ml no rótulo e 170 ml no texto).
-- [ ] Rascunhos que forem vender: NARTH Moist Shampoo, kit TSUBAKI Premium Moist & Repair, SHESOME
-      Collagen e SHESOME Hyaluronic Acid precisam de foto, preço e publicação.
+- [x] Kit TSUBAKI Premium Moist & Repair publicado com foto, texto do dono e R$ 219,90 (31/10).
+- [ ] Rascunhos que forem vender: NARTH Moist Shampoo, SHESOME Collagen e SHESOME Hyaluronic Acid
+      precisam de foto, preço e publicação.
 - [ ] Criar os kits e cupons de verdade (se houver).
 - [ ] Logo oficial da ZIVORA em arquivo (SVG/PNG) e o "Z" para o ícone da aba (**dono → eu**).
 
@@ -123,8 +124,8 @@ terminar. Quem faz: **eu** (código/site), **dono** (decisão ou informação), 
 
 ### 4. Divulgação (eu)
 
-- [ ] Imagem e texto de compartilhamento (Open Graph) para WhatsApp e Instagram: feito no branch
-      `previa-link` (31/10), aguardando aprovação. Loja: marca + 4 fotos reais; produto: foto, marca,
+- [x] Imagem e texto de compartilhamento (Open Graph) para WhatsApp e Instagram, **no ar desde
+      31/10**. Loja: marca + 4 fotos reais; produto: foto, marca,
       nome, preço e "Últimas unidades" se marcado. JPEG de 65–95 KB (WhatsApp só mostra imagens
       pequenas). Fontes do site em `assets/fonts/` (woff, OFL), porque o gerador não lê woff2.
 - [ ] Sitemap e robots; **liberar a indexação no Google** (hoje o site está marcado para não
