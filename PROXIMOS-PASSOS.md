@@ -55,7 +55,8 @@ Repositório privado: https://github.com/UlyssesLopes/japanese-commerce-backend 
 
 **No ar desde 31/10:** https://zivora-api-production.up.railway.app (Railway, plano Hobby, projeto
 `zivora-backend`: serviço `zivora-api` + `Postgres` + bucket `zivora-imagens`). Deploy manual com
-`railway up --service zivora-api` na pasta do backend. Fotos ficam no bucket privado e a API serve em
+`railway up --service zivora-api` na pasta do backend. Build pelo Dockerfile, health check e reinício
+ficam nas configurações do serviço no painel do Railway (sem `railway.json`, desde 31/10). Fotos ficam no bucket privado e a API serve em
 `/images/...`. A senha do backoffice está na variável `ADMIN_PASSWORD` do serviço (o dono recebeu).
 Há uma foto de teste de 2×2 px em `produtos/teste-deploy/` no bucket (sem uso).
 
