@@ -32,6 +32,8 @@ export const productSchema = z.object({
   subtitle: z.string().optional(),
   description: z.string().optional(),
   category: productCategorySchema,
+  /** Outras categorias em que o produto também aparece (filtro e contagem). */
+  extraCategories: z.array(productCategorySchema).optional(),
 
   images: z.array(productImageSchema),
 

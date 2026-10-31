@@ -39,3 +39,41 @@ describe("countByCategory", () => {
     });
   });
 });
+
+describe("produto em mais de uma categoria", () => {
+  const kit = {
+    ...hair,
+    id: "kit",
+    slug: "kit-tsubaki",
+    category: "kits" as const,
+    extraCategories: ["cabelos" as const],
+  };
+
+  it("aparece no filtro da principal e da extra", () => {
+    expect(filterByCategory([kit, skin], "kits")).toEqual([kit]);
+    expect(filterByCategory([kit, skin], "cabelos")).toEqual([kit]);
+    expect(filterByCategory([kit, skin], "skincare")).toEqual([skin]);
+  });
+
+  it("conta em cada categoria em que aparece", () => {
+    expect(countByCategory([kit, skin])).toEqual({
+      cabelos: 1,
+      skincare: 1,
+      maquiagem: 0,
+      kits: 1,
+    });
+  });
+
+  it("extra igual à principal ou repetida não conta duas vezes", () => {
+    const repetido = {
+      ...kit,
+      extraCategories: [
+        "kits" as const,
+        "cabelos" as const,
+        "cabelos" as const,
+      ],
+    };
+    expect(countByCategory([repetido]).cabelos).toBe(1);
+    expect(countByCategory([repetido]).kits).toBe(1);
+  });
+});

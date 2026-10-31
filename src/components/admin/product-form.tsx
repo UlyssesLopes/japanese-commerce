@@ -8,7 +8,7 @@ import { formatMoneyInput, parseMoney } from "@/features/admin/money";
 import { missingForSale } from "@/features/admin/readiness";
 import { slugify } from "@/features/admin/slug";
 import type { AdminProduct } from "@/features/admin/types";
-import type { Product } from "@/types/product";
+import type { Product, ProductCategory } from "@/types/product";
 
 import { DeleteZone, SaveBar, submitKeepingValues } from "./form-parts";
 import { ImageManager } from "./image-manager";
@@ -49,6 +49,12 @@ export function ProductForm({ product }: { product?: AdminProduct }) {
   );
   const [available, setAvailable] = useState(
     String(product?.availableQuantity ?? 1),
+  );
+  const [category, setCategory] = useState<ProductCategory>(
+    product?.category ?? "skincare",
+  );
+  const [extra, setExtra] = useState<ProductCategory[]>(
+    product?.extraCategories ?? [],
   );
   const [status, setStatus] = useState<Product["publicationStatus"]>(
     product?.publicationStatus ?? "draft",
@@ -110,11 +116,16 @@ export function ProductForm({ product }: { product?: AdminProduct }) {
               className={inputClass}
             />
           </Field>
-          <Field label="Categoria" htmlFor="category">
+          <Field
+            label="Categoria principal"
+            htmlFor="category"
+            hint="A do caminho “Início / Categoria” na página do produto."
+          >
             <select
               id="category"
               name="category"
-              defaultValue={product?.category ?? "skincare"}
+              value={category}
+              onChange={(e) => setCategory(e.target.value as ProductCategory)}
               className={inputClass}
             >
               {categories.map((c) => (
@@ -152,6 +163,40 @@ export function ProductForm({ product }: { product?: AdminProduct }) {
             />
           </Field>
         </div>
+        <fieldset>
+          <legend className="mb-2 text-sm font-medium">
+            Também aparece em
+          </legend>
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            {categories
+              .filter((c) => c.slug !== category)
+              .map((c) => (
+                <label
+                  key={c.slug}
+                  className="flex cursor-pointer items-center gap-2 text-sm"
+                >
+                  <input
+                    type="checkbox"
+                    name="extraCategories"
+                    value={c.slug}
+                    checked={extra.includes(c.slug)}
+                    onChange={(e) =>
+                      setExtra((list) =>
+                        e.target.checked
+                          ? [...list, c.slug]
+                          : list.filter((s) => s !== c.slug),
+                      )
+                    }
+                    className="accent-brand size-[1.125rem]"
+                  />
+                  {c.label}
+                </label>
+              ))}
+          </div>
+          <p className="text-ink-muted mt-2 text-[0.8125rem]">
+            O produto entra também no filtro e na contagem dessas categorias.
+          </p>
+        </fieldset>
       </Section>
 
       <Section

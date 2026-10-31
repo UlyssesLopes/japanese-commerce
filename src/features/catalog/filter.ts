@@ -4,6 +4,8 @@ import {
   type ProductCategory,
 } from "@/types/product";
 
+import { inCategory, productCategories } from "./categories";
+
 /** Lê `?categoria=` da URL. Valor ausente ou desconhecido = todas. */
 export function parseCategory(
   value: string | null | undefined,
@@ -16,7 +18,7 @@ export function filterByCategory(
   products: Product[],
   category: ProductCategory | null,
 ): Product[] {
-  return category ? products.filter((p) => p.category === category) : products;
+  return category ? products.filter((p) => inCategory(p, category)) : products;
 }
 
 export function countByCategory(
@@ -28,6 +30,7 @@ export function countByCategory(
     maquiagem: 0,
     kits: 0,
   };
-  for (const p of products) counts[p.category] += 1;
+  for (const p of products)
+    for (const c of productCategories(p)) counts[c] += 1;
   return counts;
 }

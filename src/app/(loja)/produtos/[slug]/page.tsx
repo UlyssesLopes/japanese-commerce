@@ -7,7 +7,7 @@ import { Container } from "@/components/container";
 import { ProductGallery } from "@/components/product-gallery";
 import { ProductGrid } from "@/components/product-grid";
 import { siteConfig } from "@/config/site";
-import { categories } from "@/features/catalog/categories";
+import { categories, inCategory } from "@/features/catalog/categories";
 import { isPurchasable } from "@/features/catalog/eligibility";
 import { displayImages } from "@/features/catalog/example-images";
 import { stockBadge } from "@/features/catalog/stock-badge";
@@ -61,7 +61,7 @@ export default async function ProductPage({
 
   const category = categories.find((c) => c.slug === product.category);
   const related = (await getVisibleProducts())
-    .filter((p) => p.category === product.category && p.slug !== product.slug)
+    .filter((p) => inCategory(p, product.category) && p.slug !== product.slug)
     .slice(0, 4);
   const canBuy = isPurchasable(product);
 
