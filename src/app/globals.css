@@ -16,6 +16,10 @@
   --brand-hover: #2b2d20;
   --brand-ink: #f4ece0;
   --focus: #3b3e2c;
+  /* Blocos de cor do quadro da marca (atalhos de categoria). */
+  --tile-rose: #c9998a;
+  --tile-taupe: #b8a68f;
+  --tile-charcoal: #2a2925;
 }
 
 @theme inline {
@@ -28,6 +32,9 @@
   --color-brand-hover: var(--brand-hover);
   --color-brand-ink: var(--brand-ink);
   --color-focus: var(--focus);
+  --color-tile-rose: var(--tile-rose);
+  --color-tile-taupe: var(--tile-taupe);
+  --color-tile-charcoal: var(--tile-charcoal);
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-heading), Georgia, serif;
 

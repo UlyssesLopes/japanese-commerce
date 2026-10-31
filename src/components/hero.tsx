@@ -3,12 +3,31 @@ import Link from "next/link";
 
 import { siteConfig } from "@/config/site";
 import { categories } from "@/features/catalog/categories";
-import { exampleImages } from "@/features/catalog/example-images";
 import type { ProductCategory } from "@/types/product";
 
 import abertura from "../../public/exemplos/abertura.png";
 
 import { Container } from "./container";
+
+/** Cores do quadro da marca, uma por categoria. */
+const tiles: Record<ProductCategory, { className: string; text: string }> = {
+  cabelos: {
+    className: "bg-brand text-brand-ink",
+    text: "Shampoos, refis e tratamentos",
+  },
+  skincare: {
+    className: "bg-tile-rose text-ink",
+    text: "Loções, séruns e limpeza",
+  },
+  maquiagem: {
+    className: "bg-tile-taupe text-ink",
+    text: "Olhos e lábios",
+  },
+  kits: {
+    className: "bg-tile-charcoal text-brand-ink",
+    text: "Conjuntos da mesma linha",
+  },
+};
 
 export function Hero({ counts }: { counts: Record<ProductCategory, number> }) {
   return (
@@ -55,32 +74,38 @@ export function Hero({ counts }: { counts: Record<ProductCategory, number> }) {
             Categorias
           </h2>
           <ul className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:gap-4">
-            {categories.map((c) => (
-              <li key={c.slug}>
-                <Link
-                  href={`/?categoria=${c.slug}#produtos`}
-                  className="group block"
-                >
-                  <span className="bg-surface-raised relative block aspect-[4/3] overflow-hidden">
-                    <Image
-                      src={exampleImages[c.slug][0].src}
-                      alt=""
-                      fill
-                      sizes="(min-width: 768px) 25vw, 50vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                    />
-                  </span>
-                  <span className="mt-2 flex items-baseline justify-between gap-2">
-                    <span className="font-medium group-hover:underline">
-                      {c.label}
+            {categories.map((c) => {
+              const tile = tiles[c.slug];
+              return (
+                <li key={c.slug}>
+                  <Link
+                    href={`/?categoria=${c.slug}#produtos`}
+                    className={`group flex aspect-[4/3] flex-col justify-between p-4 transition-[filter] hover:brightness-95 lg:p-6 ${tile.className}`}
+                  >
+                    <span>
+                      <span className="font-display block text-[1.75rem] leading-none lg:text-[2.25rem]">
+                        {c.label}
+                      </span>
+                      <span className="text-small mt-2 block opacity-80">
+                        {tile.text}
+                      </span>
                     </span>
-                    <span className="text-small text-ink-muted">
-                      {counts[c.slug]}
+                    <span className="text-small flex items-baseline justify-between">
+                      <span className="opacity-80">
+                        {counts[c.slug]}{" "}
+                        {counts[c.slug] === 1 ? "produto" : "produtos"}
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        className="text-lead transition-transform group-hover:translate-x-1"
+                      >
+                        →
+                      </span>
                     </span>
-                  </span>
-                </Link>
-              </li>
-            ))}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </Container>
       </section>
