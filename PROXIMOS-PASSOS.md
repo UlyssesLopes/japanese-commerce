@@ -139,6 +139,8 @@ terminar. Quem faz: **eu** (código/site), **dono** (decisão ou informação), 
 - [x] Backoffice, API no Railway, loja lendo da API, kits e cupons (31/10).
 - [x] Configuração do Railway no painel do serviço (31/10).
 - [x] Prévia de rascunhos desligada em produção (31/10).
+- [x] Aviso "Última unidade / Últimas unidades" na foto, só nos produtos marcados no backoffice
+      (checkbox no produto); medicube Zero Pore Pad marcado (31/10).
 - [x] Branch `preco-produto` (preço, hover no Chrome, categorias) já estava no `main`.
 - [x] ~~Lista real dos produtos~~, ~~referências visuais~~, ~~número de WhatsApp~~ (30/10).
 
