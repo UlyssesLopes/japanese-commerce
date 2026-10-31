@@ -10,9 +10,9 @@ describe("stockBadge", () => {
     expect(stockBadge({ availableQuantity: 1 })).toBeNull();
   });
 
-  it("o texto segue o estoque disponível", () => {
+  it("o texto não revela quantas unidades há", () => {
     expect(stockBadge({ lowStockBadge: true, availableQuantity: 1 })).toBe(
-      "Última unidade",
+      "Últimas unidades",
     );
     expect(stockBadge({ lowStockBadge: true, availableQuantity: 3 })).toBe(
       "Últimas unidades",

@@ -202,7 +202,7 @@ export function ProductForm({ product }: { product?: AdminProduct }) {
         <Field
           label="Observação junto do preço"
           htmlFor="note"
-          hint="Ex.: Última unidade. Aparece na página do produto."
+          hint="Ex.: Produto original. Aparece na página do produto."
         >
           <input
             id="note"
@@ -381,7 +381,7 @@ export function ProductForm({ product }: { product?: AdminProduct }) {
           <Check
             name="lowStockBadge"
             label="Aviso de últimas unidades na foto"
-            description="Mostra “Última unidade” (ou “Últimas unidades”, se tiver mais de uma) sobre a foto, onde o produto aparecer. Some sozinho se o produto esgotar."
+            description="Mostra “Últimas unidades” sobre a foto, onde o produto aparecer. Some sozinho se o produto esgotar."
             defaultChecked={product?.lowStockBadge}
           />
         </div>
