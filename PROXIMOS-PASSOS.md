@@ -51,10 +51,20 @@ rascunhos e a página `/dev/estados` aparecem no ar. **Desligar antes do lançam
 ## Backend (31/10/2026)
 
 Repositório privado: https://github.com/UlyssesLopes/japanese-commerce-backend (pasta local
-`../japanese-commerce-backend`). API pronta e testada (produtos, cupons, imagens, login admin), ainda
-**sem deploy**. Próximos passos: criar o projeto no Railway (API + Postgres), bucket de imagens (R2),
-apontar `catalog/queries.ts` e `coupons/queries.ts` do site para a API e construir o `/admin`.
-Railway: o teste grátis da conta expirou; falta o dono ativar um plano (Hobby) para o deploy.
+`../japanese-commerce-backend`).
+
+**No ar desde 31/10:** https://zivora-api-production.up.railway.app (Railway, plano Hobby, projeto
+`zivora-backend`: serviço `zivora-api` + `Postgres` + bucket `zivora-imagens`). Deploy manual com
+`railway up --service zivora-api` na pasta do backend. Fotos ficam no bucket privado e a API serve em
+`/images/...`. A senha do backoffice está na variável `ADMIN_PASSWORD` do serviço (o dono recebeu).
+Há uma foto de teste de 2×2 px em `produtos/teste-deploy/` no bucket (sem uso).
+
+Próximos passos:
+
+- pôr `BACKEND_URL=https://zivora-api-production.up.railway.app` na Vercel quando o backoffice subir;
+- apontar `catalog/queries.ts` e `coupons/queries.ts` do site para a API (a loja ainda lê o seed);
+- migrar `railway.json` para `.railway/railway.ts` (`railway config migrate`) **antes de 01/12/2026**,
+  quando o Railway deixa de ler o arquivo antigo.
 
 **Kits (pedido do dono, 31/10):** a API já monta kits com produtos da loja (`/api/admin/kits`): nome,
 endereço, descrição, preço próprio, fotos, status e a lista de produtos com quantidade. O kit não tem
