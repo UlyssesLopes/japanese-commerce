@@ -33,7 +33,7 @@
 Arquivos locais que não estão no git e precisam existir para retomar: `.env.local` (WhatsApp da
 Carol e `CATALOG_SHOW_DRAFTS=true`; modelo em `.env.example`) e `product_photos/original/`.
 
-**No ar para demonstração:** https://japanese-commerce.vercel.app (projeto `japanese-commerce` na
+**No ar:** https://zivorastore.com.br (antes https://japanese-commerce.vercel.app, que agora redireciona; projeto `japanese-commerce` na
 Vercel, conta ulysseslopes, deploy pela CLI). A prévia de rascunhos (`CATALOG_SHOW_DRAFTS`) foi
 **desligada em produção em 31/10/2026** a pedido do dono: rascunhos e `/dev/estados` não aparecem
 mais no ar (continuam só no localhost).
@@ -130,14 +130,11 @@ terminar. Quem faz: **eu** (código/site), **dono** (decisão ou informação), 
       pequenas). Fontes do site em `assets/fonts/` (woff, OFL), porque o gerador não lê woff2.
 - [ ] Sitemap e robots; **liberar a indexação no Google** (hoje o site está marcado para não
       aparecer em buscas).
-- [ ] **Domínio próprio `zivorastore.com.br`** (registro.br, 31/10). Na Vercel: `zivorastore.com.br`
-      e `www.zivorastore.com.br` já adicionados ao projeto e verificados; `www` redireciona (308) para
-      o domínio principal. **Falta o dono criar no registro.br** (DNS → Configurar endereçamento →
-      Modo avançado; o DNS estava "em transição" por ~2 h): `A` vazio → `216.198.79.1`; `A` vazio →
-      `64.29.17.1`; `CNAME` `www` → `721039d8f8cb5350.vercel-dns-017.com`. Depois, comigo: trocar
-      `NEXT_PUBLIC_SITE_URL` na Vercel e `STOREFRONT_REVALIDATE_URL`/`CORS_ALLOWED_ORIGINS` no
-      Railway; `japanese-commerce.vercel.app` passa a redirecionar para o domínio novo.
-      (`zivora.vercel.app` e `zivora-store.vercel.app` já pertencem a outras contas da Vercel.)
+- [x] **Domínio próprio https://zivorastore.com.br no ar desde 31/10/2026** (registro.br, DNS do
+      próprio registro.br: `A` vazio → `216.198.79.1` e `64.29.17.1`; `CNAME` `www` →
+      `721039d8f8cb5350.vercel-dns-017.com`). `www` e `japanese-commerce.vercel.app` redirecionam (308)
+      para o domínio principal. `NEXT_PUBLIC_SITE_URL` (Vercel), `STOREFRONT_REVALIDATE_URL` e
+      `CORS_ALLOWED_ORIGINS` (Railway) já apontam para ele. Certificado https emitido pela Vercel.
 - [ ] Opcional: ligar o GitHub à Vercel para publicar a cada envio.
 
 ### 5. Abrir (Carol/dono, por último)
