@@ -36,6 +36,8 @@ export function HeroShowcase({ items }: { items: ShowcaseItem[] }) {
 
   if (items.length === 0) return null;
   const item = items[current];
+  const go = (step: number) =>
+    setCurrent((i) => (i + step + items.length) % items.length);
 
   return (
     <div
@@ -44,41 +46,49 @@ export function HeroShowcase({ items }: { items: ShowcaseItem[] }) {
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
     >
-      <Link
-        href={`/produtos/${item.slug}`}
-        className="group bg-surface-raised relative block aspect-square overflow-hidden md:aspect-[5/4]"
-        aria-label={`Ver ${item.brand} ${item.name}`}
-      >
-        {items.map((it, i) => (
-          <Image
-            key={it.slug}
-            src={it.image.src}
-            alt={i === current ? it.image.alt : ""}
-            fill
-            priority={i === 0}
-            sizes="(min-width: 768px) 50vw, 100vw"
-            className={`object-cover transition-[opacity,scale] ease-out ${
-              i === current
-                ? "scale-[1.06] opacity-100 duration-[1200ms,6000ms]"
-                : "scale-100 opacity-0 duration-[1200ms,0ms]"
-            }`}
-          />
-        ))}
-        <span
-          key={item.slug}
-          className="bg-surface animate-rise absolute bottom-3 left-3 max-w-[85%] px-3 py-2"
+      <div className="relative">
+        <Link
+          href={`/produtos/${item.slug}`}
+          className="group bg-surface-raised relative block aspect-square overflow-hidden md:aspect-[5/4]"
+          aria-label={`Ver ${item.brand} ${item.name}`}
         >
-          <span translate="no" className="text-small text-ink-muted block">
-            {item.brand}
-          </span>
-          <span className="block leading-snug">{item.name}</span>
-          {item.priceCents !== null && (
-            <span className="block font-semibold tabular-nums">
-              {formatPrice(item.priceCents)}
+          {items.map((it, i) => (
+            <Image
+              key={it.slug}
+              src={it.image.src}
+              alt={i === current ? it.image.alt : ""}
+              fill
+              priority={i === 0}
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className={`object-cover transition-[opacity,scale] ease-out ${
+                i === current
+                  ? "scale-[1.06] opacity-100 duration-[1200ms,6000ms]"
+                  : "scale-100 opacity-0 duration-[1200ms,0ms]"
+              }`}
+            />
+          ))}
+          <span
+            key={item.slug}
+            className="bg-surface animate-rise absolute bottom-3 left-3 max-w-[85%] px-3 py-2"
+          >
+            <span translate="no" className="text-small text-ink-muted block">
+              {item.brand}
             </span>
-          )}
-        </span>
-      </Link>
+            <span className="block leading-snug">{item.name}</span>
+            {item.priceCents !== null && (
+              <span className="block font-semibold tabular-nums">
+                {formatPrice(item.priceCents)}
+              </span>
+            )}
+          </span>
+        </Link>
+        {items.length > 1 && (
+          <>
+            <ArrowButton direction="prev" onClick={() => go(-1)} />
+            <ArrowButton direction="next" onClick={() => go(1)} />
+          </>
+        )}
+      </div>
 
       {items.length > 1 && (
         <div className="mt-3 flex gap-1.5" role="group" aria-label="Fotos">
@@ -101,5 +111,37 @@ export function HeroShowcase({ items }: { items: ShowcaseItem[] }) {
         </div>
       )}
     </div>
+  );
+}
+
+function ArrowButton({
+  direction,
+  onClick,
+}: {
+  direction: "prev" | "next";
+  onClick: () => void;
+}) {
+  const prev = direction === "prev";
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={prev ? "Produto anterior" : "Próximo produto"}
+      className={`bg-surface/90 text-ink hover:bg-surface absolute top-1/2 flex size-11 -translate-y-1/2 items-center justify-center rounded-full transition-colors ${prev ? "left-3" : "right-3"}`}
+    >
+      <svg
+        aria-hidden="true"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d={prev ? "M15 5l-7 7 7 7" : "M9 5l7 7-7 7"} />
+      </svg>
+    </button>
   );
 }
