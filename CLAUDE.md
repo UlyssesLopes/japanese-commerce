@@ -1,6 +1,8 @@
 @AGENTS.md
 
-# Japanese Beauty Studio (nome provisório)
+# ZIVORA (Selected Goods)
+
+Nome e identidade escolhidos pela Carol em 30/10/2026 (`product_photos/design/`, fora do git).
 
 Pequeno e-commerce de cosméticos **japoneses e coreanos**. Estoque limitado: 21 produtos, quase todos
 com 1 unidade (`src/data/products.ts`). **O site é só uma loja**: mostra os produtos e leva à compra.

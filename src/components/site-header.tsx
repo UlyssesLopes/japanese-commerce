@@ -5,16 +5,14 @@ import { categories } from "@/features/catalog/categories";
 
 import { CartButton } from "./cart/cart-button";
 import { Container } from "./container";
+import { Wordmark } from "./wordmark";
 
 export function SiteHeader() {
   return (
     <header className="bg-surface">
       <Container className="flex h-16 items-center justify-between gap-6 lg:h-20">
-        <Link
-          href="/"
-          className="font-display text-ink text-[1.5rem] leading-none whitespace-nowrap md:text-[1.375rem] lg:text-[1.75rem]"
-        >
-          {siteConfig.name}
+        <Link href="/" aria-label={`${siteConfig.name}, início`}>
+          <Wordmark />
         </Link>
 
         <nav aria-label="Categorias" className="hidden md:block">

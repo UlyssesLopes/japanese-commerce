@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { siteConfig } from "@/config/site";
 import { categories } from "@/features/catalog/categories";
 import { exampleImages } from "@/features/catalog/example-images";
 import type { ProductCategory } from "@/types/product";
@@ -30,6 +31,9 @@ export function Hero({ counts }: { counts: Record<ProductCategory, number> }) {
             <h1 id="titulo" className="font-display text-display text-balance">
               Cosméticos japoneses e coreanos
             </h1>
+            <p className="text-ink-muted text-small mt-3 font-light tracking-[0.3em] uppercase">
+              {siteConfig.slogan}
+            </p>
             <p className="text-lead mt-5 max-w-[40ch]">
               Skincare, cabelos e maquiagem de marcas como Tsubaki, IHADA,
               &amp;honey e medicube. Monte sua sacola e finalize o pedido pelo

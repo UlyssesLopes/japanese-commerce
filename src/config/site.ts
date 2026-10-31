@@ -1,10 +1,12 @@
 /**
- * Configuração central da marca. Nome, descrição e contato são PROVISÓRIOS:
- * trocar aqui deve bastar para renomear o site inteiro.
+ * Configuração central da marca (identidade escolhida pela Carol em
+ * 30/10/2026, ver product_photos/design/). Trocar aqui renomeia o site inteiro.
  */
 export const siteConfig = {
-  name: "Japanese Beauty Studio",
-  shortName: "JBS",
+  name: "ZIVORA",
+  tagline: "Selected Goods",
+  slogan: "Do mundo, para o seu dia a dia",
+  shortName: "ZIVORA",
   description: "Skincare, cabelos e maquiagem de marcas japonesas e coreanas.",
   locale: "pt-BR",
   currency: "BRL",

@@ -6,15 +6,16 @@
  * nunca cores literais.
  */
 :root {
-  --surface: #ffffff;
-  --surface-raised: #fbf2f3;
-  --placeholder: #f4dfe3;
-  --ink: #1f1a1c;
-  --ink-muted: #6e5f64;
-  --brand: #c2416b;
-  --brand-hover: #a3304f;
-  --brand-ink: #ffffff;
-  --focus: #a3304f;
+  /* Paleta ZIVORA: creme, bege, verde oliva e quase preto. */
+  --surface: #faf6f0;
+  --surface-raised: #efe6da;
+  --placeholder: #e3d6c6;
+  --ink: #24231f;
+  --ink-muted: #6c665b;
+  --brand: #3b3e2c;
+  --brand-hover: #2b2d20;
+  --brand-ink: #f4ece0;
+  --focus: #3b3e2c;
 }
 
 @theme inline {

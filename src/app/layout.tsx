@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Serif_Display, Instrument_Sans } from "next/font/google";
+import { Cormorant_Garamond, Instrument_Sans } from "next/font/google";
 
 import { CartProvider } from "@/components/cart/cart-provider";
 import { SiteFooter } from "@/components/site-footer";
@@ -9,9 +9,9 @@ import { getCartCatalog } from "@/features/catalog/queries";
 
 import "./globals.css";
 
-const heading = DM_Serif_Display({
+const heading = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["500", "600"],
   variable: "--font-heading",
 });
 
