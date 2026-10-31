@@ -7,29 +7,29 @@ de identificação em `product_photos/original/` (cada arquivo tem o slug do pro
 pessoais, ficam fora do git e **não são usadas no site**. Tamanho com "—" significa que não estava
 legível na foto e precisa ser conferido no verso ou no fundo da embalagem.
 
-| ID  | Marca               | Produto                                        | Tamanho           | Qtd. | Categoria | Origem da marca | Verificado | Preço | Foto final |
-| --- | ------------------- | ---------------------------------------------- | ----------------- | ---- | --------- | --------------- | ---------- | ----- | ---------- |
-| 001 | THERATIS TERA       | Premium EX Night Moist Treatment               | —                 | 1    | cabelos   | Japão           | ☐          | ☐     | ☐          |
-| 002 | THERATIS TERA       | Premium EX Night Moist Treatment (refil)       | —                 | 1    | cabelos   | Japão           | ☐          | ☐     | ☐          |
-| 003 | &honey              | Rich Luxe Repair Shampoo                       | —                 | 1    | cabelos   | Japão           | ☐          | ☐     | ☐          |
-| 004 | &honey              | Rich Luxe Repair Shampoo (refil)               | —                 | 1    | cabelos   | Japão           | ☐          | ☐     | ☐          |
-| 005 | NARTH               | Moist Shampoo (refil)                          | —                 | 1    | cabelos   | Japão           | ☐          | ☐     | ☐          |
-| 006 | TSUBAKI             | Premium Volume & Repair Condicionador (refil)  | —                 | 1    | cabelos   | Japão           | ☐          | ☐     | ☐          |
-| 007 | fino                | Premium Touch Hair Mask                        | —                 | 3    | cabelos   | Japão           | ☐          | ☐     | ☐          |
-| 008 | TSUBAKI             | Premium Moist & Repair (kit shampoo + cond.)   | —                 | 1    | kits      | Japão           | ☐          | ☐     | ☐          |
-| 009 | IHADA               | Emulsão Medicinal Shittori                     | —                 | 1    | skincare  | Japão           | ☐          | ☐     | ☐          |
-| 010 | IHADA               | Loção Medicinal Totemo Shittori (refil)        | —                 | 1    | skincare  | Japão           | ☐          | ☐     | ☐          |
-| 011 | SANA Nameraka Honpo | Loção de Isoflavona de Soja Sappari            | —                 | 1    | skincare  | Japão           | ☐          | ☐     | ☐          |
-| 012 | anciente            | Sérum Vitamin C Derivatives × Glutathione      | 55 ml             | 1    | skincare  | Japão           | ☐          | ☐     | ☐          |
-| 013 | SECRET SCIENCE+     | White Deep Serum                               | 55 ml             | 1    | skincare  | a confirmar     | ☐          | ☐     | ☐          |
-| 014 | VARI:HOPE           | 8 Days Pure Vitamin C Cream                    | —                 | 1    | skincare  | Coreia          | ☐          | ☐     | ☐          |
-| 015 | medicube            | Zero Pore Pad 2.0                              | 155 g (70 discos) | 1    | skincare  | Coreia          | ☐          | ☐     | ☐          |
-| 016 | Deve                | Deep Cleans Cleansing Oil                      | 180 ml            | 1    | skincare  | Japão           | ☐          | ☐     | ☐          |
-| 017 | SHESOME             | Collagen Essence Mask Sheet                    | 25 ml             | 3    | skincare  | Coreia          | ☐          | ☐     | ☐          |
-| 018 | SHESOME             | Hyaluronic Acid with Peach Essence Mask Sheet  | 25 ml             | 3    | skincare  | Coreia          | ☐          | ☐     | ☐          |
-| 019 | LOVE MAKER          | Mascara Volume, Natural Black (à prova d'água) | —                 | 1    | maquiagem | Japão           | ☐          | ☐     | ☐          |
-| 020 | Glint by VDIVOV     | Lipcerin                                       | 15 ml             | 1    | maquiagem | Coreia          | ☐          | ☐     | ☐          |
-| 021 | twinkle pop         | Glitter Layering Eye Palette (cor a conferir)  | 4,6 g             | 1    | maquiagem | Coreia          | ☐          | ☐     | ☐          |
+| ID  | Marca               | Produto                                        | Tamanho           | Qtd. | Categoria | Origem da marca | Verificado | Preço     | Foto final |
+| --- | ------------------- | ---------------------------------------------- | ----------------- | ---- | --------- | --------------- | ---------- | --------- | ---------- |
+| 001 | THERATIS TERA       | Premium EX Night Moist Treatment               | —                 | 1    | cabelos   | Japão           | ☐          | ☐         | ☐          |
+| 002 | THERATIS TERA       | Premium EX Night Moist Treatment (refil)       | —                 | 1    | cabelos   | Japão           | ☐          | ☐         | ☐          |
+| 003 | &honey              | Rich Luxe Repair Shampoo                       | —                 | 1    | cabelos   | Japão           | ☐          | ☐         | ☐          |
+| 004 | &honey              | Rich Luxe Repair Shampoo (refil)               | —                 | 1    | cabelos   | Japão           | ☐          | ☐         | ☐          |
+| 005 | NARTH               | Moist Shampoo (refil)                          | —                 | 1    | cabelos   | Japão           | ☐          | ☐         | ☐          |
+| 006 | TSUBAKI             | Premium Volume & Repair Condicionador (refil)  | —                 | 1    | cabelos   | Japão           | ☐          | ☐         | ☐          |
+| 007 | fino                | Premium Touch Hair Mask                        | —                 | 3    | cabelos   | Japão           | ☐          | ☐         | ☐          |
+| 008 | TSUBAKI             | Premium Moist & Repair (kit shampoo + cond.)   | —                 | 1    | kits      | Japão           | ☐          | ☐         | ☐          |
+| 009 | IHADA               | Emulsão Medicinal Shittori                     | —                 | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
+| 010 | IHADA               | Loção Medicinal Totemo Shittori (refil)        | —                 | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
+| 011 | SANA Nameraka Honpo | Loção de Isoflavona de Soja Sappari            | —                 | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
+| 012 | anciente            | Sérum Vitamin C Derivatives × Glutathione      | 55 ml             | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
+| 013 | SECRET SCIENCE+     | White Deep Serum                               | 55 ml             | 1    | skincare  | a confirmar     | ☐          | ☐         | ☐          |
+| 014 | VARI:HOPE           | 8 Days Pure Vitamin C Cream                    | —                 | 1    | skincare  | Coreia          | ☐          | ☐         | ☐          |
+| 015 | medicube            | Zero Pore Pad 2.0                              | 155 g (70 discos) | 1    | skincare  | Coreia          | ☑          | R$ 250,00 | ☑          |
+| 016 | Deve                | Deep Cleans Cleansing Oil                      | 180 ml            | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
+| 017 | SHESOME             | Collagen Essence Mask Sheet                    | 25 ml             | 3    | skincare  | Coreia          | ☐          | ☐         | ☐          |
+| 018 | SHESOME             | Hyaluronic Acid with Peach Essence Mask Sheet  | 25 ml             | 3    | skincare  | Coreia          | ☐          | ☐         | ☐          |
+| 019 | LOVE MAKER          | Mascara Volume, Natural Black (à prova d'água) | —                 | 1    | maquiagem | Japão           | ☐          | ☐         | ☐          |
+| 020 | Glint by VDIVOV     | Lipcerin                                       | 15 ml             | 1    | maquiagem | Coreia          | ☐          | ☐         | ☐          |
+| 021 | twinkle pop         | Glitter Layering Eye Palette (cor a conferir)  | 4,6 g             | 1    | maquiagem | Coreia          | ☐          | ☐         | ☐          |
 
 ### Observações
 
@@ -75,7 +75,8 @@ A elegibilidade está em `src/features/catalog/eligibility.ts` e tem testes.
 
 ## Como colocar a foto real de um produto
 
-1. Salvar a foto em `public/produtos/<slug>.jpg` (o slug está em `src/data/products.ts`), quadrada ou 4:5.
+1. Guardar o original em `product_photos/site/<slug>.jpeg` (fora do git) e copiar para
+   `public/produtos/<slug>.jpg` (com `-2`, `-3`... para as fotos extras) (o slug está em `src/data/products.ts`), quadrada ou 4:5.
 2. No produto, preencher `images: [{ src: "/produtos/<slug>.jpg", alt: "<o que aparece na foto>", width: <px>, height: <px> }]`.
 3. Pronto: a foto ilustrativa e a etiqueta "Foto ilustrativa" somem sozinhas.
 4. Marcar a coluna "Foto final" no inventário acima e registrar a foto no manifesto abaixo.
@@ -88,9 +89,14 @@ o produto e não substitui a foto real no checklist de publicação.
 
 Toda imagem usada no site precisa de uma linha aqui.
 
-| Produto               | Arquivo                                                                                    | Origem                            | Detentor dos direitos | Permissão | Crédito exigido | Aprovada                          |
-| --------------------- | ------------------------------------------------------------------------------------------ | --------------------------------- | --------------------- | --------- | --------------- | --------------------------------- |
-| (todas, ilustrativas) | `public/exemplos/*.png` (abertura, cabelos-1..3, skincare-1..3, maquiagem-1..3, kits-1..2) | [StockSnap](https://stocksnap.io) | Autores no StockSnap  | CC0       | Não exigido     | Provisório, até as fotos próprias |
+| Produto                        | Arquivo                                                                                    | Origem                            | Detentor dos direitos | Permissão       | Crédito exigido | Aprovada                          |
+| ------------------------------ | ------------------------------------------------------------------------------------------ | --------------------------------- | --------------------- | --------------- | --------------- | --------------------------------- |
+| 015 medicube Zero Pore Pad 2.0 | `public/produtos/medicube-zero-pore-pad-2-0.jpg` (original em `product_photos/site/`)      | Enviada pelo dono                 | **A confirmar**       | **A confirmar** | —               | Em uso; ver nota abaixo           |
+| (todas, ilustrativas)          | `public/exemplos/*.png` (abertura, cabelos-1..3, skincare-1..3, maquiagem-1..3, kits-1..2) | [StockSnap](https://stocksnap.io) | Autores no StockSnap  | CC0             | Não exigido     | Provisório, até as fotos próprias |
+
+**Nota sobre a foto da medicube (30/10/2026):** o texto do pote aparece embaralhado ("Dedicated to
+reel reuls" em vez de "real results"), sinal de imagem gerada ou editada por IA. Pela regra 6 do
+`CLAUDE.md`, confirmar a origem e o direito de uso, ou trocar por uma foto própria do produto.
 
 **Padrão recomendado: fotos próprias** dos produtos (fundo neutro, luz natural, mesmo enquadramento
 para todos, proporção 4:5). O detentor dos direitos é o dono, a foto mostra o item real que o cliente

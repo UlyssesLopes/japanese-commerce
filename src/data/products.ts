@@ -169,6 +169,33 @@ export const products: Product[] = [
     name: "Zero Pore Pad 2.0",
     category: "skincare",
     volume: "155 g (70 discos)",
+    // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
+    images: [
+      {
+        src: "/produtos/medicube-zero-pore-pad-2-0.jpg",
+        alt: "Pote e caixa do medicube Zero Pore Pad 2.0, com discos ao lado",
+        width: 1312,
+        height: 1199,
+      },
+    ],
+    priceCents: 25000,
+    description:
+      "Um dos produtos coreanos mais conhecidos para cuidar dos poros e melhorar a textura da pele.",
+    indication:
+      "Ideal para peles mistas e oleosas, especialmente para quem tem cravinhos, poros obstruídos, oleosidade excessiva ou textura irregular.",
+    benefits: [
+      "Ajuda a desobstruir os poros.",
+      "Reduz cravinhos e acúmulo de células mortas.",
+      "Auxilia no controle da oleosidade.",
+      "Melhora a aparência dos poros dilatados.",
+      "Deixa a pele mais lisinha e uniforme.",
+    ],
+    usageInstructions:
+      "Após limpar o rosto, passar suavemente um disco pela pele, evitando a região dos olhos. Recomendo começar usando 2 vezes por semana, preferencialmente à noite. Se a pele se adaptar bem, pode aumentar para 3 vezes por semana.\n\nDepois, aplicar um hidratante facial. Durante o dia, usar protetor solar!",
+    countryOfOrigin: "Coreia do Sul",
+    note: "Produto original, comprado pessoalmente no Japão!",
+    contentVerified: true,
+    publicationStatus: "published",
   },
   {
     ...base,

@@ -84,3 +84,10 @@ export function displayImage(product: Product): DisplayImage {
   const seed = [...product.id].reduce((sum, c) => sum + c.charCodeAt(0), 0);
   return { ...options[seed % options.length], illustrative: true };
 }
+
+/** Todas as fotos do produto para a galeria; a ilustrativa só quando não há nenhuma. */
+export function displayImages(product: Product): DisplayImage[] {
+  return product.images.length > 0
+    ? product.images.map((img) => ({ ...img, illustrative: false }))
+    : [displayImage(product)];
+}

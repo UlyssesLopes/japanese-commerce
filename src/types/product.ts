@@ -44,9 +44,16 @@ export const productSchema = z.object({
   availableQuantity: z.number().int().nonnegative(),
 
   volume: z.string().optional(),
+  /** Para quem o produto é indicado (tipo de pele, de cabelo...). */
+  indication: z.string().optional(),
   ingredients: z.array(z.string()).optional(),
+  /** Modo de uso; parágrafos separados por linha em branco. */
   usageInstructions: z.string().optional(),
   benefits: z.array(z.string()).optional(),
+  /** Avisos da embalagem (uso externo, teste de alergia...). */
+  precautions: z.array(z.string()).optional(),
+  /** Observação do vendedor, mostrada junto do preço. */
+  note: z.string().optional(),
   countryOfOrigin: z.string().optional(),
   expirationDate: z.string().optional(),
 

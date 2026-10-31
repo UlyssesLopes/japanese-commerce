@@ -71,6 +71,14 @@ describe("seed de produtos", () => {
     }
   });
 
+  it("produto publicado tem conteúdo verificado e foto própria", () => {
+    for (const p of products) {
+      if (p.publicationStatus !== "published") continue;
+      expect(p.contentVerified, p.slug).toBe(true);
+      expect(p.images.length, p.slug).toBeGreaterThan(0);
+    }
+  });
+
   it("slugs são únicos", () => {
     const slugs = products.map((p) => p.slug);
     expect(new Set(slugs).size).toBe(slugs.length);
