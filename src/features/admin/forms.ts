@@ -59,6 +59,7 @@ export function productInput(form: FormData): Parsed<Record<string, unknown>> {
       subtitle: optional(form, "subtitle"),
       description: optional(form, "description"),
       category: text(form, "category"),
+      extraCategories: form.getAll("extraCategories").map(String),
       priceCents: price.cents,
       inventoryQuantity,
       availableQuantity,

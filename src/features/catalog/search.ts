@@ -1,6 +1,6 @@
 import type { Product } from "@/types/product";
 
-import { categories } from "./categories";
+import { categories, productCategories } from "./categories";
 
 /** Minúsculas e sem acento, para "loção" achar "locao" e vice-versa. */
 export function normalize(text: string): string {
@@ -8,8 +8,9 @@ export function normalize(text: string): string {
 }
 
 function haystack(product: Product): { strong: string; weak: string } {
-  const category =
-    categories.find((c) => c.slug === product.category)?.label ?? "";
+  const category = productCategories(product)
+    .map((slug) => categories.find((c) => c.slug === slug)?.label ?? "")
+    .join(" ");
   return {
     strong: normalize(
       [product.brand, product.name, product.subtitle, category].join(" "),

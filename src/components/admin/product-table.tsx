@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
-import { categories } from "@/features/catalog/categories";
+import { categories, productCategories } from "@/features/catalog/categories";
 import { missingForSale } from "@/features/admin/readiness";
 import type { AdminProduct } from "@/features/admin/types";
 import { formatPrice } from "@/lib/currency";
@@ -131,7 +131,9 @@ export function ProductTable({ products }: { products: AdminProduct[] }) {
                     </Link>
                   </td>
                   <td className="text-ink-muted py-3 pr-4 text-sm">
-                    {categoryLabel[p.category]}
+                    {productCategories(p)
+                      .map((c) => categoryLabel[c])
+                      .join(" · ")}
                   </td>
                   <td
                     className={`py-3 pr-4 text-right whitespace-nowrap tabular-nums ${
