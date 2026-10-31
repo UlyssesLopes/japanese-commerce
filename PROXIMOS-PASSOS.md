@@ -48,6 +48,13 @@ rascunhos e a página `/dev/estados` aparecem no ar. **Desligar antes do lançam
 4. Commit e push.
 5. **Sempre** publicar na Vercel: `vercel deploy --prod --yes` e conferir a página no ar.
 
+## Backend (31/10/2026)
+
+Repositório privado: https://github.com/UlyssesLopes/japanese-commerce-backend (pasta local
+`../japanese-commerce-backend`). API pronta e testada (produtos, cupons, imagens, login admin), ainda
+**sem deploy**. Próximos passos: criar o projeto no Railway (API + Postgres), bucket de imagens (R2),
+apontar `catalog/queries.ts` e `coupons/queries.ts` do site para a API e construir o `/admin`.
+
 ## ✅ Checklist para finalizar (31/10/2026)
 
 ### Conteúdo (dono)
