@@ -165,8 +165,15 @@ export const products: Product[] = [
     name: "Emulsion Hidratante Facial",
     category: "skincare",
     volume: "135 ml",
-    // Conteúdo e preço enviados pelo dono em 30/10/2026. A foto enviada mostrava
-    // outro produto (a loção clareadora), então fica em "preview" até a foto certa.
+    // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
+    images: [
+      {
+        src: "/produtos/ihada-emulsao-medicinal-shittori.jpg",
+        alt: "Caixa e frasco IHADA, da Shiseido",
+        width: 1312,
+        height: 1199,
+      },
+    ],
     priceCents: 13000,
     description:
       "Emulsão hidratante japonesa da Shiseido, desenvolvida para nutrir, suavizar e ajudar a proteger a pele contra o ressecamento.",
@@ -185,7 +192,7 @@ export const products: Product[] = [
     countryOfOrigin: "Japão",
     note: "Produto original, comprado pessoalmente no Japão!",
     contentVerified: true,
-    publicationStatus: "preview",
+    publicationStatus: "published",
   },
   {
     ...base,

@@ -17,7 +17,7 @@ legível na foto e precisa ser conferido no verso ou no fundo da embalagem.
 | 006 | TSUBAKI             | Premium Volume & Repair Condicionador (refil)  | —                 | 1    | cabelos   | Japão           | ☑          | R$ 99,90  | ☑          |
 | 007 | fino                | Premium Touch Hair Mask                        | 230 g             | 3    | cabelos   | Japão           | ☑          | R$ 200,00 | ☑          |
 | 008 | TSUBAKI             | Premium Moist & Repair (kit shampoo + cond.)   | —                 | 1    | kits      | Japão           | ☐          | ☐         | ☐          |
-| 009 | IHADA               | Emulsion Hidratante Facial                     | 135 ml            | 1    | skincare  | Japão           | ☑          | R$ 130,00 | ☐          |
+| 009 | IHADA               | Emulsion Hidratante Facial                     | 135 ml            | 1    | skincare  | Japão           | ☑          | R$ 130,00 | ☑          |
 | 010 | IHADA               | Loção Medicinal Totemo Shittori (refil)        | —                 | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
 | 011 | SANA Nameraka Honpo | Loção de Isoflavona de Soja Sappari            | —                 | 1    | skincare  | Japão           | ☑          | R$ 80,00  | ☑          |
 | 012 | anciente            | Sérum Vitamin C Derivatives × Glutathione      | 55 ml             | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
@@ -98,11 +98,9 @@ Toda imagem usada no site precisa de uma linha aqui.
 reel reuls" em vez de "real results"), sinal de imagem gerada ou editada por IA. Pela regra 6 do
 `CLAUDE.md`, confirmar a origem e o direito de uso, ou trocar por uma foto própria do produto.
 
-**IHADA 009 (30/10/2026):** a foto enviada mostra a _loção clareadora_ (薬用美白化粧水), não a Emulsion.
-Ficou de fora (`product_photos/site/ihada-FOTO-ERRADA-mostra-locao-clareadora.jpeg`); o produto está
-em `preview` com foto ilustrativa até chegar a foto certa. O mesmo vale para a IHADA 010 (refil da Lotion
-"Totemo Shittori"): a foto enviada (`ihada-refil-FOTO-ERRADA-...`) é o refil da linha clareadora, e o
-texto enviado era o da Emulsion; falta o texto e a foto certos.
+**IHADA (30/10/2026):** as fotos enviadas mostram a linha clareadora da IHADA (薬用美白化粧水), enquanto as
+fotos de identificação mostram a Emulsion (乳液 しっとり) e o refil da Lotion (化粧水 とてもしっとり). Por
+decisão do dono, a foto foi usada na Emulsion. Trocar se o cliente estranhar a diferença.
 
 **Padrão recomendado: fotos próprias** dos produtos (fundo neutro, luz natural, mesmo enquadramento
 para todos, proporção 4:5). O detentor dos direitos é o dono, a foto mostra o item real que o cliente
