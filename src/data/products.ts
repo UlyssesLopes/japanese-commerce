@@ -77,6 +77,32 @@ export const products: Product[] = [
     name: "Premium Volume & Repair Condicionador",
     subtitle: "Refil",
     category: "cabelos",
+    // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
+    images: [
+      {
+        src: "/produtos/tsubaki-premium-volume-repair-condicionador-refil.jpg",
+        alt: "Refil dourado do condicionador TSUBAKI Premium Volume & Repair",
+        width: 1086,
+        height: 1448,
+      },
+    ],
+    priceCents: 9990,
+    description:
+      "Condicionador japonês da Shiseido, desenvolvido para cuidar dos cabelos danificados, proporcionando maciez, brilho e movimento sem deixar os fios pesados.",
+    indication:
+      "Ideal para cabelos finos, sem volume, ressecados ou danificados que precisam de reparação e leveza.",
+    benefits: [
+      "Reparação: ajuda a melhorar a aparência dos fios danificados.",
+      "Volume e movimento: proporciona um acabamento leve, sem pesar.",
+      "Hidratação: deixa os cabelos mais macios e fáceis de desembaraçar.",
+      "Brilho: ajuda a reduzir o aspecto opaco e melhorar a aparência dos fios.",
+    ],
+    usageInstructions:
+      "Após o shampoo, aplicar no comprimento e nas pontas, deixar agir por alguns instantes e enxaguar bem.",
+    countryOfOrigin: "Japão",
+    note: "Produto original, comprado pessoalmente no Japão!",
+    contentVerified: true,
+    publicationStatus: "published",
   },
   {
     ...base,
@@ -136,8 +162,30 @@ export const products: Product[] = [
     slug: "ihada-emulsao-medicinal-shittori",
     sku: "IHA-EMU-SHI",
     brand: "IHADA",
-    name: "Emulsão Medicinal Shittori",
+    name: "Emulsion Hidratante Facial",
     category: "skincare",
+    volume: "135 ml",
+    // Conteúdo e preço enviados pelo dono em 30/10/2026. A foto enviada mostrava
+    // outro produto (a loção clareadora), então fica em "preview" até a foto certa.
+    priceCents: 13000,
+    description:
+      "Emulsão hidratante japonesa da Shiseido, desenvolvida para nutrir, suavizar e ajudar a proteger a pele contra o ressecamento.",
+    indication:
+      "Ideal para peles secas, sensíveis ou desidratadas que precisam de hidratação prolongada e proteção da barreira cutânea.",
+    benefits: [
+      "Hidratação prolongada: ajuda a manter a pele hidratada por mais tempo.",
+      "Proteção da barreira cutânea: auxilia na redução da perda de umidade.",
+      "Maciez e conforto: suaviza a sensação de ressecamento e repuxamento.",
+      "Textura leitosa: espalha facilmente e ajuda a deixar a pele macia, sem a textura de um creme muito espesso.",
+    ],
+    usageInstructions:
+      "Aplicar no rosto após a limpeza e a loção hidratante. Pode ser utilizada de manhã e à noite.",
+    highlight:
+      "A Lotion proporciona hidratação aquosa, enquanto a Emulsion ajuda a manter essa hidratação na pele. Os dois produtos podem ser utilizados juntos!",
+    countryOfOrigin: "Japão",
+    note: "Produto original, comprado pessoalmente no Japão!",
+    contentVerified: true,
+    publicationStatus: "preview",
   },
   {
     ...base,

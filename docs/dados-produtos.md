@@ -14,10 +14,10 @@ legível na foto e precisa ser conferido no verso ou no fundo da embalagem.
 | 003 | &honey              | Rich Luxe Repair Shampoo                       | —                 | 1    | cabelos   | Japão           | ☐          | ☐         | ☐          |
 | 004 | &honey              | Rich Luxe Repair Shampoo (refil)               | —                 | 1    | cabelos   | Japão           | ☐          | ☐         | ☐          |
 | 005 | NARTH               | Moist Shampoo (refil)                          | —                 | 1    | cabelos   | Japão           | ☐          | ☐         | ☐          |
-| 006 | TSUBAKI             | Premium Volume & Repair Condicionador (refil)  | —                 | 1    | cabelos   | Japão           | ☐          | ☐         | ☐          |
+| 006 | TSUBAKI             | Premium Volume & Repair Condicionador (refil)  | —                 | 1    | cabelos   | Japão           | ☑          | R$ 99,90  | ☑          |
 | 007 | fino                | Premium Touch Hair Mask                        | 230 g             | 3    | cabelos   | Japão           | ☑          | R$ 200,00 | ☑          |
 | 008 | TSUBAKI             | Premium Moist & Repair (kit shampoo + cond.)   | —                 | 1    | kits      | Japão           | ☐          | ☐         | ☐          |
-| 009 | IHADA               | Emulsão Medicinal Shittori                     | —                 | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
+| 009 | IHADA               | Emulsion Hidratante Facial                     | 135 ml            | 1    | skincare  | Japão           | ☑          | R$ 130,00 | ☐          |
 | 010 | IHADA               | Loção Medicinal Totemo Shittori (refil)        | —                 | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
 | 011 | SANA Nameraka Honpo | Loção de Isoflavona de Soja Sappari            | —                 | 1    | skincare  | Japão           | ☑          | R$ 80,00  | ☑          |
 | 012 | anciente            | Sérum Vitamin C Derivatives × Glutathione      | 55 ml             | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
@@ -97,6 +97,10 @@ Toda imagem usada no site precisa de uma linha aqui.
 **Nota sobre a foto da medicube (30/10/2026):** o texto do pote aparece embaralhado ("Dedicated to
 reel reuls" em vez de "real results"), sinal de imagem gerada ou editada por IA. Pela regra 6 do
 `CLAUDE.md`, confirmar a origem e o direito de uso, ou trocar por uma foto própria do produto.
+
+**IHADA 009 (30/10/2026):** a foto enviada mostra a _loção clareadora_ (薬用美白化粧水), não a Emulsion.
+Ficou de fora (`product_photos/site/ihada-FOTO-ERRADA-mostra-locao-clareadora.jpeg`); o produto está
+em `preview` com foto ilustrativa até chegar a foto certa.
 
 **Padrão recomendado: fotos próprias** dos produtos (fundo neutro, luz natural, mesmo enquadramento
 para todos, proporção 4:5). O detentor dos direitos é o dono, a foto mostra o item real que o cliente

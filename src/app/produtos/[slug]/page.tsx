@@ -63,6 +63,7 @@ export default async function ProductPage({
     Boolean(product.indication) ||
     Boolean(product.benefits?.length) ||
     usage.length > 0 ||
+    Boolean(product.highlight) ||
     Boolean(product.precautions?.length) ||
     Boolean(product.ingredients?.length);
 
@@ -170,6 +171,12 @@ export default async function ProductPage({
                         <p key={paragraph}>{paragraph}</p>
                       ))}
                     </div>
+                  </Section>
+                )}
+
+                {product.highlight && (
+                  <Section title="Diferencial">
+                    <p className="bg-surface-raised p-4">{product.highlight}</p>
                   </Section>
                 )}
 

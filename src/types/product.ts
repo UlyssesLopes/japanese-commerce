@@ -52,6 +52,8 @@ export const productSchema = z.object({
   benefits: z.array(z.string()).optional(),
   /** Avisos da embalagem (uso externo, teste de alergia...). */
   precautions: z.array(z.string()).optional(),
+  /** Diferencial do produto (ex.: como combina com outro da mesma linha). */
+  highlight: z.string().optional(),
   /** Observação do vendedor, mostrada junto do preço. */
   note: z.string().optional(),
   countryOfOrigin: z.string().optional(),
