@@ -24,7 +24,7 @@ legível na foto e precisa ser conferido no verso ou no fundo da embalagem.
 | 013 | SECRET SCIENCE+     | White Deep Serum                                 | 55 ml             | 1    | skincare  | Japão           | ☑          | R$ 119,90 | ☑          |
 | 014 | VARI:HOPE           | 8 Days Pure Vitamin C Creme Facial               | —                 | 1    | skincare  | Coreia          | ☑          | R$ 159,90 | ☑          |
 | 015 | medicube            | Zero Pore Pad 2.0                                | 155 g (70 discos) | 1    | skincare  | Coreia          | ☑          | R$ 249,90 | ☑          |
-| 016 | Deve                | Deep Cleans Cleansing Oil                        | 180 ml            | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
+| 016 | Devé                | Cleansing Oil Óleo de Limpeza Facial             | 180 ml            | 1    | skincare  | Japão           | ☑          | R$ 88,90  | ☑          |
 | 017 | SHESOME             | Collagen Essence Mask Sheet                      | 25 ml             | 3    | skincare  | Coreia          | ☐          | ☐         | ☐          |
 | 018 | SHESOME             | Hyaluronic Acid with Peach Essence Mask Sheet    | 25 ml             | 3    | skincare  | Coreia          | ☐          | ☐         | ☐          |
 | 019 | LOVE MAKER          | Mascara Volume, Natural Black (à prova d'água)   | —                 | 1    | maquiagem | Japão           | ☐          | ☐         | ☐          |

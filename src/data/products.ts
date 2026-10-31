@@ -512,10 +512,39 @@ export const products: Product[] = [
     id: "016",
     slug: "deve-deep-cleans-cleansing-oil",
     sku: "DEV-DC-OIL",
-    brand: "Deve",
-    name: "Deep Cleans Cleansing Oil",
+    brand: "Devé",
+    name: "Cleansing Oil Óleo de Limpeza Facial",
     category: "skincare",
+    // O texto do dono diz 170 ml; o rótulo (foto e identificação) diz 180 ml.
     volume: "180 ml",
+    // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
+    images: [
+      {
+        src: "/produtos/deve-deep-cleans-cleansing-oil.jpg",
+        alt: "Frasco lilás com pump do óleo de limpeza Devé Deep Cleans, 180 ml",
+        width: 1199,
+        height: 1312,
+      },
+    ],
+    priceCents: 8890,
+    description:
+      "Óleo de limpeza facial japonês desenvolvido para remover maquiagem, protetor solar e impurezas, deixando a pele limpa e macia.",
+    indication:
+      "Ideal para quem deseja uma limpeza profunda, especialmente para remover maquiagem e resíduos acumulados ao longo do dia.",
+    benefits: [
+      "Limpeza eficaz: ajuda a dissolver maquiagem, protetor solar e oleosidade.",
+      "Cuidado com os poros: auxilia na remoção de resíduos e impurezas.",
+      "Maciez: proporciona uma limpeza confortável, sem deixar a pele excessivamente ressecada.",
+      "Praticidade: textura em óleo que facilita a remoção da maquiagem.",
+    ],
+    usageInstructions:
+      "Aplicar aproximadamente 4 pumps no rosto seco ou levemente úmido, massagear suavemente e enxaguar bem. Pode ser seguido de um sabonete facial.",
+    highlight:
+      "Ideal como primeira etapa da limpeza facial dupla (double cleansing)!",
+    countryOfOrigin: "Japão",
+    note: "Produto original, comprado pessoalmente no Japão!",
+    contentVerified: true,
+    publicationStatus: "published",
   },
   {
     ...base,
