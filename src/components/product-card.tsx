@@ -17,7 +17,8 @@ export function ProductCard({ product }: { product: Product }) {
     .join(" · ");
 
   return (
-    <article className="group flex w-full flex-1 flex-col">
+    // O produto sob o mouse sobe e os outros da grade se apagam.
+    <article className="group flex w-full flex-1 flex-col transition-[translate,opacity] duration-300 ease-out group-hover/grid:opacity-55 hover:-translate-y-1.5 hover:opacity-100">
       <Link
         href={href}
         tabIndex={-1}
@@ -29,7 +30,7 @@ export function ProductCard({ product }: { product: Product }) {
           alt=""
           fill
           sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+          className="object-cover transition-transform duration-500 group-hover:scale-[1.06]"
         />
         {image.illustrative && <IllustrativeTag />}
       </Link>
@@ -39,7 +40,10 @@ export function ProductCard({ product }: { product: Product }) {
           {product.brand}
         </p>
         <h3 className="mt-0.5 text-pretty">
-          <Link href={href} className="hover:underline">
+          <Link
+            href={href}
+            className="underline-offset-4 group-hover:underline"
+          >
             {product.name}
           </Link>
         </h3>

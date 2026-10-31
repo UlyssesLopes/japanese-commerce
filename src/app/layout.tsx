@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Instrument_Sans } from "next/font/google";
 
 import { CartProvider } from "@/components/cart/cart-provider";
+import { RevealObserver } from "@/components/reveal-observer";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { siteConfig } from "@/config/site";
@@ -38,8 +39,18 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="pt-BR"
+      // A classe "js" é adicionada pelo script abaixo antes da hidratação.
+      suppressHydrationWarning
       className={`${heading.variable} ${body.variable} h-full antialiased`}
     >
+      <head>
+        {/* Marca que há JavaScript antes de pintar, para a entrada ao rolar. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: 'document.documentElement.classList.add("js")',
+          }}
+        />
+      </head>
       <body className="text-body flex min-h-full flex-col font-sans">
         <CartProvider catalog={catalog}>
           <a
@@ -53,6 +64,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
             {children}
           </main>
           <SiteFooter />
+          <RevealObserver />
         </CartProvider>
       </body>
     </html>
