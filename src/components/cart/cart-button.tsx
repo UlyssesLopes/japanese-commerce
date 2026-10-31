@@ -31,7 +31,7 @@ export function CartButton() {
     <button
       type="button"
       onClick={open}
-      className="text-ink hover:text-brand -mr-2 flex h-11 items-center gap-2 px-2"
+      className="text-ink hover:text-brand flex h-11 items-center gap-2 px-2"
       aria-label={
         count === 0
           ? "Sacola, vazia"

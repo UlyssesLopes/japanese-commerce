@@ -78,6 +78,11 @@ button {
   outline-offset: 2px;
 }
 
+/* O campo de busca mostra o foco na borda de baixo do próprio cabeçalho. */
+input[type="search"]:focus-visible {
+  outline: none;
+}
+
 /* Movimento (DESIGN.md §7): contido, só opacidade e deslocamento. */
 @keyframes rise {
   from {

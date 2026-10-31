@@ -6,7 +6,7 @@ import { RevealObserver } from "@/components/reveal-observer";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { siteConfig } from "@/config/site";
-import { getCartCatalog } from "@/features/catalog/queries";
+import { getCartCatalog, getVisibleProducts } from "@/features/catalog/queries";
 
 import "./globals.css";
 
@@ -34,7 +34,10 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {
-  const catalog = await getCartCatalog();
+  const [catalog, searchCatalog] = await Promise.all([
+    getCartCatalog(),
+    getVisibleProducts(),
+  ]);
 
   return (
     <html
@@ -52,7 +55,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
         />
       </head>
       <body className="text-body flex min-h-full flex-col font-sans">
-        <CartProvider catalog={catalog}>
+        <CartProvider catalog={catalog} searchCatalog={searchCatalog}>
           <a
             href="#conteudo"
             className="focus:bg-brand focus:text-brand-ink sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-10 focus:px-4 focus:py-3"

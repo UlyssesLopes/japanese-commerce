@@ -4,6 +4,7 @@ import { siteConfig } from "@/config/site";
 import { categories } from "@/features/catalog/categories";
 
 import { CartButton } from "./cart/cart-button";
+import { SearchButton } from "./search/search-dialog";
 import { Container } from "./container";
 import { HeaderShell } from "./header-shell";
 import { Wordmark } from "./wordmark";
@@ -31,7 +32,10 @@ export function SiteHeader() {
           </ul>
         </nav>
 
-        <CartButton />
+        <div className="-mr-2 flex items-center">
+          <SearchButton />
+          <CartButton />
+        </div>
       </Container>
 
       <nav aria-label="Categorias" className="md:hidden">
