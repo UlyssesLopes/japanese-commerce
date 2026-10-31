@@ -110,7 +110,7 @@ export default async function ProductPage({
             )}
 
             <p
-              className={`mt-6 tabular-nums ${product.priceCents === null ? "text-lead text-ink-muted" : "font-display text-head"}`}
+              className={`mt-6 tabular-nums ${product.priceCents === null ? "text-lead text-ink-muted" : "text-[clamp(1.75rem,1.5rem+0.8vw,2.25rem)] font-semibold tracking-[-0.01em]"}`}
             >
               {formatPrice(product.priceCents)}
             </p>
