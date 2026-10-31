@@ -48,6 +48,37 @@ rascunhos e a página `/dev/estados` aparecem no ar. **Desligar antes do lançam
 4. Commit e push.
 5. **Sempre** publicar na Vercel: `vercel deploy --prod --yes` e conferir a página no ar.
 
+## ✅ Checklist para finalizar (31/10/2026)
+
+### Conteúdo (dono)
+
+- [ ] Texto, foto e preço dos 4 que faltam: NARTH Moist Shampoo refil (005), kit TSUBAKI Premium
+      Moist & Repair (008), SHESOME Collagen (017) e SHESOME Hyaluronic Acid (018). Hoje aparecem
+      com "Foto ilustrativa" e "Preço em definição".
+- [ ] Foto correta da IHADA Emulsion (009): a atual mostra a linha clareadora.
+- [ ] Confirmar origem e direito de uso das fotos (várias parecem geradas/editadas por IA; regra 6
+      do CLAUDE.md pede foto própria ou com direito registrado).
+- [ ] Conferir quantidades reais (ex.: Diane, cadastrado com 1) e o volume do Devé (180 ml do
+      rótulo vs. 170 ml do texto).
+- [ ] Logo oficial da ZIVORA em arquivo (SVG/PNG) e o ícone "Z" para favicon.
+
+### Venda (dono decide)
+
+- [ ] Liberar a compra: `purchaseEnabled: true` nos produtos prontos (hoje nenhum entra na sacola).
+- [ ] Itens de `docs/prontidao-producao.md`: situação na Anvisa, forma de vender (pessoa física ou
+      MEI), política de troca/devolução (7 dias do CDC), identificação do vendedor.
+- [ ] Definir e escrever pagamento, entrega/frete e região atendida (vira pergunta frequente).
+
+### Site (eu)
+
+- [ ] Subir o branch `preco-produto` (preço, hover no Chrome, correções da avaliação, categorias).
+- [ ] Refazer a seção "Como comprar" (a primeira tentativa foi descartada).
+- [ ] Antes do lançamento: tirar `CATALOG_SHOW_DRAFTS` da produção na Vercel e esconder `/dev/*`.
+- [ ] Páginas de política de privacidade e de trocas/entregas.
+- [ ] SEO: metadata e imagem de compartilhamento (Open Graph), sitemap e liberar indexação.
+- [ ] Teste do fluxo completo no celular e teste automatizado (E2E) de sacola → WhatsApp.
+- [ ] Domínio próprio (opcional) e ligar o GitHub à Vercel para publicar a cada push (opcional).
+
 ## ⏳ Esperando o dono
 
 - [ ] **Fotos dos 21 produtos** (o dono vai fazer). Cada foto entra trocando a ilustrativa.
