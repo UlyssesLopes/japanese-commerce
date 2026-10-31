@@ -150,3 +150,4 @@ rascunhos e a página `/dev/estados` aparecem no ar. **Desligar antes do lançam
 | 30/10/2026 | Sem página `/produtos` separada; lista e filtro ficam na home                          | 21 itens cabem numa página; menos navegação.                                                                       |
 | 30/10/2026 | Sacola com `<dialog>` nativo, sem Radix                                                | Acessível de graça (foco, Esc) e uma dependência a menos.                                                          |
 | 30/10/2026 | Demo na Vercel com rascunhos visíveis em produção                                      | Dono quis mostrar o site completo à Carol. Nada é comprável e o site não é indexado; desligar antes do lançamento. |
+| 30/10/2026 | Preços redondos terminam em ,90 (R$ 250 → R$ 249,90)                                   | Pedido do dono, para chamar atenção. Preços que já terminam em ,90 ficam como estão.                               |

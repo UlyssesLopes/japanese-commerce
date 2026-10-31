@@ -124,7 +124,7 @@ export const products: Product[] = [
         height: 1448,
       },
     ],
-    priceCents: 20000,
+    priceCents: 19990,
     description:
       "Uma das máscaras capilares japonesas mais famosas, da Shiseido.",
     indication:
@@ -174,7 +174,7 @@ export const products: Product[] = [
         height: 1199,
       },
     ],
-    priceCents: 13000,
+    priceCents: 12990,
     description:
       "Emulsão hidratante japonesa da Shiseido, desenvolvida para nutrir, suavizar e ajudar a proteger a pele contra o ressecamento.",
     indication:
@@ -221,7 +221,7 @@ export const products: Product[] = [
         height: 1448,
       },
     ],
-    priceCents: 8000,
+    priceCents: 7990,
     description:
       "Um hidratante japonês com textura leve e aquosa, formulado com derivados de soja e isoflavonas.",
     indication:
@@ -268,7 +268,7 @@ export const products: Product[] = [
         height: 1199,
       },
     ],
-    priceCents: 12000,
+    priceCents: 11990,
     description:
       "Sérum facial japonês que combina diversos ativos para melhorar a textura, luminosidade e aparência da pele.",
     indication:
@@ -309,7 +309,7 @@ export const products: Product[] = [
         height: 1199,
       },
     ],
-    priceCents: 16000,
+    priceCents: 15990,
     description:
       "Um creme coreano com vitamina C, desenvolvido para ajudar a deixar a pele mais iluminada, uniforme e com aparência saudável.",
     indication:
@@ -346,7 +346,7 @@ export const products: Product[] = [
         height: 1199,
       },
     ],
-    priceCents: 25000,
+    priceCents: 24990,
     description:
       "Um dos produtos coreanos mais conhecidos para cuidar dos poros e melhorar a textura da pele.",
     indication:

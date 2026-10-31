@@ -15,15 +15,15 @@ legível na foto e precisa ser conferido no verso ou no fundo da embalagem.
 | 004 | &honey              | Rich Luxe Repair Shampoo (refil)               | —                 | 1    | cabelos   | Japão           | ☐          | ☐         | ☐          |
 | 005 | NARTH               | Moist Shampoo (refil)                          | —                 | 1    | cabelos   | Japão           | ☐          | ☐         | ☐          |
 | 006 | TSUBAKI             | Premium Volume & Repair Condicionador (refil)  | —                 | 1    | cabelos   | Japão           | ☑          | R$ 99,90  | ☑          |
-| 007 | fino                | Premium Touch Hair Mask                        | 230 g             | 3    | cabelos   | Japão           | ☑          | R$ 200,00 | ☑          |
+| 007 | fino                | Premium Touch Hair Mask                        | 230 g             | 3    | cabelos   | Japão           | ☑          | R$ 199,90 | ☑          |
 | 008 | TSUBAKI             | Premium Moist & Repair (kit shampoo + cond.)   | —                 | 1    | kits      | Japão           | ☐          | ☐         | ☐          |
-| 009 | IHADA               | Emulsion Hidratante Facial                     | 135 ml            | 1    | skincare  | Japão           | ☑          | R$ 130,00 | ☑          |
+| 009 | IHADA               | Emulsion Hidratante Facial                     | 135 ml            | 1    | skincare  | Japão           | ☑          | R$ 129,90 | ☑          |
 | 010 | IHADA               | Loção Medicinal Totemo Shittori (refil)        | —                 | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
-| 011 | SANA Nameraka Honpo | Loção de Isoflavona de Soja Sappari            | —                 | 1    | skincare  | Japão           | ☑          | R$ 80,00  | ☑          |
+| 011 | SANA Nameraka Honpo | Loção de Isoflavona de Soja Sappari            | —                 | 1    | skincare  | Japão           | ☑          | R$ 79,90  | ☑          |
 | 012 | anciente            | Sérum Vitamin C Derivatives × Glutathione      | 55 ml             | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
-| 013 | SECRET SCIENCE+     | White Deep Serum                               | 55 ml             | 1    | skincare  | Japão           | ☑          | R$ 120,00 | ☑          |
-| 014 | VARI:HOPE           | 8 Days Pure Vitamin C Creme Facial             | —                 | 1    | skincare  | Coreia          | ☑          | R$ 160,00 | ☑          |
-| 015 | medicube            | Zero Pore Pad 2.0                              | 155 g (70 discos) | 1    | skincare  | Coreia          | ☑          | R$ 250,00 | ☑          |
+| 013 | SECRET SCIENCE+     | White Deep Serum                               | 55 ml             | 1    | skincare  | Japão           | ☑          | R$ 119,90 | ☑          |
+| 014 | VARI:HOPE           | 8 Days Pure Vitamin C Creme Facial             | —                 | 1    | skincare  | Coreia          | ☑          | R$ 159,90 | ☑          |
+| 015 | medicube            | Zero Pore Pad 2.0                              | 155 g (70 discos) | 1    | skincare  | Coreia          | ☑          | R$ 249,90 | ☑          |
 | 016 | Deve                | Deep Cleans Cleansing Oil                      | 180 ml            | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
 | 017 | SHESOME             | Collagen Essence Mask Sheet                    | 25 ml             | 3    | skincare  | Coreia          | ☐          | ☐         | ☐          |
 | 018 | SHESOME             | Hyaluronic Acid with Peach Essence Mask Sheet  | 25 ml             | 3    | skincare  | Coreia          | ☐          | ☐         | ☐          |
