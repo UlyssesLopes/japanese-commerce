@@ -15,7 +15,7 @@ legível na foto e precisa ser conferido no verso ou no fundo da embalagem.
 | 004 | &honey              | Rich Luxe Repair Shampoo (refil)               | —                 | 1    | cabelos   | Japão           | ☐          | ☐         | ☐          |
 | 005 | NARTH               | Moist Shampoo (refil)                          | —                 | 1    | cabelos   | Japão           | ☐          | ☐         | ☐          |
 | 006 | TSUBAKI             | Premium Volume & Repair Condicionador (refil)  | —                 | 1    | cabelos   | Japão           | ☐          | ☐         | ☐          |
-| 007 | fino                | Premium Touch Hair Mask                        | —                 | 3    | cabelos   | Japão           | ☐          | ☐         | ☐          |
+| 007 | fino                | Premium Touch Hair Mask                        | 230 g             | 3    | cabelos   | Japão           | ☑          | R$ 200,00 | ☑          |
 | 008 | TSUBAKI             | Premium Moist & Repair (kit shampoo + cond.)   | —                 | 1    | kits      | Japão           | ☐          | ☐         | ☐          |
 | 009 | IHADA               | Emulsão Medicinal Shittori                     | —                 | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
 | 010 | IHADA               | Loção Medicinal Totemo Shittori (refil)        | —                 | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |

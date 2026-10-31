@@ -84,10 +84,37 @@ export const products: Product[] = [
     slug: "fino-premium-touch-hair-mask",
     sku: "FIN-PT-MASK",
     brand: "fino",
-    name: "Premium Touch Hair Mask",
+    name: "Premium Touch Máscara Capilar",
     category: "cabelos",
     inventoryQuantity: 3,
     availableQuantity: 3,
+    volume: "230 g",
+    // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
+    images: [
+      {
+        src: "/produtos/fino-premium-touch-hair-mask.jpg",
+        alt: "Pote da máscara capilar fino Premium Touch, com tampa vermelha",
+        width: 1086,
+        height: 1448,
+      },
+    ],
+    priceCents: 20000,
+    description:
+      "Uma das máscaras capilares japonesas mais famosas, da Shiseido.",
+    indication:
+      "Ideal para cabelos ressecados, danificados, com frizz ou que precisam de mais nutrição e brilho.",
+    benefits: [
+      "Ajuda a recuperar a maciez dos fios.",
+      "Reduz a aparência de ressecamento e frizz.",
+      "Deixa o cabelo mais sedoso, brilhante e alinhado.",
+      "Facilita o desembaraço.",
+    ],
+    usageInstructions:
+      "Após lavar o cabelo com shampoo, aplique no comprimento e nas pontas, evitando a raiz. Espalhe bem e enxágue. Recomendo usar de 1 a 2 vezes por semana.",
+    countryOfOrigin: "Japão",
+    note: "Produto original, comprado diretamente no Japão!",
+    contentVerified: true,
+    publicationStatus: "published",
   },
 
   // Kits
