@@ -105,7 +105,7 @@ terminar. Quem faz: **eu** (código/site), **dono** (decisão ou informação), 
 
 ### 2. Produtos (Carol/dono no backoffice)
 
-- [ ] Trocar a foto da **IHADA Emulsion** (a atual mostra a linha clareadora).
+- [x] Foto correta da **IHADA Emulsion** no ar (31/10).
 - [ ] Confirmar origem e direito de uso das fotos; trocar as que parecem geradas/editadas por IA por
       fotos próprias (regra 6 do `CLAUDE.md`).
 - [ ] Conferir preço, quantidade e textos de cada produto (ex.: quantidade do Diane; volume do Devé,
