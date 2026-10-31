@@ -67,5 +67,17 @@ export const productSchema = z.object({
   purchaseEnabled: z.boolean(),
 
   featured: z.boolean(),
+
+  /** Só em kits: os produtos da loja que vêm no kit. */
+  kitItems: z
+    .array(
+      z.object({
+        slug: z.string(),
+        brand: z.string(),
+        name: z.string(),
+        quantity: z.number().int().positive(),
+      }),
+    )
+    .optional(),
 });
 export type Product = z.infer<typeof productSchema>;

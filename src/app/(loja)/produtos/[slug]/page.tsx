@@ -51,7 +51,8 @@ export default async function ProductPage({
 
   // Só o que foi informado ou verificado; o resto fica de fora.
   const facts = [
-    ["Marca", product.brand],
+    // Kit não tem marca própria: as marcas aparecem em "O que vem no kit".
+    ["Marca", product.kitItems ? undefined : product.brand],
     ["Variante", product.subtitle],
     ["Tamanho", product.volume],
     ["Origem da marca", product.countryOfOrigin],
@@ -141,6 +142,34 @@ export default async function ProductPage({
               <p className="text-lead mt-6 max-w-[60ch]">
                 {product.description}
               </p>
+            )}
+
+            {product.kitItems && product.kitItems.length > 0 && (
+              <div className="mt-8">
+                <Section title="O que vem no kit">
+                  <ul className="divide-placeholder divide-y">
+                    {product.kitItems.map((item) => (
+                      <li
+                        key={item.slug}
+                        className="flex items-baseline gap-3 py-2.5"
+                      >
+                        <span className="w-8 flex-none font-medium tabular-nums">
+                          {item.quantity}×
+                        </span>
+                        <Link
+                          href={`/produtos/${item.slug}`}
+                          className="hover:underline"
+                        >
+                          <span translate="no" className="text-ink-muted">
+                            {item.brand}
+                          </span>{" "}
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </Section>
+              </div>
             )}
 
             {hasDetails && (

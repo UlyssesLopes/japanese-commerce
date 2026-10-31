@@ -5,7 +5,7 @@
 Nome e identidade escolhidos pela Carol em 30/10/2026 (`product_photos/design/`, fora do git).
 
 Pequeno e-commerce de cosméticos **japoneses e coreanos**. Estoque limitado: 21 produtos, quase todos
-com 1 unidade (`src/data/products.ts`). **O site é só uma loja**: mostra os produtos e leva à compra.
+com 1 unidade (cadastrados no backoffice `/admin`, guardados na API Java). **O site é só uma loja**: mostra os produtos e leva à compra.
 Não conta a história de como os produtos chegaram (nada de "viagem", "na mala") e não usa imagem
 cultural decorativa (gueixa, gravura, cerejeira). Nunca chamar tudo de "japonês": há marcas coreanas.
 **Não é uma marca de longo prazo nem um marketplace**: o objetivo é vender esse estoque com uma vitrine
@@ -57,7 +57,8 @@ src/
   app/                 rotas (App Router)
   config/site.ts       marca e contato — único lugar para trocar nome, URL, WhatsApp
   types/product.ts     schema Zod + tipos do produto
-  data/products.ts     seed do catálogo
+  app/admin/           backoffice (senha única): produtos, kits, cupons
+  features/admin/      acesso à API do backoffice (só servidor) e regras dos formulários
   features/catalog/    queries.ts (única porta de leitura do catálogo) + eligibility.ts
   features/checkout/   whatsapp.ts (monta mensagem e link wa.me)
   lib/                 utilitários puros (moeda etc.)
@@ -65,8 +66,9 @@ docs/                  produto, arquitetura, dados, ferramentas de design, pront
 .claude/skills/        skills de design e browser versionadas no repo
 ```
 
-Componentes nunca importam `src/data/` diretamente: sempre via `src/features/catalog/queries.ts`.
-Assim, trocar o seed por uma API no futuro não mexe na UI.
+Componentes nunca chamam a API direto: a loja lê por `src/features/catalog/queries.ts` (cupons por
+`src/features/coupons/queries.ts`) e o backoffice por `src/features/admin/`.
+A API é o repositório `japanese-commerce-backend` (Railway); ver `PROXIMOS-PASSOS.md`.
 
 ## Front-end: processo obrigatório
 

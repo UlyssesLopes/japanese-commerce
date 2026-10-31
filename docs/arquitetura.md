@@ -2,14 +2,19 @@
 
 ## Visão geral
 
-Site Next.js 16 sem backend próprio. O catálogo é um arquivo TypeScript (`src/data/products.ts`),
-validado com Zod, lido no servidor e renderizado como páginas estáticas. A sacola vive no navegador.
-O "pedido" sai do site como um link `wa.me` com texto pronto.
+Loja em Next.js 16 (Vercel) + API Java (Railway, repositório `japanese-commerce-backend`) com
+Postgres e bucket de fotos. Produtos, kits, preços, estoque e cupons são editados no backoffice
+`/admin` e lidos pela loja na API. A sacola vive no navegador. O "pedido" sai do site como um link
+`wa.me` com texto pronto.
 
 ```
-products.ts ──► queries.ts ('use cache') ──► Server Components ──► HTML estático
-                    │
-                    └─ eligibility.ts (isVisible / isPurchasable)
+/admin (Server Actions, cookie httpOnly) ──► API Java ──► Postgres / bucket
+                                                 │
+                                                 └─ POST /api/revalidar (avisa a loja)
+
+API ──► catalog/queries.ts ('use cache' + cacheTag) ──► Server Components ──► HTML estático
+              │
+              └─ kits.ts (kit vira produto "kits") · eligibility.ts (isVisible / isPurchasable)
 
 Navegador: sacola (Zustand + localStorage) ──► whatsapp.ts ──► wa.me/<número>?text=...
 ```
@@ -18,30 +23,33 @@ Navegador: sacola (Zustand + localStorage) ──► whatsapp.ts ──► wa.me
 
 | Camada            | Onde                              | Regra                                                     |
 | ----------------- | --------------------------------- | --------------------------------------------------------- |
-| Dados             | `src/data/`                       | Só o seed do catálogo.                                    |
+| Dados             | API Java (`BACKEND_URL`)          | Produtos, kits, cupons e fotos, editados no `/admin`.     |
 | Acesso a dados    | `src/features/catalog/queries.ts` | Única porta de leitura. Valida com Zod, filtra rascunhos. |
 | Regras de negócio | `src/features/*/`, `src/lib/`     | Funções puras e testadas.                                 |
-| UI                | `src/app/`, `src/components/`     | Só apresentação. Não importa `src/data/`.                 |
+| UI                | `src/app/`, `src/components/`     | Só apresentação. Não chama a API direto.                  |
 | Configuração      | `src/config/`                     | Marca, URL, WhatsApp.                                     |
 
 ## Decisões
 
-- **Cache Components (padrão do Next 16).** As queries usam `'use cache'` + `cacheLife('hours')`. Com
-  seed local isso é quase gratuito; quando os dados vierem de uma API, o comportamento de cache já
-  está no lugar certo.
+- **Cache Components (padrão do Next 16).** O catálogo usa `'use cache'` + `cacheTag('catalog')`. A
+  API chama `/api/revalidar` depois de cada mudança no backoffice; a visita seguinte já traz o dado
+  novo.
 - **Filtros na URL** (`?categoria=skincare&marca=ihada`). Ler `searchParams` torna a parte filtrada
   dinâmica: envolver em `<Suspense>` para manter o resto da página estático.
 - **Sacola só com `{ productId, quantity }`.** Preço e nome são relidos do catálogo na hora de mostrar
   e de montar a mensagem, para que um preço antigo salvo no navegador não vá para o WhatsApp.
 - **Nenhum dado pessoal sai do navegador pelo site.** O cliente escreve nome e endereço na conversa.
-- **Sem banco de dados.** Marcar um item como vendido = editar o seed e fazer deploy (a Vercel
-  publica em ~1 min). Com esse volume, um painel seria custo sem retorno.
+- **Backoffice com senha única** (decisão do dono, 31/10/2026). O token da API fica num cookie
+  httpOnly; o navegador nunca fala direto com a API do admin.
+- **Kit = produto no catálogo**, na categoria "kits". Sem estoque próprio: a API calcula quantos
+  kits completos dá para vender com as unidades dos produtos.
 
 ## Limitações conhecidas
 
 - Validação de estoque só no navegador. Duas pessoas podem pedir o último item ao mesmo tempo, e o
   dono resolve na conversa. Aceitável para venda manual via WhatsApp.
-- Atualizar estoque ou preço exige deploy.
+- Kit e produto avulso dividem as mesmas unidades; a sacola não impede pedir os dois além do
+  estoque. O dono confere na conversa e atualiza o estoque no backoffice.
 
 ## Como evoluir, se um dia fizer sentido
 
