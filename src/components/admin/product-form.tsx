@@ -378,6 +378,12 @@ export function ProductForm({ product }: { product?: AdminProduct }) {
             label="Destaque na vitrine"
             defaultChecked={product?.featured}
           />
+          <Check
+            name="lowStockBadge"
+            label="Aviso de últimas unidades na foto"
+            description="Mostra “Última unidade” (ou “Últimas unidades”, se tiver mais de uma) sobre a foto, onde o produto aparecer. Some sozinho se o produto esgotar."
+            defaultChecked={product?.lowStockBadge}
+          />
         </div>
         <div className="bg-surface rounded-lg px-4 py-3 text-sm">
           {missing.length === 0 ? (

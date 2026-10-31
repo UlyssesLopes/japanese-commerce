@@ -76,6 +76,7 @@ export function productInput(form: FormData): Parsed<Record<string, unknown>> {
       publicationStatus: text(form, "publicationStatus"),
       purchaseEnabled: checked(form, "purchaseEnabled"),
       featured: checked(form, "featured"),
+      lowStockBadge: checked(form, "lowStockBadge"),
       images: images(form),
     },
   };

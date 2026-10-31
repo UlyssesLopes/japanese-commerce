@@ -7,6 +7,7 @@ import { CategoryChips, ProductBrowser } from "@/components/product-browser";
 import { ProductGrid } from "@/components/product-grid";
 import { SellerSection } from "@/components/seller-section";
 import { countByCategory } from "@/features/catalog/filter";
+import { stockBadge } from "@/features/catalog/stock-badge";
 import {
   getStoreSettings,
   getVisibleProducts,
@@ -30,6 +31,7 @@ export default async function Home() {
             name: p.name,
             priceCents: p.priceCents,
             image: { src: p.images[0].src, alt: p.images[0].alt },
+            badge: stockBadge(p),
           }))}
       />
 

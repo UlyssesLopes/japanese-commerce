@@ -9,6 +9,7 @@ import { ProductGrid } from "@/components/product-grid";
 import { categories } from "@/features/catalog/categories";
 import { isPurchasable } from "@/features/catalog/eligibility";
 import { displayImages } from "@/features/catalog/example-images";
+import { stockBadge } from "@/features/catalog/stock-badge";
 import {
   getProductBySlug,
   getVisibleProducts,
@@ -93,7 +94,10 @@ export default async function ProductPage({
         <div className="mt-6 grid gap-8 md:grid-cols-12 lg:gap-14">
           <div className="md:col-span-6 lg:col-span-7">
             <div className="md:sticky md:top-6">
-              <ProductGallery images={displayImages(product)} />
+              <ProductGallery
+                images={displayImages(product)}
+                badge={stockBadge(product)}
+              />
             </div>
           </div>
 

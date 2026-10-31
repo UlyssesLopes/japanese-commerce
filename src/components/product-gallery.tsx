@@ -6,9 +6,17 @@ import { useState } from "react";
 import type { DisplayImage } from "@/features/catalog/example-images";
 
 import { IllustrativeTag } from "./illustrative-tag";
+import { StockTag } from "./stock-tag";
 
 /** Foto principal e, quando houver mais de uma, miniaturas para trocar. */
-export function ProductGallery({ images }: { images: DisplayImage[] }) {
+export function ProductGallery({
+  images,
+  badge = null,
+}: {
+  images: DisplayImage[];
+  /** Aviso de poucas unidades (ver `stockBadge`). */
+  badge?: string | null;
+}) {
   const [current, setCurrent] = useState(0);
   const image = images[current];
   // Segue o formato da foto, entre 4:5 (vertical) e 1:1, para não cortar o frasco.
@@ -30,6 +38,7 @@ export function ProductGallery({ images }: { images: DisplayImage[] }) {
           className="object-cover"
         />
         {image.illustrative && <IllustrativeTag />}
+        <StockTag label={badge} />
       </div>
 
       {images.length > 1 && (

@@ -30,7 +30,9 @@ const product = {
 
 describe("productInput", () => {
   it("converte preço, listas e campos vazios", () => {
-    const parsed = productInput(form({ ...product, featured: "on" }));
+    const parsed = productInput(
+      form({ ...product, featured: "on", lowStockBadge: "on" }),
+    );
     expect(parsed.ok).toBe(true);
     if (!parsed.ok) return;
     expect(parsed.value).toMatchObject({
@@ -43,6 +45,7 @@ describe("productInput", () => {
       ingredients: null,
       featured: true,
       purchaseEnabled: false,
+      lowStockBadge: true,
       images: [],
     });
   });

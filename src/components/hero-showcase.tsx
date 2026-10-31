@@ -6,12 +6,16 @@ import { useEffect, useState } from "react";
 
 import { formatPrice } from "@/lib/currency";
 
+import { StockTag } from "./stock-tag";
+
 export type ShowcaseItem = {
   slug: string;
   brand: string;
   name: string;
   priceCents: number | null;
   image: { src: string; alt: string };
+  /** Aviso de poucas unidades (ver `stockBadge`). */
+  badge?: string | null;
 };
 
 const INTERVAL_MS = 4500;
@@ -67,6 +71,7 @@ export function HeroShowcase({ items }: { items: ShowcaseItem[] }) {
               }`}
             />
           ))}
+          <StockTag key={`tag-${item.slug}`} label={item.badge ?? null} />
           <span
             key={item.slug}
             className="bg-surface animate-rise absolute bottom-3 left-3 z-10 max-w-[85%] px-3 py-2"
