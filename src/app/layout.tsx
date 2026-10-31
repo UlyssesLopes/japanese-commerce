@@ -24,6 +24,13 @@ export const metadata: Metadata = {
     template: `%s · ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    siteName: siteConfig.name,
+    title: `${siteConfig.name} · Cosméticos japoneses e coreanos`,
+    description: `${siteConfig.slogan}. ${siteConfig.description}`,
+  },
   // Enquanto o site não estiver pronto, nada deve ser indexado.
   robots: { index: false, follow: false },
 };

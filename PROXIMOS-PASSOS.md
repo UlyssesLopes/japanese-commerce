@@ -101,8 +101,7 @@ terminar. Quem faz: **eu** (código/site), **dono** (decisão ou informação), 
       31/10.**
 - [ ] **Carol**: no backoffice → Configurações, definir o valor do frete grátis e enviar a foto
       e o texto da seção Quem vende (opções de texto sugeridas na conversa de 31/10).
-- [ ] **Eu**: refazer a seção **"Como comprar"** com essas informações (a primeira tentativa foi
-      descartada).
+- [x] ~~Refazer a seção "Como comprar"~~: o dono decidiu manter como está (31/10).
 
 ### 2. Produtos (Carol/dono no backoffice)
 
@@ -124,7 +123,10 @@ terminar. Quem faz: **eu** (código/site), **dono** (decisão ou informação), 
 
 ### 4. Divulgação (eu)
 
-- [ ] Imagem e texto de compartilhamento (Open Graph) para WhatsApp e Instagram.
+- [ ] Imagem e texto de compartilhamento (Open Graph) para WhatsApp e Instagram: feito no branch
+      `previa-link` (31/10), aguardando aprovação. Loja: marca + 4 fotos reais; produto: foto, marca,
+      nome, preço e "Últimas unidades" se marcado. JPEG de 65–95 KB (WhatsApp só mostra imagens
+      pequenas). Fontes do site em `assets/fonts/` (woff, OFL), porque o gerador não lê woff2.
 - [ ] Sitemap e robots; **liberar a indexação no Google** (hoje o site está marcado para não
       aparecer em buscas).
 - [ ] Opcional: domínio próprio; ligar o GitHub à Vercel para publicar a cada envio.

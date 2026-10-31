@@ -6,6 +6,7 @@ import { AddToCartButton } from "@/components/cart/add-to-cart-button";
 import { Container } from "@/components/container";
 import { ProductGallery } from "@/components/product-gallery";
 import { ProductGrid } from "@/components/product-grid";
+import { siteConfig } from "@/config/site";
 import { categories } from "@/features/catalog/categories";
 import { isPurchasable } from "@/features/catalog/eligibility";
 import { displayImages } from "@/features/catalog/example-images";
@@ -31,9 +32,23 @@ export async function generateMetadata({
 }: PageProps<"/produtos/[slug]">): Promise<Metadata> {
   const product = await getProductBySlug((await params).slug);
   if (!product) return {};
+  const title = `${product.brand} ${product.name}`;
+  const description =
+    product.description ??
+    [product.subtitle, product.volume, formatPrice(product.priceCents)]
+      .filter(Boolean)
+      .join(" · ");
   return {
-    title: `${product.brand} ${product.name}`,
-    description: product.description,
+    title,
+    description,
+    // Prévia do link (WhatsApp, Instagram); a imagem vem de opengraph-image.tsx.
+    openGraph: {
+      type: "website",
+      locale: "pt_BR",
+      siteName: siteConfig.name,
+      title: `${title} · ${formatPrice(product.priceCents)}`,
+      description,
+    },
   };
 }
 
