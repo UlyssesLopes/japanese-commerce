@@ -54,6 +54,17 @@ Repositório privado: https://github.com/UlyssesLopes/japanese-commerce-backend 
 `../japanese-commerce-backend`). API pronta e testada (produtos, cupons, imagens, login admin), ainda
 **sem deploy**. Próximos passos: criar o projeto no Railway (API + Postgres), bucket de imagens (R2),
 apontar `catalog/queries.ts` e `coupons/queries.ts` do site para a API e construir o `/admin`.
+Railway: o teste grátis da conta expirou; falta o dono ativar um plano (Hobby) para o deploy.
+
+**Kits (pedido do dono, 31/10):** a API já monta kits com produtos da loja (`/api/admin/kits`): nome,
+endereço, descrição, preço próprio, fotos, status e a lista de produtos com quantidade. O kit não tem
+estoque próprio: a API calcula quantos kits completos o estoque dos produtos permite e mostra a soma
+dos preços avulsos para comparar. Falta:
+
+- tela **Kits** no `/admin`: buscar produto, adicionar com quantidade, mostrar soma avulsa vs. preço
+  do kit e quantos kits dá para vender;
+- seção/página de kits no site (`/api/kits`) e kit na sacola/mensagem do WhatsApp. Kit e produto
+  avulso usam as mesmas unidades: vendeu um, o outro fica indisponível ao atualizar o estoque.
 
 ## ✅ Checklist para finalizar (31/10/2026)
 
