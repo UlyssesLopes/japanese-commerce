@@ -18,7 +18,7 @@ export function ProductCard({ product }: { product: Product }) {
 
   return (
     // O produto sob o mouse sobe e os outros da grade se apagam.
-    <article className="group flex w-full flex-1 flex-col transition-[translate,opacity] duration-300 ease-out group-hover/grid:opacity-55 hover:-translate-y-1.5 hover:opacity-100">
+    <article className="group hover:bg-surface -m-3 flex w-[calc(100%+1.5rem)] flex-1 flex-col p-3 transition-[translate,opacity,background-color,box-shadow,filter] duration-300 ease-out group-hover/grid:opacity-45 group-hover/grid:saturate-50 hover:-translate-y-2 hover:opacity-100 hover:shadow-[0_18px_40px_-18px_rgb(36_35_31/0.35)] hover:saturate-100">
       <Link
         href={href}
         tabIndex={-1}
