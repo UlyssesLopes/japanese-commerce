@@ -16,18 +16,17 @@ export function SellerSection({ settings }: { settings: StoreSettings }) {
   const whatsapp = siteConfig.whatsappNumber.replace(/\D/g, "");
   return (
     <section aria-labelledby="quem-vende" className="py-12 lg:py-20">
-      <Container className="grid items-center gap-8 md:grid-cols-12 lg:gap-14">
-        <div className="reveal md:col-span-5 lg:col-span-4">
-          <Image
-            src={sellerPhoto.src}
-            alt={sellerPhoto.alt}
-            width={sellerPhoto.width}
-            height={sellerPhoto.height}
-            sizes="(min-width: 1024px) 30vw, (min-width: 768px) 40vw, 100vw"
-            className="bg-placeholder aspect-[4/5] w-full object-cover"
-          />
-        </div>
-        <div className="reveal md:col-span-7 lg:col-span-6 lg:col-start-6">
+      <Container className="flex flex-col items-center gap-8 text-center md:flex-row md:items-center md:gap-14 md:text-left">
+        {/* Retrato redondo: corta o centro da foto, vertical ou não. */}
+        <Image
+          src={sellerPhoto.src}
+          alt={sellerPhoto.alt}
+          width={sellerPhoto.width}
+          height={sellerPhoto.height}
+          sizes="(min-width: 1024px) 18rem, 14rem"
+          className="reveal bg-placeholder aspect-square w-56 shrink-0 rounded-full object-cover lg:w-72"
+        />
+        <div className="reveal max-w-[60ch]">
           <h2 id="quem-vende" className="font-display text-head">
             Quem vende
           </h2>
