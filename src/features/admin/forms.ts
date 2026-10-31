@@ -141,3 +141,26 @@ export function couponInput(form: FormData): Parsed<Record<string, unknown>> {
     },
   };
 }
+
+export function settingsInput(form: FormData): Parsed<Record<string, unknown>> {
+  const percent = integer(form, "deliveryFeePercent");
+  if (percent === null || percent > 100)
+    return { ok: false, error: "Taxa de entrega: de 0 a 100%." };
+  const free = money(form, "freeDeliveryFrom", "Entrega grátis a partir de");
+  if (!free.ok) return free;
+  const [photo] = images(form);
+
+  return {
+    ok: true,
+    value: {
+      deliveryArea: optional(form, "deliveryArea"),
+      pickupLocation: optional(form, "pickupLocation"),
+      deliveryLeadTime: optional(form, "deliveryLeadTime"),
+      freeDeliveryFromCents: free.cents,
+      deliveryFeePercent: percent,
+      sellerName: optional(form, "sellerName"),
+      sellerBio: optional(form, "sellerBio"),
+      sellerPhoto: photo ?? null,
+    },
+  };
+}

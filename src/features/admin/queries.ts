@@ -2,6 +2,8 @@ import "server-only";
 
 import { notFound } from "next/navigation";
 
+import type { StoreSettings } from "@/features/checkout/delivery";
+
 import { AdminApiError, adminFetch } from "./api";
 import type { AdminCoupon, AdminKit, AdminProduct } from "./types";
 
@@ -50,4 +52,8 @@ export async function getCoupon(code: string): Promise<AdminCoupon> {
   const coupon = (await getCoupons()).find((c) => c.code === code);
   if (!coupon) notFound();
   return coupon;
+}
+
+export async function getSettings(): Promise<StoreSettings> {
+  return adminFetch<StoreSettings>("/api/admin/settings");
 }

@@ -2,6 +2,7 @@ import "server-only";
 
 import { cacheLife, cacheTag } from "next/cache";
 
+import type { StoreSettings } from "@/features/checkout/delivery";
 import { productSchema, type Product } from "@/types/product";
 
 import { isVisible } from "./eligibility";
@@ -11,7 +12,8 @@ import { kitToProduct, mergeCatalog, type ApiKit } from "./kits";
 /**
  * Única porta de entrada para dados de catálogo: lê produtos e kits da API
  * (japanese-commerce-backend). O backoffice avisa o site a cada mudança
- * (`/api/revalidar`), então o cache longo não atrasa as edições.
+ * (`/api/revalidar`). O cache de horas é só uma rede de segurança: um build
+ * pode reaproveitar dados antigos do cache, e assim eles se corrigem sozinhos.
  */
 
 export const CATALOG_TAG = "catalog";
@@ -44,7 +46,7 @@ function toProduct(raw: Record<string, unknown>): Product {
 
 async function loadCatalog(): Promise<Product[]> {
   "use cache";
-  cacheLife("days");
+  cacheLife("hours");
   cacheTag(CATALOG_TAG);
   const [products, kits] = await Promise.all([
     fetchApi<Record<string, unknown>[]>("/api/products"),
@@ -75,4 +77,12 @@ export async function getCartCatalog(): Promise<Product[]> {
   return visibility.includeDrafts
     ? [...visible, ...fixtureStates.map((s) => s.product)]
     : visible;
+}
+
+/** Entrega, retirada, taxa e "Quem vende", editados no backoffice. */
+export async function getStoreSettings(): Promise<StoreSettings> {
+  "use cache";
+  cacheLife("hours");
+  cacheTag(CATALOG_TAG);
+  return fetchApi<StoreSettings>("/api/settings");
 }

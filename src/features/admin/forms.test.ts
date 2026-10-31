@@ -1,6 +1,12 @@
 import { describe, expect, it } from "vitest";
 
-import { couponInput, kitInput, lines, productInput } from "./forms";
+import {
+  couponInput,
+  kitInput,
+  lines,
+  productInput,
+  settingsInput,
+} from "./forms";
 
 function form(fields: Record<string, string>): FormData {
   const data = new FormData();
@@ -129,5 +135,45 @@ describe("couponInput", () => {
 describe("lines", () => {
   it("vazio vira null", () => {
     expect(lines(" \n ")).toBeNull();
+  });
+});
+
+describe("settingsInput", () => {
+  it("converte taxa, frete grátis e foto", () => {
+    const parsed = settingsInput(
+      form({
+        deliveryArea: " Porto Alegre ",
+        deliveryFeePercent: "5",
+        freeDeliveryFrom: "200,00",
+        sellerName: "Caroline Serpa",
+        sellerBio: "  ",
+        images: JSON.stringify([
+          { src: "/a.jpg", alt: "Caroline", width: 600, height: 800 },
+          { src: "/b.jpg", alt: "Outra", width: 600, height: 800 },
+        ]),
+      }),
+    );
+    expect(parsed.ok && parsed.value).toMatchObject({
+      deliveryArea: "Porto Alegre",
+      deliveryFeePercent: 5,
+      freeDeliveryFromCents: 20000,
+      sellerBio: null,
+      sellerPhoto: { src: "/a.jpg" },
+    });
+  });
+
+  it("frete grátis vazio = nunca; sem foto = null", () => {
+    const parsed = settingsInput(form({ deliveryFeePercent: "0" }));
+    expect(parsed.ok && parsed.value).toMatchObject({
+      freeDeliveryFromCents: null,
+      sellerPhoto: null,
+    });
+  });
+
+  it("recusa taxa fora de 0 a 100", () => {
+    expect(settingsInput(form({ deliveryFeePercent: "150" }))).toEqual({
+      ok: false,
+      error: "Taxa de entrega: de 0 a 100%.",
+    });
   });
 });

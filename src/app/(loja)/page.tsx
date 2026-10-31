@@ -5,11 +5,18 @@ import { Hero } from "@/components/hero";
 import { HowToBuy } from "@/components/how-to-buy";
 import { CategoryChips, ProductBrowser } from "@/components/product-browser";
 import { ProductGrid } from "@/components/product-grid";
+import { SellerSection } from "@/components/seller-section";
 import { countByCategory } from "@/features/catalog/filter";
-import { getVisibleProducts } from "@/features/catalog/queries";
+import {
+  getStoreSettings,
+  getVisibleProducts,
+} from "@/features/catalog/queries";
 
 export default async function Home() {
-  const products = await getVisibleProducts();
+  const [products, settings] = await Promise.all([
+    getVisibleProducts(),
+    getStoreSettings(),
+  ]);
 
   return (
     <>
@@ -61,6 +68,8 @@ export default async function Home() {
       </section>
 
       <HowToBuy />
+
+      <SellerSection settings={settings} />
     </>
   );
 }

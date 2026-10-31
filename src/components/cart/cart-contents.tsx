@@ -8,6 +8,7 @@ import { siteConfig } from "@/config/site";
 import { maxQuantity, toOrderLines } from "@/features/cart/cart";
 import { useCart } from "@/features/cart/store";
 import { displayImage } from "@/features/catalog/example-images";
+import { quoteDelivery } from "@/features/checkout/delivery";
 import { applyCoupon } from "@/features/coupons/coupons";
 import {
   buildOrderMessage,
@@ -15,14 +16,20 @@ import {
 } from "@/features/checkout/whatsapp";
 import { formatPrice } from "@/lib/currency";
 
-import { useResolvedCart } from "./cart-provider";
+import { useResolvedCart, useStoreSettings } from "./cart-provider";
 import { CouponField } from "./coupon-field";
+import { DeliveryChoice } from "./delivery-choice";
 
 /** Lista da sacola com total e envio pelo WhatsApp (drawer e /sacola). */
 export function CartContents({ onNavigate }: { onNavigate?: () => void }) {
   const cart = useResolvedCart();
-  const { setQuantity, remove, keep, coupon } = useCart();
+  const { setQuantity, remove, keep, coupon, delivery } = useCart();
+  const settings = useStoreSettings();
   const discount = applyCoupon(cart.subtotalCents, coupon);
+  const quote = delivery
+    ? quoteDelivery(discount.totalCents, delivery, settings)
+    : null;
+  const totalCents = discount.totalCents + (quote?.feeCents ?? 0);
 
   // Itens que saíram de venda somem da sacola salva.
   const removedKey = cart.removed.join(",");
@@ -53,6 +60,16 @@ export function CartContents({ onNavigate }: { onNavigate?: () => void }) {
           toOrderLines(cart.lines),
           coupon
             ? { code: coupon.code, discountCents: discount.discountCents }
+            : undefined,
+          delivery && quote
+            ? {
+                method: delivery,
+                place:
+                  delivery === "entrega"
+                    ? settings.deliveryArea
+                    : settings.pickupLocation,
+                feeCents: quote.feeCents,
+              }
             : undefined,
         ),
       )
@@ -146,6 +163,7 @@ export function CartContents({ onNavigate }: { onNavigate?: () => void }) {
 
       <div className="bg-surface-raised flex flex-col gap-4 p-4">
         <CouponField blockedReason={discount.blockedReason} />
+        <DeliveryChoice totalCents={discount.totalCents} />
 
         <dl className="flex flex-col gap-1">
           <div className="flex items-baseline justify-between">
@@ -160,15 +178,29 @@ export function CartContents({ onNavigate }: { onNavigate?: () => void }) {
               </dd>
             </div>
           )}
+          {quote && (
+            <div className="flex items-baseline justify-between">
+              <dt>{delivery === "entrega" ? "Entrega" : "Retirada"}</dt>
+              <dd className="tabular-nums">
+                {quote.feeCents > 0
+                  ? formatPrice(quote.feeCents)
+                  : delivery === "entrega"
+                    ? "Grátis"
+                    : "Sem custo"}
+              </dd>
+            </div>
+          )}
           <div className="flex items-baseline justify-between">
             <dt className="font-medium">Total</dt>
             <dd className="text-lead font-semibold tabular-nums">
-              {formatPrice(discount.totalCents)}
+              {formatPrice(totalCents)}
             </dd>
           </div>
         </dl>
         <p className="text-small text-ink-muted mt-1">
-          Pagamento e entrega são combinados pelo WhatsApp.
+          {delivery
+            ? "Pagamento e dia combinados pelo WhatsApp."
+            : "Pagamento e entrega são combinados pelo WhatsApp."}
         </p>
         {whatsappUrl ? (
           <a

@@ -3,7 +3,12 @@
 import { redirect } from "next/navigation";
 
 import { AdminApiError, adminFetch, login, logout } from "@/features/admin/api";
-import { couponInput, kitInput, productInput } from "@/features/admin/forms";
+import {
+  couponInput,
+  kitInput,
+  productInput,
+  settingsInput,
+} from "@/features/admin/forms";
 import type { ActionState } from "@/features/admin/types";
 import type { ProductImage } from "@/types/product";
 
@@ -146,4 +151,23 @@ export async function deleteCoupon(code: string): Promise<ActionState> {
     return failure(e);
   }
   redirect("/admin/cupons");
+}
+
+// Configurações da loja
+
+export async function saveSettings(
+  _: ActionState,
+  form: FormData,
+): Promise<ActionState> {
+  const parsed = settingsInput(form);
+  if (!parsed.ok) return { error: parsed.error };
+  try {
+    await adminFetch("/api/admin/settings", {
+      method: "PUT",
+      json: parsed.value,
+    });
+  } catch (e) {
+    return failure(e);
+  }
+  return { saved: true };
 }
