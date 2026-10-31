@@ -39,6 +39,15 @@ também em **produção** na Vercel (30/10/2026, a pedido do dono, para mostrar 
 rascunhos e a página `/dev/estados` aparecem no ar. **Desligar antes do lançamento**
 (`vercel env rm CATALOG_SHOW_DRAFTS production` e novo deploy).
 
+## Fluxo para cada produto (combinado com o dono)
+
+1. Dono coloca a foto em `product_photos/site/` e manda o texto (descrição, modo de uso, preço).
+2. Copiar a foto para `public/produtos/<slug>.jpg` e preencher o produto em `src/data/products.ts`
+   (texto do dono como está, sem emojis; `contentVerified: true`, `publicationStatus: "published"`).
+3. `pnpm check`, `pnpm build`, conferir a página em 390 e 1440.
+4. Commit e push.
+5. **Sempre** publicar na Vercel: `vercel deploy --prod --yes` e conferir a página no ar.
+
 ## ⏳ Esperando o dono
 
 - [ ] **Fotos dos 21 produtos** (o dono vai fazer). Cada foto entra trocando a ilustrativa.
