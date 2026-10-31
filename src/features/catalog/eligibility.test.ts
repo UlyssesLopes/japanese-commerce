@@ -1,7 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { products } from "@/data/products";
-import { productSchema, type Product } from "@/types/product";
+import type { Product } from "@/types/product";
 
 import { isPurchasable, isVisible } from "./eligibility";
 
@@ -56,31 +55,5 @@ describe("isVisible", () => {
     const draft = { ...purchasable, publicationStatus: "draft" as const };
     expect(isVisible(draft, { includeDrafts: true })).toBe(true);
     expect(isVisible(draft, { includeDrafts: false })).toBe(false);
-  });
-});
-
-describe("seed de produtos", () => {
-  it("todo produto do seed passa no schema", () => {
-    for (const p of products)
-      expect(() => productSchema.parse(p)).not.toThrow();
-  });
-
-  it("nenhum produto real está liberado para venda antes da verificação", () => {
-    for (const p of products) {
-      if (!p.contentVerified) expect(isPurchasable(p)).toBe(false);
-    }
-  });
-
-  it("produto publicado tem conteúdo verificado e foto própria", () => {
-    for (const p of products) {
-      if (p.publicationStatus !== "published") continue;
-      expect(p.contentVerified, p.slug).toBe(true);
-      expect(p.images.length, p.slug).toBeGreaterThan(0);
-    }
-  });
-
-  it("slugs são únicos", () => {
-    const slugs = products.map((p) => p.slug);
-    expect(new Set(slugs).size).toBe(slugs.length);
   });
 });

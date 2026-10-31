@@ -1,37 +1,69 @@
 import "server-only";
 
-import { cacheLife } from "next/cache";
+import { cacheLife, cacheTag } from "next/cache";
 
-import { products } from "@/data/products";
 import { productSchema, type Product } from "@/types/product";
 
 import { isVisible } from "./eligibility";
 import { fixtureStates } from "./fixtures";
+import { kitToProduct, mergeCatalog, type ApiKit } from "./kits";
 
 /**
- * Única porta de entrada para dados de catálogo. Hoje lê o seed local;
- * no futuro, troca-se o corpo destas funções por uma API sem mexer na UI.
+ * Única porta de entrada para dados de catálogo: lê produtos e kits da API
+ * (japanese-commerce-backend). O backoffice avisa o site a cada mudança
+ * (`/api/revalidar`), então o cache longo não atrasa as edições.
  */
 
-const validated: Product[] = products.map((p) => productSchema.parse(p));
+export const CATALOG_TAG = "catalog";
 
-/** Ver `VisibilityOptions`: nunca definir esta variável na Vercel. */
+/** Ver `VisibilityOptions`: prévia com rascunhos só com a chave da API. */
 const visibility = {
   includeDrafts: process.env.CATALOG_SHOW_DRAFTS === "true",
 };
 
-export async function getVisibleProducts(): Promise<Product[]> {
+async function fetchApi<T>(path: string): Promise<T> {
+  const base = (process.env.BACKEND_URL ?? "http://localhost:8080").replace(
+    /\/$/,
+    "",
+  );
+  const headers: Record<string, string> = {};
+  const previewKey = process.env.STOREFRONT_PREVIEW_KEY;
+  if (visibility.includeDrafts && previewKey)
+    headers["X-Preview-Key"] = previewKey;
+
+  const res = await fetch(`${base}${path}`, { headers });
+  if (!res.ok)
+    throw new Error(`Catálogo indisponível: ${path} respondeu ${res.status}`);
+  return (await res.json()) as T;
+}
+
+/** A API omite campos nulos; o schema do site espera `priceCents: null`. */
+function toProduct(raw: Record<string, unknown>): Product {
+  return productSchema.parse({ priceCents: null, images: [], ...raw });
+}
+
+async function loadCatalog(): Promise<Product[]> {
   "use cache";
-  cacheLife("hours");
-  return validated.filter((p) => isVisible(p, visibility));
+  cacheLife("days");
+  cacheTag(CATALOG_TAG);
+  const [products, kits] = await Promise.all([
+    fetchApi<Record<string, unknown>[]>("/api/products"),
+    fetchApi<ApiKit[]>("/api/kits"),
+  ]);
+  return mergeCatalog(
+    products.map(toProduct),
+    kits.map((k) => productSchema.parse(kitToProduct(k))),
+  ).filter((p) => isVisible(p, visibility));
+}
+
+export async function getVisibleProducts(): Promise<Product[]> {
+  return loadCatalog();
 }
 
 export async function getProductBySlug(
   slug: string,
 ): Promise<Product | undefined> {
-  "use cache";
-  cacheLife("hours");
-  return validated.find((p) => p.slug === slug && isVisible(p, visibility));
+  return (await loadCatalog()).find((p) => p.slug === slug);
 }
 
 /**
@@ -39,9 +71,7 @@ export async function getProductBySlug(
  * os produtos de exemplo de `/dev/estados` para testar a sacola localmente.
  */
 export async function getCartCatalog(): Promise<Product[]> {
-  "use cache";
-  cacheLife("hours");
-  const visible = validated.filter((p) => isVisible(p, visibility));
+  const visible = await loadCatalog();
   return visibility.includeDrafts
     ? [...visible, ...fixtureStates.map((s) => s.product)]
     : visible;

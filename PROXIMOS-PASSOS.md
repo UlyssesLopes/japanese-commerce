@@ -51,20 +51,40 @@ rascunhos e a página `/dev/estados` aparecem no ar. **Desligar antes do lançam
 ## Backend (31/10/2026)
 
 Repositório privado: https://github.com/UlyssesLopes/japanese-commerce-backend (pasta local
-`../japanese-commerce-backend`). API pronta e testada (produtos, cupons, imagens, login admin), ainda
-**sem deploy**. Próximos passos: criar o projeto no Railway (API + Postgres), bucket de imagens (R2),
-apontar `catalog/queries.ts` e `coupons/queries.ts` do site para a API e construir o `/admin`.
-Railway: o teste grátis da conta expirou; falta o dono ativar um plano (Hobby) para o deploy.
+`../japanese-commerce-backend`).
 
-**Kits (pedido do dono, 31/10):** a API já monta kits com produtos da loja (`/api/admin/kits`): nome,
-endereço, descrição, preço próprio, fotos, status e a lista de produtos com quantidade. O kit não tem
-estoque próprio: a API calcula quantos kits completos o estoque dos produtos permite e mostra a soma
-dos preços avulsos para comparar. Falta:
+**No ar desde 31/10:** https://zivora-api-production.up.railway.app (Railway, plano Hobby, projeto
+`zivora-backend`: serviço `zivora-api` + `Postgres` + bucket `zivora-imagens`). Deploy manual com
+`railway up --service zivora-api` na pasta do backend. Fotos ficam no bucket privado e a API serve em
+`/images/...`. A senha do backoffice está na variável `ADMIN_PASSWORD` do serviço (o dono recebeu).
+Há uma foto de teste de 2×2 px em `produtos/teste-deploy/` no bucket (sem uso).
 
-- tela **Kits** no `/admin`: buscar produto, adicionar com quantidade, mostrar soma avulsa vs. preço
-  do kit e quantos kits dá para vender;
-- seção/página de kits no site (`/api/kits`) e kit na sacola/mensagem do WhatsApp. Kit e produto
-  avulso usam as mesmas unidades: vendeu um, o outro fica indisponível ao atualizar o estoque.
+**Loja ligada à API (31/10):** produtos, kits e cupons vêm da API; o seed local (`src/data/`) foi
+removido (o histórico está no git e na migração `V2__seed_products.sql`). Cada mudança no backoffice
+avisa a loja (`POST /api/revalidar`, segredo `STOREFRONT_REVALIDATE_SECRET` igual nos dois lados) e
+a página seguinte já mostra o dado novo. `CATALOG_SHOW_DRAFTS` só mostra rascunhos com a chave
+`STOREFRONT_PREVIEW_KEY` (igual na Vercel e no Railway).
+
+**Kits:** montados no backoffice com produtos da loja; entram na vitrine como produtos da categoria
+"Kits" (sacola e WhatsApp sem mudança) e a página mostra "O que vem no kit". O kit não tem estoque
+próprio: a API calcula quantos kits completos dá para vender. Kit e produto avulso dividem as
+unidades: vendeu um, atualizar o estoque no backoffice.
+
+**Backoffice `/admin` (no ar desde 31/10):** senha única (cookie httpOnly; o token nunca vai ao
+navegador), Visão geral, Produtos (busca/filtro, edição completa, fotos), Kits, Cupons. A loja fica no
+grupo de rotas `(loja)`; `src/proxy.ts` manda quem não tem sessão para `/admin/entrar`.
+
+**Rodar local:** Postgres em Docker na porta **5433** (a 5432 da máquina está ocupada); API com
+`JDBC_DATABASE_URL=jdbc:postgresql://localhost:5433/zivora ADMIN_PASSWORD=zivora-local`
+`STOREFRONT_PREVIEW_KEY=previa-local STOREFRONT_REVALIDATE_URL=http://localhost:3100/api/revalidar`
+`STOREFRONT_REVALIDATE_SECRET=revalidar-local ./mvnw spring-boot:run`; o `.env.local` do site já tem
+os valores locais correspondentes.
+
+Pendências:
+
+- migrar `railway.json` para `.railway/railway.ts` (`railway config migrate`) **antes de 01/12/2026**,
+  quando o Railway deixa de ler o arquivo antigo;
+- antes do lançamento: remover `CATALOG_SHOW_DRAFTS` da Vercel.
 
 ## ✅ Checklist para finalizar (31/10/2026)
 

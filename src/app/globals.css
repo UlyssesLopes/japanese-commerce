@@ -26,6 +26,17 @@
   --tile-rose: #c9998a;
   --tile-taupe: #b8a68f;
   --tile-charcoal: #2a2925;
+  /* Backoffice: folha branca sobre o creme, linhas finas, pares de status. */
+  --sheet: #ffffff;
+  --line: #e6ded2;
+  --rule: #f1ece4;
+  --field: #d6cbbb;
+  --positive: #2f6b3f;
+  --positive-soft: #e3f1e4;
+  --warning: #8a5a12;
+  --warning-soft: #f8edd8;
+  --negative: #a8322b;
+  --negative-soft: #f9e4e1;
 }
 
 @theme inline {
@@ -41,6 +52,16 @@
   --color-tile-rose: var(--tile-rose);
   --color-tile-taupe: var(--tile-taupe);
   --color-tile-charcoal: var(--tile-charcoal);
+  --color-sheet: var(--sheet);
+  --color-line: var(--line);
+  --color-rule: var(--rule);
+  --color-field: var(--field);
+  --color-positive: var(--positive);
+  --color-positive-soft: var(--positive-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-negative: var(--negative);
+  --color-negative-soft: var(--negative-soft);
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-heading), Georgia, serif;
 
@@ -81,6 +102,11 @@ button {
 /* O campo de busca mostra o foco na borda de baixo do próprio cabeçalho. */
 input[type="search"]:focus-visible {
   outline: none;
+}
+
+/* Campos do backoffice: o contorno de foco fica sobre a própria borda. */
+.border-field:focus-visible {
+  outline-offset: -1px;
 }
 
 /* Movimento (DESIGN.md §7): contido, só opacidade e deslocamento. */

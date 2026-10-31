@@ -4,7 +4,7 @@ import type { Product, ProductCategory, ProductImage } from "@/types/product";
  * Fotos ILUSTRATIVAS por categoria (StockSnap, CC0), usadas só enquanto o
  * produto não tem foto própria. Não mostram o produto vendido: a UI sempre
  * marca "Foto ilustrativa". Para trocar pela foto real, basta preencher
- * `images` do produto em `src/data/products.ts` (ver docs/dados-produtos.md).
+ * as fotos do produto no backoffice (`/admin`).
  */
 const landscape = { width: 960, height: 640 };
 
