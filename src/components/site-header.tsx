@@ -5,12 +5,13 @@ import { categories } from "@/features/catalog/categories";
 
 import { CartButton } from "./cart/cart-button";
 import { Container } from "./container";
+import { HeaderShell } from "./header-shell";
 import { Wordmark } from "./wordmark";
 
 export function SiteHeader() {
   return (
-    <header className="bg-surface">
-      <Container className="flex h-16 items-center justify-between gap-6 lg:h-20">
+    <HeaderShell>
+      <Container className="flex h-16 items-center justify-between gap-6 transition-[height] duration-300 lg:h-20 lg:group-data-[scrolled]/header:h-16">
         <Link href="/" aria-label={`${siteConfig.name}, início`}>
           <Wordmark />
         </Link>
@@ -21,7 +22,7 @@ export function SiteHeader() {
               <li key={c.slug}>
                 <Link
                   href={`/?categoria=${c.slug}#produtos`}
-                  className="underline-offset-[0.3em] hover:underline"
+                  className="after:bg-ink relative py-1 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
                 >
                   {c.label}
                 </Link>
@@ -47,6 +48,6 @@ export function SiteHeader() {
           ))}
         </ul>
       </nav>
-    </header>
+    </HeaderShell>
   );
 }
