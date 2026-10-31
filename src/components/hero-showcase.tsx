@@ -91,7 +91,7 @@ export function HeroShowcase({ items }: { items: ShowcaseItem[] }) {
       </div>
 
       {items.length > 1 && (
-        <div className="mt-3 flex gap-1.5" role="group" aria-label="Fotos">
+        <div className="mt-1 flex flex-wrap" role="group" aria-label="Fotos">
           {items.map((it, i) => (
             <button
               key={it.slug}
@@ -99,10 +99,10 @@ export function HeroShowcase({ items }: { items: ShowcaseItem[] }) {
               onClick={() => setCurrent(i)}
               aria-label={`Mostrar ${it.brand} ${it.name}`}
               aria-current={i === current}
-              className="flex h-6 items-center"
+              className="flex h-11 items-center px-1"
             >
               <span
-                className={`block h-1 rounded-full transition-all duration-300 ${
+                className={`block h-1 rounded-full transition-[width,background-color] duration-300 ${
                   i === current ? "bg-brand w-6" : "bg-placeholder w-3"
                 }`}
               />

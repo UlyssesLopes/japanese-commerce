@@ -40,7 +40,11 @@ export function AddToCartButton({
       className={`bg-brand text-brand-ink hover:bg-brand-hover disabled:bg-surface-raised disabled:text-ink-muted h-11 w-full px-4 font-medium transition-colors disabled:cursor-not-allowed ${className}`}
     >
       <span key={String(justAdded)} className="animate-fade inline-block">
-        {justAdded ? "Adicionado ✓" : full ? "Na sacola" : "Adicionar à sacola"}
+        {justAdded
+          ? "Adicionado à sacola"
+          : full
+            ? "Na sacola"
+            : "Adicionar à sacola"}
       </span>
     </button>
   );

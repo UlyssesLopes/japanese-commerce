@@ -22,7 +22,7 @@ export function SiteHeader() {
               <li key={c.slug}>
                 <Link
                   href={`/?categoria=${c.slug}#produtos`}
-                  className="after:bg-ink relative py-1 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
+                  className="after:bg-ink relative inline-flex min-h-11 items-center after:absolute after:inset-x-0 after:bottom-2.5 after:h-px after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
                 >
                   {c.label}
                 </Link>
@@ -40,7 +40,7 @@ export function SiteHeader() {
             <li key={c.slug} className="shrink-0">
               <Link
                 href={`/?categoria=${c.slug}#produtos`}
-                className="inline-block py-1"
+                className="inline-flex min-h-11 items-center"
               >
                 {c.label}
               </Link>
