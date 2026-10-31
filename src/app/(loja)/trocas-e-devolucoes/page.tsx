@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 
 import { PolicyPage, PolicySection } from "@/components/policy-page";
-import { siteConfig } from "@/config/site";
-import { formatPhone } from "@/lib/phone";
+import { WhatsAppLink } from "@/components/whatsapp-link";
 
 export const metadata: Metadata = {
   title: "Trocas e devoluções",
@@ -10,7 +9,6 @@ export const metadata: Metadata = {
 };
 
 export default function ReturnsPage() {
-  const phone = formatPhone(siteConfig.whatsappNumber);
   return (
     <PolicyPage
       title="Trocas e devoluções"
@@ -57,9 +55,8 @@ export default function ReturnsPage() {
 
       <PolicySection title="Como pedir">
         <p>
-          Chame no WhatsApp{phone ? ` ${phone}` : ""} com o seu nome, o produto
-          e, se for defeito, uma foto. A gente combina a troca ou a devolução
-          por lá.
+          Chame no <WhatsAppLink /> com o seu nome, o produto e, se for defeito,
+          uma foto. A gente combina a troca ou a devolução por lá.
         </p>
       </PolicySection>
     </PolicyPage>

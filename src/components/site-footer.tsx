@@ -2,9 +2,9 @@ import Link from "next/link";
 
 import { siteConfig } from "@/config/site";
 import { categories } from "@/features/catalog/categories";
-import { formatPhone } from "@/lib/phone";
 
 import { Container } from "./container";
+import { WhatsAppLink } from "./whatsapp-link";
 import { Wordmark } from "./wordmark";
 
 const linkClass =
@@ -18,7 +18,6 @@ const storeLinks = [
 ];
 
 export function SiteFooter() {
-  const phone = siteConfig.whatsappNumber;
   return (
     <footer className="bg-surface-raised">
       <Container className="grid gap-8 py-12 md:grid-cols-12 lg:py-16">
@@ -56,21 +55,8 @@ export function SiteFooter() {
       </Container>
       <Container className="border-placeholder text-small text-ink-muted border-t py-5">
         <p>
-          Vendido por {siteConfig.name}
-          {phone && (
-            <>
-              {" · "}
-              <a
-                href={`https://wa.me/${phone.replace(/\D/g, "")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline-offset-4 hover:underline"
-              >
-                WhatsApp {formatPhone(phone)}
-              </a>
-            </>
-          )}
-          {" · "}Pedidos, pagamento e entrega combinados pelo WhatsApp.
+          Vendido por {siteConfig.name} · Pedidos, pagamento e entrega
+          combinados pelo <WhatsAppLink />.
         </p>
       </Container>
     </footer>

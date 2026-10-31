@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 
 import { PolicyPage, PolicySection } from "@/components/policy-page";
-import { siteConfig } from "@/config/site";
-import { formatPhone } from "@/lib/phone";
+import { WhatsAppLink } from "@/components/whatsapp-link";
 
 export const metadata: Metadata = {
   title: "Privacidade",
@@ -10,7 +9,6 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPage() {
-  const phone = formatPhone(siteConfig.whatsappNumber);
   return (
     <PolicyPage
       title="Privacidade"
@@ -47,7 +45,7 @@ export default function PrivacyPage() {
         <p>
           Pela Lei Geral de Proteção de Dados (LGPD), você pode pedir para ver,
           corrigir ou apagar os dados que temos sobre você. Basta pedir no
-          WhatsApp{phone ? ` ${phone}` : ""}.
+          <WhatsAppLink />.
         </p>
       </PolicySection>
     </PolicyPage>
