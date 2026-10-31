@@ -26,8 +26,7 @@ export const products: Product[] = [
     slug: "theratis-tera-premium-ex-night-moist-treatment",
     sku: "THE-TERA-TRT",
     brand: "THERATIS TERA",
-    name: "Premium Night Moist Shampoo",
-    subtitle: "Embalagem original",
+    name: "Premium Night Moist Shampoo (Embalagem Original)",
     category: "cabelos",
     // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
     images: [
@@ -65,8 +64,7 @@ export const products: Product[] = [
     slug: "theratis-tera-premium-ex-night-moist-treatment-refil",
     sku: "THE-TERA-TRT-RF",
     brand: "THERATIS TERA",
-    name: "Premium Night Moist Shampoo",
-    subtitle: "Refil",
+    name: "Premium Night Moist Shampoo Refil",
     category: "cabelos",
     // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
     images: [
@@ -104,8 +102,7 @@ export const products: Product[] = [
     slug: "andhoney-rich-luxe-repair-shampoo",
     sku: "AHN-RICH-SHP",
     brand: "&honey",
-    name: "Rich Luxe Repair Shampoo",
-    subtitle: "Embalagem original",
+    name: "Rich Luxe Repair Shampoo (Embalagem Original)",
     category: "cabelos",
     // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
     images: [
@@ -143,8 +140,7 @@ export const products: Product[] = [
     slug: "andhoney-rich-luxe-repair-shampoo-refil",
     sku: "AHN-RICH-SHP-RF",
     brand: "&honey",
-    name: "Rich Luxe Repair Shampoo",
-    subtitle: "Refil",
+    name: "Rich Luxe Repair Shampoo Refil",
     category: "cabelos",
     volume: "350 ml",
     // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
@@ -193,8 +189,7 @@ export const products: Product[] = [
     slug: "tsubaki-premium-volume-repair-condicionador-refil",
     sku: "TSU-VOL-CND-RF",
     brand: "TSUBAKI",
-    name: "Premium Volume & Repair Condicionador",
-    subtitle: "Refil",
+    name: "Premium Volume & Repair Condicionador Refil",
     category: "cabelos",
     // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
     images: [
@@ -319,8 +314,7 @@ export const products: Product[] = [
     slug: "ihada-locao-medicinal-totemo-shittori-refil",
     sku: "IHA-LOC-TSH-RF",
     brand: "IHADA",
-    name: "Emulsion Hidratante Facial",
-    subtitle: "Refil",
+    name: "Emulsion Hidratante Facial Refil",
     category: "skincare",
     volume: "135 ml",
     // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
