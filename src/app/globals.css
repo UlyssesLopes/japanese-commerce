@@ -1,6 +1,12 @@
 @import "tailwindcss";
 
 /*
+ * Efeitos de mouse sempre que houver ponteiro em cima, mesmo em navegadores
+ * que se declaram sem "hover" (ex.: Chrome em notebook com tela touch).
+ */
+@custom-variant hover (&:hover);
+
+/*
  * Tokens semânticos — valores definidos no DESIGN.md (§2 e §3).
  * Componentes usam só os nomes semânticos (bg-surface, text-ink...),
  * nunca cores literais.
