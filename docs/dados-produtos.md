@@ -21,7 +21,7 @@ legível na foto e precisa ser conferido no verso ou no fundo da embalagem.
 | 010 | IHADA               | Loção Medicinal Totemo Shittori (refil)        | —                 | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
 | 011 | SANA Nameraka Honpo | Loção de Isoflavona de Soja Sappari            | —                 | 1    | skincare  | Japão           | ☑          | R$ 80,00  | ☑          |
 | 012 | anciente            | Sérum Vitamin C Derivatives × Glutathione      | 55 ml             | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
-| 013 | SECRET SCIENCE+     | White Deep Serum                               | 55 ml             | 1    | skincare  | a confirmar     | ☐          | ☐         | ☐          |
+| 013 | SECRET SCIENCE+     | White Deep Serum                               | 55 ml             | 1    | skincare  | Japão           | ☑          | R$ 120,00 | ☑          |
 | 014 | VARI:HOPE           | 8 Days Pure Vitamin C Cream                    | —                 | 1    | skincare  | Coreia          | ☐          | ☐         | ☐          |
 | 015 | medicube            | Zero Pore Pad 2.0                              | 155 g (70 discos) | 1    | skincare  | Coreia          | ☑          | R$ 250,00 | ☑          |
 | 016 | Deve                | Deep Cleans Cleansing Oil                      | 180 ml            | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
@@ -100,7 +100,9 @@ reel reuls" em vez de "real results"), sinal de imagem gerada ou editada por IA.
 
 **IHADA 009 (30/10/2026):** a foto enviada mostra a _loção clareadora_ (薬用美白化粧水), não a Emulsion.
 Ficou de fora (`product_photos/site/ihada-FOTO-ERRADA-mostra-locao-clareadora.jpeg`); o produto está
-em `preview` com foto ilustrativa até chegar a foto certa.
+em `preview` com foto ilustrativa até chegar a foto certa. O mesmo vale para a IHADA 010 (refil da Lotion
+"Totemo Shittori"): a foto enviada (`ihada-refil-FOTO-ERRADA-...`) é o refil da linha clareadora, e o
+texto enviado era o da Emulsion; falta o texto e a foto certos.
 
 **Padrão recomendado: fotos próprias** dos produtos (fundo neutro, luz natural, mesmo enquadramento
 para todos, proporção 4:5). O detentor dos direitos é o dono, a foto mostra o item real que o cliente

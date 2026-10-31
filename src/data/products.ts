@@ -252,6 +252,38 @@ export const products: Product[] = [
     name: "White Deep Serum",
     category: "skincare",
     volume: "55 ml",
+    // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
+    images: [
+      {
+        src: "/produtos/secret-science-white-deep-serum.jpg",
+        alt: "Frasco e caixa do sérum SECRET SCIENCE+ White Deep Serum, 55 ml",
+        width: 1312,
+        height: 1199,
+      },
+    ],
+    priceCents: 12000,
+    description:
+      "Sérum facial japonês que combina diversos ativos para melhorar a textura, luminosidade e aparência da pele.",
+    indication:
+      "Ideal para quem deseja suavizar a aparência de manchas, linhas finas, poros aparentes e tom irregular.",
+    benefits: [
+      "Retinol: auxilia na renovação da pele e na suavização de linhas finas.",
+      "Niacinamida: ajuda a uniformizar o tom e equilibrar a oleosidade.",
+      "Vitamina C e glutationa: ação antioxidante e mais luminosidade.",
+      "PDRN e peptídeos: complementam os cuidados com a aparência e hidratação da pele.",
+      "Colágeno: contribui para a maciez e hidratação.",
+    ],
+    usageInstructions:
+      "Aplicar uma pequena quantidade no rosto limpo, antes do hidratante. Começar utilizando à noite, 2 vezes por semana, aumentando gradualmente conforme a tolerância da pele.",
+    precautions: [
+      "Utilizar protetor solar diariamente.",
+      "Evitar combinar com ácidos esfoliantes na mesma noite.",
+      "Não utilizar durante a gravidez.",
+    ],
+    countryOfOrigin: "Japão",
+    note: "Produto original, comprado pessoalmente no Japão!",
+    contentVerified: true,
+    publicationStatus: "published",
   },
   {
     ...base,
