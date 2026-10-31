@@ -13,7 +13,18 @@ export default async function Home() {
 
   return (
     <>
-      <Hero counts={countByCategory(products)} />
+      <Hero
+        counts={countByCategory(products)}
+        showcase={products
+          .filter((p) => p.images.length > 0)
+          .map((p) => ({
+            slug: p.slug,
+            brand: p.brand,
+            name: p.name,
+            priceCents: p.priceCents,
+            image: { src: p.images[0].src, alt: p.images[0].alt },
+          }))}
+      />
 
       <section
         id="produtos"
@@ -21,7 +32,10 @@ export default async function Home() {
         className="bg-surface-raised mt-12 scroll-mt-4 py-12 lg:mt-20 lg:py-20"
       >
         <Container>
-          <h2 id="produtos-titulo" className="font-display text-head mb-5">
+          <h2
+            id="produtos-titulo"
+            className="font-display text-head reveal mb-5"
+          >
             Produtos
           </h2>
           {products.length > 0 ? (

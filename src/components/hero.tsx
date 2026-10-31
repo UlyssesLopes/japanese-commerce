@@ -1,13 +1,11 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import { siteConfig } from "@/config/site";
 import { categories } from "@/features/catalog/categories";
 import type { ProductCategory } from "@/types/product";
 
-import abertura from "../../public/exemplos/abertura.png";
-
 import { Container } from "./container";
+import { HeroShowcase, type ShowcaseItem } from "./hero-showcase";
 
 /** Cores do quadro da marca, uma por categoria. */
 const tiles: Record<ProductCategory, { className: string; text: string }> = {
@@ -29,24 +27,21 @@ const tiles: Record<ProductCategory, { className: string; text: string }> = {
   },
 };
 
-export function Hero({ counts }: { counts: Record<ProductCategory, number> }) {
+export function Hero({
+  counts,
+  showcase,
+}: {
+  counts: Record<ProductCategory, number>;
+  showcase: ShowcaseItem[];
+}) {
   return (
     <>
       <section aria-labelledby="titulo">
         <Container className="grid gap-8 pt-6 pb-10 md:grid-cols-12 md:items-center lg:pt-10 lg:pb-16">
           <div className="md:order-2 md:col-span-6">
-            <div className="bg-surface-raised relative aspect-[16/10] overflow-hidden">
-              <Image
-                src={abertura}
-                alt="Mulher aplicando sérum facial com conta-gotas"
-                priority
-                fill
-                sizes="(min-width: 768px) 58vw, 100vw"
-                className="object-cover object-[30%_50%]"
-              />
-            </div>
+            <HeroShowcase items={showcase} />
           </div>
-          <div className="md:order-1 md:col-span-6">
+          <div className="animate-rise md:order-1 md:col-span-6">
             <h1 id="titulo" className="font-display text-display text-balance">
               Cosméticos japoneses e coreanos
             </h1>
@@ -77,7 +72,7 @@ export function Hero({ counts }: { counts: Record<ProductCategory, number> }) {
             {categories.map((c) => {
               const tile = tiles[c.slug];
               return (
-                <li key={c.slug}>
+                <li key={c.slug} className="reveal">
                   <Link
                     href={`/?categoria=${c.slug}#produtos`}
                     className={`group flex aspect-[4/3] flex-col justify-between p-4 transition-[filter] hover:brightness-95 lg:p-6 ${tile.className}`}

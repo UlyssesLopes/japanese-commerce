@@ -21,7 +21,10 @@ export function ProductBrowser({ products }: { products: Product[] }) {
         {visible.length} {visible.length === 1 ? "produto" : "produtos"}
       </p>
       <div className="mt-4">
-        <ProductGrid products={visible} />
+        {/* A chave remonta a grade ao trocar o filtro, para os cards entrarem de novo. */}
+        <div key={active ?? "todos"} className="animate-fade">
+          <ProductGrid products={visible} />
+        </div>
       </div>
     </>
   );

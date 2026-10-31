@@ -72,6 +72,42 @@ button {
   outline-offset: 2px;
 }
 
+/* Movimento (DESIGN.md §7): contido, só opacidade e deslocamento. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    translate: 0 16px;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes bump {
+  40% {
+    scale: 1.35;
+  }
+}
+.animate-rise {
+  animation: rise 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.animate-fade {
+  animation: fade 400ms ease-out both;
+}
+.animate-bump {
+  animation: bump 400ms ease-out;
+}
+
+/* Entrada ao rolar: sem suporte, o conteúdo só aparece parado. */
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: rise linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 60%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

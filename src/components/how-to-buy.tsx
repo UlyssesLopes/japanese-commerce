@@ -120,7 +120,7 @@ export function HowToBuy() {
             {steps.map((s, i) => (
               <li
                 key={s.title}
-                className="bg-surface-raised flex gap-5 p-5 lg:p-6"
+                className="bg-surface-raised reveal flex gap-5 p-5 lg:p-6"
               >
                 <span className="bg-surface text-brand relative flex size-14 shrink-0 items-center justify-center rounded-full">
                   {s.icon}
@@ -139,7 +139,7 @@ export function HowToBuy() {
             ))}
           </ol>
 
-          <figure className="lg:col-span-5">
+          <figure className="reveal lg:col-span-5">
             <div className="bg-surface-raised p-5 lg:p-6">
               <figcaption className="text-small text-ink-muted flex items-center justify-between gap-3">
                 <span>

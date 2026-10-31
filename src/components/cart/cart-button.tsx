@@ -39,7 +39,9 @@ export function CartButton() {
       }
     >
       <BagIcon />
-      <span className="tabular-nums">{count}</span>
+      <span key={count} className="animate-bump inline-block tabular-nums">
+        {count}
+      </span>
     </button>
   );
 }

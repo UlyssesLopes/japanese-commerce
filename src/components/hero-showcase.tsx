@@ -1,0 +1,105 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+
+import { formatPrice } from "@/lib/currency";
+
+export type ShowcaseItem = {
+  slug: string;
+  brand: string;
+  name: string;
+  priceCents: number | null;
+  image: { src: string; alt: string };
+};
+
+const INTERVAL_MS = 4500;
+
+/**
+ * Vitrine da abertura: alterna as fotos reais dos produtos com transição
+ * suave. Pausa com o mouse em cima, com a aba escondida e com
+ * "reduzir movimento"; os pontinhos permitem escolher a foto.
+ */
+export function HeroShowcase({ items }: { items: ShowcaseItem[] }) {
+  const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (paused || reduce.matches || items.length < 2) return;
+    const id = window.setInterval(() => {
+      if (!document.hidden) setCurrent((i) => (i + 1) % items.length);
+    }, INTERVAL_MS);
+    return () => window.clearInterval(id);
+  }, [paused, items.length]);
+
+  if (items.length === 0) return null;
+  const item = items[current];
+
+  return (
+    <div
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocus={() => setPaused(true)}
+      onBlur={() => setPaused(false)}
+    >
+      <Link
+        href={`/produtos/${item.slug}`}
+        className="group bg-surface-raised relative block aspect-square overflow-hidden md:aspect-[5/4]"
+        aria-label={`Ver ${item.brand} ${item.name}`}
+      >
+        {items.map((it, i) => (
+          <Image
+            key={it.slug}
+            src={it.image.src}
+            alt={i === current ? it.image.alt : ""}
+            fill
+            priority={i === 0}
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className={`object-cover transition-[opacity,scale] ease-out ${
+              i === current
+                ? "scale-[1.06] opacity-100 duration-[1200ms,6000ms]"
+                : "scale-100 opacity-0 duration-[1200ms,0ms]"
+            }`}
+          />
+        ))}
+        <span
+          key={item.slug}
+          className="bg-surface animate-rise absolute bottom-3 left-3 max-w-[85%] px-3 py-2"
+        >
+          <span translate="no" className="text-small text-ink-muted block">
+            {item.brand}
+          </span>
+          <span className="block leading-snug">{item.name}</span>
+          {item.priceCents !== null && (
+            <span className="block font-semibold tabular-nums">
+              {formatPrice(item.priceCents)}
+            </span>
+          )}
+        </span>
+      </Link>
+
+      {items.length > 1 && (
+        <div className="mt-3 flex gap-1.5" role="group" aria-label="Fotos">
+          {items.map((it, i) => (
+            <button
+              key={it.slug}
+              type="button"
+              onClick={() => setCurrent(i)}
+              aria-label={`Mostrar ${it.brand} ${it.name}`}
+              aria-current={i === current}
+              className="flex h-6 items-center"
+            >
+              <span
+                className={`block h-1 rounded-full transition-all duration-300 ${
+                  i === current ? "bg-brand w-6" : "bg-placeholder w-3"
+                }`}
+              />
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
