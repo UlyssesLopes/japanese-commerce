@@ -130,11 +130,13 @@ terminar. Quem faz: **eu** (código/site), **dono** (decisão ou informação), 
       pequenas). Fontes do site em `assets/fonts/` (woff, OFL), porque o gerador não lê woff2.
 - [ ] Sitemap e robots; **liberar a indexação no Google** (hoje o site está marcado para não
       aparecer em buscas).
-- [ ] **Domínio próprio `zivorastore.com.br`**: comprado pelo dono no registro.br (31/10), em
-      processo de registro; o dono avisa quando terminar. Então: adicionar `zivorastore.com.br` e
-      `www.zivorastore.com.br` ao projeto na Vercel; o dono cria no registro.br os registros DNS que a
-      Vercel indicar; trocar `NEXT_PUBLIC_SITE_URL` na Vercel e `STOREFRONT_REVALIDATE_URL`/
-      `CORS_ALLOWED_ORIGINS` no Railway; manter `japanese-commerce.vercel.app` funcionando.
+- [ ] **Domínio próprio `zivorastore.com.br`** (registro.br, 31/10). Na Vercel: `zivorastore.com.br`
+      e `www.zivorastore.com.br` já adicionados ao projeto e verificados; `www` redireciona (308) para
+      o domínio principal. **Falta o dono criar no registro.br** (DNS → Configurar endereçamento →
+      Modo avançado; o DNS estava "em transição" por ~2 h): `A` vazio → `216.198.79.1`; `A` vazio →
+      `64.29.17.1`; `CNAME` `www` → `721039d8f8cb5350.vercel-dns-017.com`. Depois, comigo: trocar
+      `NEXT_PUBLIC_SITE_URL` na Vercel e `STOREFRONT_REVALIDATE_URL`/`CORS_ALLOWED_ORIGINS` no
+      Railway; `japanese-commerce.vercel.app` passa a redirecionar para o domínio novo.
       (`zivora.vercel.app` e `zivora-store.vercel.app` já pertencem a outras contas da Vercel.)
 - [ ] Opcional: ligar o GitHub à Vercel para publicar a cada envio.
 
