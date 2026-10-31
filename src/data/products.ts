@@ -46,7 +46,37 @@ export const products: Product[] = [
     sku: "AHN-RICH-SHP",
     brand: "&honey",
     name: "Rich Luxe Repair Shampoo",
+    subtitle: "Embalagem original",
     category: "cabelos",
+    // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
+    images: [
+      {
+        src: "/produtos/andhoney-rich-luxe-repair-shampoo.jpg",
+        alt: "Frasco com válvula do shampoo &honey Rich Luxe Repair",
+        width: 1312,
+        height: 1199,
+      },
+    ],
+    priceCents: 13990,
+    description:
+      "Shampoo japonês com fórmula voltada à hidratação e ao cuidado dos cabelos danificados, deixando os fios mais macios, brilhantes e com aparência saudável.",
+    indication:
+      "Perfeito para cabelos ressecados, danificados, opacos ou com frizz.",
+    benefits: [
+      "Hidratação e nutrição: ajuda a recuperar a sensação de maciez dos fios.",
+      "Cuidado reparador: melhora a aparência das áreas danificadas.",
+      "Brilho e suavidade: deixa os cabelos com aspecto mais sedoso.",
+      "Controle do frizz: auxilia no alinhamento dos fios.",
+      "Praticidade: frasco original com válvula dosadora para facilitar o uso diário.",
+    ],
+    usageInstructions:
+      "Aplicar nos cabelos molhados, massagear delicadamente até formar espuma e enxaguar completamente.",
+    highlight:
+      "Embalagem original, ideal para quem deseja conhecer a linha e depois utilizar os refis!",
+    countryOfOrigin: "Japão",
+    note: "Produto original, comprado pessoalmente no Japão!",
+    contentVerified: true,
+    publicationStatus: "published",
   },
   {
     ...base,
@@ -57,6 +87,36 @@ export const products: Product[] = [
     name: "Rich Luxe Repair Shampoo",
     subtitle: "Refil",
     category: "cabelos",
+    volume: "350 ml",
+    // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
+    images: [
+      {
+        src: "/produtos/andhoney-rich-luxe-repair-shampoo-refil.jpg",
+        alt: "Refil laranja do shampoo &honey Rich Luxe Repair",
+        width: 1312,
+        height: 1199,
+      },
+    ],
+    priceCents: 9990,
+    description:
+      "Shampoo japonês desenvolvido para cuidar dos cabelos ressecados e danificados, proporcionando hidratação, maciez e brilho.",
+    indication:
+      "Ideal para cabelos secos, danificados, com frizz ou que precisam de mais nutrição e suavidade.",
+    benefits: [
+      "Hidratação: ajuda a combater o ressecamento dos fios.",
+      "Reparação: melhora a aparência dos cabelos danificados.",
+      "Maciez: deixa os fios mais suaves e fáceis de desembaraçar.",
+      "Brilho: proporciona uma aparência mais saudável e luminosa.",
+      "Controle do frizz: ajuda a manter os cabelos mais alinhados.",
+    ],
+    usageInstructions:
+      "Aplicar nos cabelos molhados, massagear suavemente o couro cabeludo e enxaguar bem. Repetir se necessário.",
+    highlight:
+      "Embalagem refil: opção prática para repor o shampoo no frasco original.",
+    countryOfOrigin: "Japão",
+    note: "Produto original, comprado pessoalmente no Japão!",
+    contentVerified: true,
+    publicationStatus: "published",
   },
   {
     ...base,
@@ -417,9 +477,37 @@ export const products: Product[] = [
     slug: "glint-lipcerin",
     sku: "GLI-LIPCERIN",
     brand: "Glint by VDIVOV",
-    name: "Lipcerin",
+    name: "Lip Serum Shine",
     category: "maquiagem",
     volume: "15 ml",
+    // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
+    images: [
+      {
+        src: "/produtos/glint-lipcerin.jpg",
+        alt: "Pote e caixa do sérum labial Glint by VDIVOV Lipcerin, 15 ml",
+        width: 1312,
+        height: 1199,
+      },
+    ],
+    priceCents: 6990,
+    description:
+      "Sérum labial coreano com acabamento brilhante, desenvolvido para deixar os lábios com aparência mais hidratada, macia e luminosa.",
+    indication:
+      "Ideal para quem gosta de lábios com efeito glossy, aparência saudável e um toque de brilho.",
+    benefits: [
+      "Hidratação: ajuda a suavizar o ressecamento dos lábios.",
+      "Brilho intenso: proporciona um acabamento luminoso e efeito de lábios molhados.",
+      "Maciez: deixa os lábios com aparência mais lisa e bem cuidada.",
+      "Versatilidade: pode ser utilizado sozinho ou sobre o batom para um acabamento brilhante.",
+    ],
+    usageInstructions:
+      "Aplicar diretamente nos lábios sempre que desejar hidratação e brilho. Pode ser reaplicado ao longo do dia.",
+    highlight:
+      "Combina o cuidado de um sérum labial com o acabamento brilhante de um gloss!",
+    countryOfOrigin: "Coreia do Sul",
+    note: "Produto original, comprado pessoalmente no Japão!",
+    contentVerified: true,
+    publicationStatus: "published",
   },
   {
     ...base,
@@ -427,9 +515,38 @@ export const products: Product[] = [
     slug: "twinkle-pop-glitter-layering-eye-palette",
     sku: "TWP-GLT-PAL",
     brand: "twinkle pop",
-    name: "Glitter Layering Eye Palette",
+    name: "Paleta de Glitter 4 Cores",
     category: "maquiagem",
     volume: "4,6 g",
+    // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
+    images: [
+      {
+        src: "/produtos/twinkle-pop-glitter-layering-eye-palette.jpg",
+        alt: "Paleta twinkle pop Glitter Layering Eye Palette aberta, com quatro tons, ao lado da caixa",
+        width: 1312,
+        height: 1199,
+      },
+    ],
+    priceCents: 5490,
+    description:
+      "Paleta de sombras coreana com quatro tons brilhantes, perfeita para criar maquiagens iluminadas, delicadas ou cheias de glamour.",
+    indication:
+      "Ideal para quem ama maquiagem com brilho, efeito cintilante e pontos de luz nos olhos.",
+    benefits: [
+      "4 cores: permite combinar diferentes tons e criar vários looks.",
+      "Brilho luminoso: proporciona um acabamento cintilante e sofisticado.",
+      "Versatilidade: ideal para maquiagens do dia a dia ou ocasiões especiais.",
+      "Efeito iluminado: ajuda a destacar o olhar com pontos de luz.",
+      "Embalagem compacta: prática para levar na bolsa ou nécessaire.",
+    ],
+    usageInstructions:
+      "Aplicar pequenas quantidades nas pálpebras com os dedos ou pincel apropriado, dando leves batidinhas para intensificar o brilho.",
+    highlight:
+      "Quatro opções de brilho em uma única paleta, para transformar qualquer maquiagem!",
+    countryOfOrigin: "Coreia do Sul",
+    note: "Produto original, comprado pessoalmente no Japão!",
+    contentVerified: true,
+    publicationStatus: "published",
   },
 
   // Cabelos (cadastrado depois do inventário inicial, a pedido do dono)

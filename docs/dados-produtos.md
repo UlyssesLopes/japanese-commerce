@@ -11,8 +11,8 @@ legível na foto e precisa ser conferido no verso ou no fundo da embalagem.
 | --- | ------------------- | ---------------------------------------------- | ----------------- | ---- | --------- | --------------- | ---------- | --------- | ---------- |
 | 001 | THERATIS TERA       | Premium EX Night Moist Treatment               | —                 | 1    | cabelos   | Japão           | ☐          | ☐         | ☐          |
 | 002 | THERATIS TERA       | Premium EX Night Moist Treatment (refil)       | —                 | 1    | cabelos   | Japão           | ☐          | ☐         | ☐          |
-| 003 | &honey              | Rich Luxe Repair Shampoo                       | —                 | 1    | cabelos   | Japão           | ☐          | ☐         | ☐          |
-| 004 | &honey              | Rich Luxe Repair Shampoo (refil)               | —                 | 1    | cabelos   | Japão           | ☐          | ☐         | ☐          |
+| 003 | &honey              | Rich Luxe Repair Shampoo                       | —                 | 1    | cabelos   | Japão           | ☑          | R$ 139,90 | ☑          |
+| 004 | &honey              | Rich Luxe Repair Shampoo (refil)               | 350 ml            | 1    | cabelos   | Japão           | ☑          | R$ 99,90  | ☑          |
 | 005 | NARTH               | Moist Shampoo (refil)                          | —                 | 1    | cabelos   | Japão           | ☐          | ☐         | ☐          |
 | 006 | TSUBAKI             | Premium Volume & Repair Condicionador (refil)  | —                 | 1    | cabelos   | Japão           | ☑          | R$ 99,90  | ☑          |
 | 007 | fino                | Premium Touch Hair Mask                        | 230 g             | 3    | cabelos   | Japão           | ☑          | R$ 199,90 | ☑          |
@@ -28,8 +28,8 @@ legível na foto e precisa ser conferido no verso ou no fundo da embalagem.
 | 017 | SHESOME             | Collagen Essence Mask Sheet                    | 25 ml             | 3    | skincare  | Coreia          | ☐          | ☐         | ☐          |
 | 018 | SHESOME             | Hyaluronic Acid with Peach Essence Mask Sheet  | 25 ml             | 3    | skincare  | Coreia          | ☐          | ☐         | ☐          |
 | 019 | LOVE MAKER          | Mascara Volume, Natural Black (à prova d'água) | —                 | 1    | maquiagem | Japão           | ☐          | ☐         | ☐          |
-| 020 | Glint by VDIVOV     | Lipcerin                                       | 15 ml             | 1    | maquiagem | Coreia          | ☐          | ☐         | ☐          |
-| 021 | twinkle pop         | Glitter Layering Eye Palette (cor a conferir)  | 4,6 g             | 1    | maquiagem | Coreia          | ☐          | ☐         | ☐          |
+| 020 | Glint by VDIVOV     | Lipcerin                                       | 15 ml             | 1    | maquiagem | Coreia          | ☑          | R$ 69,90  | ☑          |
+| 021 | twinkle pop         | Glitter Layering Eye Palette (cor a conferir)  | 4,6 g             | 1    | maquiagem | Coreia          | ☑          | R$ 54,90  | ☑          |
 | 022 | Diane               | Lotus Shine Spray Oil Óleo Capilar             | 80 g              | 1    | cabelos   | Japão           | ☑          | R$ 109,90 | ☑          |
 
 ### Observações
