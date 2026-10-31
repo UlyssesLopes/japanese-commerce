@@ -19,7 +19,7 @@ legível na foto e precisa ser conferido no verso ou no fundo da embalagem.
 | 008 | TSUBAKI             | Premium Moist & Repair (kit shampoo + cond.)   | —                 | 1    | kits      | Japão           | ☐          | ☐         | ☐          |
 | 009 | IHADA               | Emulsão Medicinal Shittori                     | —                 | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
 | 010 | IHADA               | Loção Medicinal Totemo Shittori (refil)        | —                 | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
-| 011 | SANA Nameraka Honpo | Loção de Isoflavona de Soja Sappari            | —                 | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
+| 011 | SANA Nameraka Honpo | Loção de Isoflavona de Soja Sappari            | —                 | 1    | skincare  | Japão           | ☑          | R$ 80,00  | ☑          |
 | 012 | anciente            | Sérum Vitamin C Derivatives × Glutathione      | 55 ml             | 1    | skincare  | Japão           | ☐          | ☐         | ☐          |
 | 013 | SECRET SCIENCE+     | White Deep Serum                               | 55 ml             | 1    | skincare  | a confirmar     | ☐          | ☐         | ☐          |
 | 014 | VARI:HOPE           | 8 Days Pure Vitamin C Cream                    | —                 | 1    | skincare  | Coreia          | ☐          | ☐         | ☐          |

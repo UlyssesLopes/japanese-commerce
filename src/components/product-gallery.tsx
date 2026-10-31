@@ -11,10 +11,15 @@ import { IllustrativeTag } from "./illustrative-tag";
 export function ProductGallery({ images }: { images: DisplayImage[] }) {
   const [current, setCurrent] = useState(0);
   const image = images[current];
+  // Segue o formato da foto, entre 4:5 (vertical) e 1:1, para não cortar o frasco.
+  const ratio = Math.min(1, Math.max(4 / 5, image.width / image.height));
 
   return (
     <div>
-      <div className="bg-surface-raised relative aspect-square overflow-hidden">
+      <div
+        className="bg-surface-raised relative overflow-hidden"
+        style={{ aspectRatio: ratio }}
+      >
         <Image
           key={image.src}
           src={image.src}

@@ -128,8 +128,35 @@ export const products: Product[] = [
     slug: "sana-nameraka-honpo-locao-isoflavona-sappari",
     sku: "SAN-NAM-LOC-SAP",
     brand: "SANA Nameraka Honpo",
-    name: "Loção de Isoflavona de Soja Sappari",
+    name: "Loção Hidratante Facial",
     category: "skincare",
+    // Conteúdo, preço e foto enviados pelo dono em 30/10/2026.
+    images: [
+      {
+        src: "/produtos/sana-nameraka-honpo-locao-isoflavona-sappari.jpg",
+        alt: "Frasco da loção hidratante SANA Nameraka Honpo com grãos de soja ao lado",
+        width: 1086,
+        height: 1448,
+      },
+    ],
+    priceCents: 8000,
+    description:
+      "Um hidratante japonês com textura leve e aquosa, formulado com derivados de soja e isoflavonas.",
+    indication:
+      "Ideal para peles mistas e oleosas que precisam de hidratação sem aquela sensação pesada ou grudenta.",
+    benefits: [
+      "Proporciona hidratação leve.",
+      "Ajuda a prevenir o ressecamento.",
+      "Deixa a pele mais macia e viçosa.",
+      "Possui textura aquosa e de rápida absorção.",
+      "Ótimo para complementar a rotina de skincare.",
+    ],
+    usageInstructions:
+      "Aplicar uma pequena quantidade no rosto limpo, com as mãos ou algodão, pela manhã e à noite. Pode ser utilizado antes de um hidratante mais cremoso, se necessário.",
+    countryOfOrigin: "Japão",
+    note: "Produto original, comprado diretamente no Japão!",
+    contentVerified: true,
+    publicationStatus: "published",
   },
   {
     ...base,
