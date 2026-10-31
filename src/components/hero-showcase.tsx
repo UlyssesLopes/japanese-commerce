@@ -69,7 +69,7 @@ export function HeroShowcase({ items }: { items: ShowcaseItem[] }) {
           ))}
           <span
             key={item.slug}
-            className="bg-surface animate-rise absolute bottom-3 left-3 max-w-[85%] px-3 py-2"
+            className="bg-surface animate-rise absolute bottom-3 left-3 z-10 max-w-[85%] px-3 py-2"
           >
             <span translate="no" className="text-small text-ink-muted block">
               {item.brand}
@@ -127,16 +127,21 @@ function ArrowButton({
       type="button"
       onClick={onClick}
       aria-label={prev ? "Produto anterior" : "Próximo produto"}
-      className={`bg-surface/90 text-ink hover:bg-surface absolute top-1/2 flex size-11 -translate-y-1/2 items-center justify-center rounded-full transition-colors ${prev ? "left-3" : "right-3"}`}
+      style={{
+        backgroundImage: `linear-gradient(to ${prev ? "right" : "left"}, rgb(20 18 14 / 0.6), rgb(20 18 14 / 0.25) 45%, transparent)`,
+      }}
+      // Faixa da altura da vitrine, com degradê do escuro para o transparente.
+      className={`group/arrow absolute inset-y-0 flex w-16 items-center text-white transition-opacity duration-300 hover:opacity-90 md:w-28 ${prev ? "left-0 justify-start pl-3" : "right-0 justify-end pr-3"}`}
     >
       <svg
         aria-hidden="true"
-        width="20"
-        height="20"
+        width="30"
+        height="30"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.8"
+        strokeWidth="1.5"
+        className={`drop-shadow transition-transform duration-300 ${prev ? "group-hover/arrow:-translate-x-1" : "group-hover/arrow:translate-x-1"}`}
         strokeLinecap="round"
         strokeLinejoin="round"
       >
