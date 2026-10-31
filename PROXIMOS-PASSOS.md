@@ -80,51 +80,60 @@ grupo de rotas `(loja)`; `src/proxy.ts` manda quem não tem sessão para `/admin
 `STOREFRONT_REVALIDATE_SECRET=revalidar-local ./mvnw spring-boot:run`; o `.env.local` do site já tem
 os valores locais correspondentes.
 
-## ✅ Checklist para finalizar (31/10/2026)
+## 🚀 Lançamento: pendências em ordem (31/10/2026)
 
-### Conteúdo (dono)
+Tudo o que falta para abrir a loja ao público. Atacar **uma de cada vez, na ordem**; marcar aqui ao
+terminar. Quem faz: **eu** (código/site), **dono** (decisão ou informação), **Carol** (backoffice).
 
-- [ ] Texto, foto e preço dos 4 que faltam: NARTH Moist Shampoo refil (005), kit TSUBAKI Premium
-      Moist & Repair (008), SHESOME Collagen (017) e SHESOME Hyaluronic Acid (018). Hoje aparecem
-      com "Foto ilustrativa" e "Preço em definição".
-- [ ] Foto correta da IHADA Emulsion (009): a atual mostra a linha clareadora.
-- [ ] Confirmar origem e direito de uso das fotos (várias parecem geradas/editadas por IA; regra 6
-      do CLAUDE.md pede foto própria ou com direito registrado).
-- [ ] Conferir quantidades reais (ex.: Diane, cadastrado com 1) e o volume do Devé (180 ml do
-      rótulo vs. 170 ml do texto).
-- [ ] Logo oficial da ZIVORA em arquivo (SVG/PNG) e o ícone "Z" para favicon.
+### 1. Informações da loja (dono → eu)
 
-### Venda (dono decide)
+- [ ] **Dono** decide e me passa: venda como pessoa física ou MEI; nome/CNPJ e contato que aparecem
+      no site; formas de pagamento; frete (quem paga, como calcula) e regiões atendidas; prazo de
+      envio; política de troca e devolução (7 dias do CDC para compra online, produto aberto ou
+      fechado, quem paga o frete de volta).
+- [ ] **Dono** confirma a situação dos produtos na Anvisa (ver `docs/prontidao-producao.md`).
+- [ ] **Eu**: páginas **Trocas e devoluções**, **Entregas e pagamento** e **Privacidade**, com links
+      no rodapé, e identificação do vendedor no rodapé.
+- [ ] **Eu**: refazer a seção **"Como comprar"** com essas informações (a primeira tentativa foi
+      descartada).
 
-- [ ] Liberar a compra: `purchaseEnabled: true` nos produtos prontos (hoje nenhum entra na sacola).
-- [ ] Itens de `docs/prontidao-producao.md`: situação na Anvisa, forma de vender (pessoa física ou
-      MEI), política de troca/devolução (7 dias do CDC), identificação do vendedor.
-- [ ] Definir e escrever pagamento, entrega/frete e região atendida (vira pergunta frequente).
+### 2. Produtos (Carol/dono no backoffice)
 
-### Site (eu)
+- [ ] Trocar a foto da **IHADA Emulsion** (a atual mostra a linha clareadora).
+- [ ] Confirmar origem e direito de uso das fotos; trocar as que parecem geradas/editadas por IA por
+      fotos próprias (regra 6 do `CLAUDE.md`).
+- [ ] Conferir preço, quantidade e textos de cada produto (ex.: quantidade do Diane; volume do Devé,
+      180 ml no rótulo e 170 ml no texto).
+- [ ] Rascunhos que forem vender: NARTH Moist Shampoo, kit TSUBAKI Premium Moist & Repair, SHESOME
+      Collagen e SHESOME Hyaluronic Acid precisam de foto, preço e publicação.
+- [ ] Criar os kits e cupons de verdade (se houver).
+- [ ] Logo oficial da ZIVORA em arquivo (SVG/PNG) e o "Z" para o ícone da aba (**dono → eu**).
 
-- [ ] Subir o branch `preco-produto` (preço, hover no Chrome, correções da avaliação, categorias).
-- [ ] Refazer a seção "Como comprar" (a primeira tentativa foi descartada).
-- [x] Tirar `CATALOG_SHOW_DRAFTS` da produção na Vercel (31/10; `/dev/*` some junto).
-- [ ] Páginas de política de privacidade e de trocas/entregas.
-- [ ] SEO: metadata e imagem de compartilhamento (Open Graph), sitemap e liberar indexação.
-- [ ] Teste do fluxo completo no celular e teste automatizado (E2E) de sacola → WhatsApp.
-- [ ] Domínio próprio (opcional) e ligar o GitHub à Vercel para publicar a cada push (opcional).
+### 3. Qualidade (eu)
 
-## ⏳ Esperando o dono
+- [ ] Teste do fluxo completo num celular real: vitrine → sacola → cupom → WhatsApp.
+- [ ] Teste automatizado (E2E, Playwright) do mesmo fluxo, rodando antes de cada publicação.
+- [ ] Auditoria de acessibilidade e textos (`web-design-guidelines`) nas telas da loja.
 
-- [ ] **Fotos dos 21 produtos** (o dono vai fazer). Cada foto entra trocando a ilustrativa.
-- [ ] **Preço de venda** de cada produto. Sem preço, o produto não pode ir para a sacola.
-- [ ] **Conferir cada produto** pelo checklist de `docs/dados-produtos.md` e mudar o status para
-      `published` + `purchaseEnabled: true`.
-- [ ] Feedback sobre esta versão do visual.
-- [x] ~~Lista real dos produtos~~, ~~referências visuais~~, ~~número de WhatsApp~~ (30/10/2026).
+### 4. Divulgação (eu)
 
-## ▶ Agora (próxima sessão)
+- [ ] Imagem e texto de compartilhamento (Open Graph) para WhatsApp e Instagram.
+- [ ] Sitemap e robots; **liberar a indexação no Google** (hoje o site está marcado para não
+      aparecer em buscas).
+- [ ] Opcional: domínio próprio; ligar o GitHub à Vercel para publicar a cada envio.
 
-1. Colher o feedback do dono sobre esta versão e ajustar.
-2. Entrar com fotos e preços que chegarem; publicar os produtos conferidos.
-3. Fase 5: testes E2E do fluxo de compra, SEO e deploy na Vercel (preview primeiro).
+### 5. Abrir (Carol/dono, por último)
+
+- [ ] Liberar a venda ("Liberar venda" no backoffice) em cada produto conferido.
+- [ ] Conferir no ar uma compra de teste até a mensagem do WhatsApp.
+
+### Já feito
+
+- [x] Backoffice, API no Railway, loja lendo da API, kits e cupons (31/10).
+- [x] Configuração do Railway no painel do serviço (31/10).
+- [x] Prévia de rascunhos desligada em produção (31/10).
+- [x] Branch `preco-produto` (preço, hover no Chrome, categorias) já estava no `main`.
+- [x] ~~Lista real dos produtos~~, ~~referências visuais~~, ~~número de WhatsApp~~ (30/10).
 
 ## Fases
 
@@ -177,16 +186,15 @@ os valores locais correspondentes.
 ### Depois (só se fizer sentido)
 
 - Domínio próprio, marca definitiva (nome, logo, paleta)
-- Marcar produto como vendido de forma prática (hoje é editar o seed e fazer deploy)
 
 ## Decisões em aberto
 
-| Decisão                                        | Quem               | Impacto                                                            |
-| ---------------------------------------------- | ------------------ | ------------------------------------------------------------------ |
-| Nome e identidade da marca                     | dono               | Só o texto em `src/config/site.ts` e os tokens; nada bloqueia.     |
-| Paleta e fontes                                | dono + `DESIGN.md` | Vem dos prints.                                                    |
-| Quando ligar `purchaseEnabled` em cada produto | dono               | Ver `docs/prontidao-producao.md` (Anvisa).                         |
-| Como marcar um item como vendido               | dono               | Edição manual do seed por enquanto; um painel seria exagero agora. |
+| Decisão                                        | Quem               | Impacto                                                        |
+| ---------------------------------------------- | ------------------ | -------------------------------------------------------------- |
+| Nome e identidade da marca                     | dono               | Só o texto em `src/config/site.ts` e os tokens; nada bloqueia. |
+| Paleta e fontes                                | dono + `DESIGN.md` | Vem dos prints.                                                |
+| Quando ligar `purchaseEnabled` em cada produto | dono               | Ver `docs/prontidao-producao.md` (Anvisa).                     |
+| Como marcar um item como vendido               | dono               | No backoffice: baixar o estoque do produto.                    |
 
 ## Registro de decisões
 
