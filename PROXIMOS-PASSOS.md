@@ -83,8 +83,6 @@ os valores locais correspondentes.
 
 Pendências:
 
-- migrar `railway.json` para `.railway/railway.ts` (`railway config migrate`) **antes de 01/12/2026**,
-  quando o Railway deixa de ler o arquivo antigo;
 - antes do lançamento: remover `CATALOG_SHOW_DRAFTS` da Vercel.
 
 ## ✅ Checklist para finalizar (31/10/2026)
