@@ -35,9 +35,14 @@ export function Hero({
   showcase: ShowcaseItem[];
 }) {
   return (
-    <>
-      <section aria-labelledby="titulo">
-        <Container className="grid gap-8 pt-6 pb-10 lg:grid-cols-12 lg:items-center lg:pt-8 lg:pb-10">
+    // No desktop, abertura e categorias ocupam exatamente a primeira tela:
+    // os blocos ficam no rodapé da tela e a abertura centraliza no espaço que sobra.
+    <div className="flex flex-col lg:min-h-[min(calc(100svh-5rem),50rem)] lg:pb-8">
+      <section
+        aria-labelledby="titulo"
+        className="lg:flex lg:flex-1 lg:items-center"
+      >
+        <Container className="grid gap-8 pt-6 pb-10 lg:grid-cols-12 lg:items-center lg:py-10">
           <div className="animate-rise lg:col-span-6">
             <h1 id="titulo" className="font-display text-display text-balance">
               Cosméticos japoneses e coreanos
@@ -78,7 +83,7 @@ export function Hero({
                 <li key={c.slug} className="reveal">
                   <Link
                     href={`/?categoria=${c.slug}#produtos`}
-                    className={`group flex min-h-36 flex-col justify-between gap-6 p-4 lg:min-h-40 transition-[filter] hover:brightness-95 lg:p-6 ${tile.className}`}
+                    className={`group flex min-h-36 flex-col justify-between gap-6 p-4 transition-[filter] hover:brightness-95 lg:min-h-40 lg:p-6 ${tile.className}`}
                   >
                     <span>
                       <span className="font-display block text-[1.75rem] leading-none lg:text-[2.25rem]">
@@ -107,6 +112,6 @@ export function Hero({
           </ul>
         </Container>
       </section>
-    </>
+    </div>
   );
 }
