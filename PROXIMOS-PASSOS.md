@@ -128,8 +128,10 @@ terminar. Quem faz: **eu** (código/site), **dono** (decisão ou informação), 
       31/10**. Loja: marca + 4 fotos reais; produto: foto, marca,
       nome, preço e "Últimas unidades" se marcado. JPEG de 65–95 KB (WhatsApp só mostra imagens
       pequenas). Fontes do site em `assets/fonts/` (woff, OFL), porque o gerador não lê woff2.
-- [ ] Sitemap e robots; **liberar a indexação no Google** (hoje o site está marcado para não
-      aparecer em buscas).
+- [x] Sitemap e robots; **indexação no Google liberada em 31/10/2026** (`src/app/sitemap.ts` com
+      loja, políticas e produtos publicados; `robots.ts` bloqueia `/admin`, `/api/`, `/dev/`, `/sacola`;
+      o backoffice continua `noindex`). Opcional: Google Search Console (precisa da conta Google do
+      dono e de uma entrada TXT no registro.br).
 - [x] **Domínio próprio https://zivorastore.com.br no ar desde 31/10/2026** (registro.br, DNS do
       próprio registro.br: `A` vazio → `216.198.79.1` e `64.29.17.1`; `CNAME` `www` →
       `721039d8f8cb5350.vercel-dns-017.com`). `www` e `japanese-commerce.vercel.app` redirecionam (308)

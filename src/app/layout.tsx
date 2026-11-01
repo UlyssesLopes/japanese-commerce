@@ -31,8 +31,6 @@ export const metadata: Metadata = {
     title: `${siteConfig.name} · Cosméticos japoneses e coreanos`,
     description: `${siteConfig.slogan}. ${siteConfig.description}`,
   },
-  // Enquanto o site não estiver pronto, nada deve ser indexado.
-  robots: { index: false, follow: false },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
