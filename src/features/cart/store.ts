@@ -5,13 +5,16 @@ import { persist } from "zustand/middleware";
 
 import type { DeliveryMethod } from "@/features/checkout/delivery";
 import type { AppliedCoupon } from "@/types/coupon";
+import type { Product } from "@/types/product";
 
-import type { CartItem } from "./cart";
+import { addItems, type CartItem } from "./cart";
 
 type CartState = {
   items: CartItem[];
   isOpen: boolean;
   add: (slug: string, max: number) => void;
+  /** Vários produtos de uma vez (ver `addItems`); abre a sacola. */
+  addMany: (products: Product[]) => void;
   setQuantity: (slug: string, quantity: number) => void;
   remove: (slug: string) => void;
   /** Mantém só os itens que ainda existem (após revalidar no catálogo). */
@@ -50,6 +53,8 @@ export const useCart = create<CartState>()(
             isOpen: true,
           };
         }),
+      addMany: (products) =>
+        set((s) => ({ items: addItems(s.items, products), isOpen: true })),
       setQuantity: (slug, quantity) =>
         set((s) => ({
           items: s.items.map((i) => (i.slug === slug ? { ...i, quantity } : i)),

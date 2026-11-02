@@ -64,6 +64,18 @@ export function resolveCart(
   };
 }
 
+/**
+ * Junta vários produtos à sacola de uma vez (a rotina inteira). Produto que
+ * já está na sacola fica como está; produto que não pode ser comprado fica de fora.
+ */
+export function addItems(items: CartItem[], products: Product[]): CartItem[] {
+  const inCart = new Set(items.map((i) => i.slug));
+  const added = products
+    .filter((p) => maxQuantity(p) > 0 && !inCart.has(p.slug))
+    .map((p) => ({ slug: p.slug, quantity: 1 }));
+  return [...items, ...new Map(added.map((i) => [i.slug, i])).values()];
+}
+
 export function toOrderLines(lines: CartLine[]): WhatsAppOrderLine[] {
   return lines.map((l) => ({
     brand: l.product.brand,

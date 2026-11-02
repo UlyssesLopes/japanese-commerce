@@ -50,6 +50,24 @@ describe("productInput", () => {
     });
   });
 
+  it("lê etiquetas e passo da rotina", () => {
+    const data = form(product);
+    data.append("concerns", "pele-seca");
+    data.append("concerns", "manchas");
+    data.set("routineStep", "hidratacao");
+    const parsed = productInput(data);
+    expect(parsed.ok && parsed.value).toMatchObject({
+      concerns: ["pele-seca", "manchas"],
+      routineStep: "hidratacao",
+    });
+
+    const empty = productInput(form({ ...product, routineStep: "" }));
+    expect(empty.ok && empty.value).toMatchObject({
+      concerns: [],
+      routineStep: null,
+    });
+  });
+
   it("preço vazio é preço em definição", () => {
     const parsed = productInput(form({ ...product, price: "" }));
     expect(parsed.ok && parsed.value.priceCents).toBeNull();

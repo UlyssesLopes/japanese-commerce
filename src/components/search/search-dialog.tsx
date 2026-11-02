@@ -6,6 +6,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import { displayImage } from "@/features/catalog/example-images";
 import { searchProducts } from "@/features/catalog/search";
+import { buildQuiz } from "@/features/routine/recommend";
 import { formatPrice } from "@/lib/currency";
 
 import { useSearchCatalog } from "../cart/cart-provider";
@@ -36,6 +37,7 @@ export function SearchButton() {
   const inputRef = useRef<HTMLInputElement>(null);
   const [query, setQuery] = useState("");
   const catalog = useSearchCatalog();
+  const hasRoutine = useMemo(() => buildQuiz(catalog).length > 0, [catalog]);
   const results = useMemo(
     () => searchProducts(catalog, query),
     [catalog, query],
@@ -141,6 +143,19 @@ export function SearchButton() {
                   ? `Nenhum produto encontrado para “${query.trim()}”.`
                   : `${results.length} ${results.length === 1 ? "produto" : "produtos"}`}
               </p>
+              {results.length === 0 && hasRoutine && (
+                <p className="text-small mt-2">
+                  Não sabe o nome?{" "}
+                  <Link
+                    href="/descobrir"
+                    onClick={close}
+                    className="text-brand font-medium underline underline-offset-4 hover:no-underline"
+                  >
+                    Descubra sua rotina
+                  </Link>{" "}
+                  em poucas perguntas.
+                </p>
+              )}
               <ul className="mt-2 flex flex-col gap-1">
                 {results.map((p) => {
                   const image = displayImage(p);

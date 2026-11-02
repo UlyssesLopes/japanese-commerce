@@ -11,9 +11,12 @@ import { useResolvedCart } from "./cart-provider";
 export function AddToCartButton({
   product,
   className = "",
+  variant = "primary",
 }: {
   product: Product;
   className?: string;
+  /** "secondary": claro, quando outro botão da tela é o principal. */
+  variant?: "primary" | "secondary";
 }) {
   const add = useCart((s) => s.add);
   const { lines } = useResolvedCart();
@@ -37,7 +40,7 @@ export function AddToCartButton({
         add(product.slug, max);
         setJustAdded(true);
       }}
-      className={`bg-brand text-brand-ink hover:bg-brand-hover disabled:bg-surface-raised disabled:text-ink-muted h-11 w-full px-4 font-medium transition-colors disabled:cursor-not-allowed ${className}`}
+      className={`${variant === "primary" ? "bg-brand text-brand-ink hover:bg-brand-hover disabled:bg-surface-raised" : "bg-surface text-brand hover:bg-placeholder disabled:bg-surface"} disabled:text-ink-muted h-11 w-full px-4 font-medium transition-colors disabled:cursor-not-allowed ${className}`}
     >
       <span key={String(justAdded)} className="animate-fade inline-block">
         {justAdded

@@ -7,6 +7,7 @@ import { categories } from "@/features/catalog/categories";
 import { formatMoneyInput, parseMoney } from "@/features/admin/money";
 import { missingForSale } from "@/features/admin/readiness";
 import { slugify } from "@/features/admin/slug";
+import { concernGroups, routineSteps } from "@/features/routine/taxonomy";
 import type { AdminProduct } from "@/features/admin/types";
 import type { Product, ProductCategory } from "@/types/product";
 
@@ -371,6 +372,59 @@ export function ProductForm({ product }: { product?: AdminProduct }) {
             />
           </Field>
         </div>
+      </Section>
+
+      <Section
+        title="Descubra sua rotina"
+        description="Marque só o que o rótulo ou a indicação dizem. Produto sem passo ou sem etiqueta não entra no questionário."
+      >
+        <Field
+          label="Passo da rotina"
+          htmlFor="routineStep"
+          hint="Em que momento da rotina o produto é usado."
+        >
+          <select
+            id="routineStep"
+            name="routineStep"
+            defaultValue={product?.routineStep ?? ""}
+            className={inputClass}
+          >
+            <option value="">Não entra na rotina</option>
+            {routineSteps.map((s) => (
+              <option key={s.value} value={s.value}>
+                {s.admin}
+              </option>
+            ))}
+          </select>
+        </Field>
+        {concernGroups().map((group) => (
+          <fieldset key={group.label}>
+            <legend className="mb-2 text-sm font-medium">
+              Indicado para · {group.label}
+            </legend>
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
+              {group.items.map((c) => (
+                <label
+                  key={c.value}
+                  className="flex cursor-pointer items-center gap-2 text-sm"
+                >
+                  <input
+                    type="checkbox"
+                    name="concerns"
+                    value={c.value}
+                    defaultChecked={product?.concerns?.includes(c.value)}
+                    className="accent-brand size-[1.125rem]"
+                  />
+                  {c.label}
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        ))}
+        <p className="text-ink-muted text-[0.8125rem]">
+          Tipo de pele marcado restringe: o produto só aparece para quem tem
+          esse tipo. Sem tipo marcado, aparece para qualquer pele.
+        </p>
       </Section>
 
       <Section

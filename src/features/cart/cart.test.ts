@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import { fixtureProduct } from "@/features/catalog/fixtures";
 
-import { maxQuantity, resolveCart, toOrderLines } from "./cart";
+import { addItems, maxQuantity, resolveCart, toOrderLines } from "./cart";
 
 const a = { ...fixtureProduct, id: "a", slug: "a", priceCents: 5000 };
 const b = {
@@ -88,5 +88,20 @@ describe("toOrderLines", () => {
         unitPriceCents: 5000,
       },
     ]);
+  });
+});
+
+describe("addItems", () => {
+  const a = { ...fixtureProduct, slug: "a" };
+  const b = { ...fixtureProduct, slug: "b" };
+  const esgotado = { ...fixtureProduct, slug: "c", availableQuantity: 0 };
+
+  it("junta o que falta, sem mexer no que já está na sacola", () => {
+    expect(addItems([{ slug: "a", quantity: 2 }], [a, b, b, esgotado])).toEqual(
+      [
+        { slug: "a", quantity: 2 },
+        { slug: "b", quantity: 1 },
+      ],
+    );
   });
 });

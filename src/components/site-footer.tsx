@@ -12,6 +12,7 @@ const linkClass =
 
 const storeLinks = [
   { href: "/#como-comprar", label: "Como comprar" },
+  { href: "/descobrir", label: "Descubra sua rotina" },
   { href: "/entregas-e-pagamento", label: "Entregas e pagamento" },
   { href: "/trocas-e-devolucoes", label: "Trocas e devoluções" },
   { href: "/privacidade", label: "Privacidade" },

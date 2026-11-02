@@ -37,6 +37,30 @@ Arquivos locais que não estão no git e precisam existir para retomar: `.env.lo
 **No ar:** https://zivorastore.com.br. A prévia de rascunhos (`CATALOG_SHOW_DRAFTS`) está
 **desligada em produção** desde 31/10: rascunhos e `/dev/estados` só no localhost.
 
+## Em andamento: "Descubra sua rotina" (branch `descubra-sua-rotina`, 02/11)
+
+Questionário curto para quem entra sem saber o que comprar: 3–4 perguntas (área, tipo de pele,
+incômodo, cabelo) e uma rotina em ordem de uso com os produtos à venda, mais o kit se combinar.
+Decisões do dono: maquiagem fica fora; só aparecem opções que o estoque cobre; nome "Descubra sua
+rotina"; eu proponho as etiquetas e a Carol confere. Sem IA: as etiquetas são marcadas no backoffice
+(regra 1), o site só cruza.
+
+- [x] **1. Motor** (`src/features/routine/`): taxonomia, perguntas filtradas pelo estoque,
+      recomendação por passo (limpeza → preparo → tratamento → hidratação → finalização), kits,
+      respostas na URL, mensagem do WhatsApp. Campos `concerns` e `routineStep` opcionais no
+      schema (produto sem eles fica fora).
+- [x] **2. API + backoffice**: migração `V7__routine.sql` (branch `descubra-sua-rotina` no backend),
+      etiqueta desconhecida recusada (400); seção "Descubra sua rotina" no formulário de produto.
+- [x] **3–4. Tela** `/descobrir`: uma pergunta por tela (links, voltar do navegador funciona),
+      resultado com passos, motivo (texto de indicação), alternativas, kit, total, "Colocar a rotina na
+      sacola" e "Tirar dúvida no WhatsApp". Conferido em 390/768/1440 e auditado.
+- [x] **5. Convites**: bloco na home logo após as categorias (some se nada estiver etiquetado), link no
+      rodapé e na busca sem resultado.
+- [ ] **Dono/Carol**: responder as 4 dúvidas de `docs/rotina-etiquetas.md` e marcar as etiquetas no
+      backoffice de produção (até lá, nada da feature aparece no ar).
+- [ ] **Publicar juntos**: API primeiro (`railway up`), site logo em seguida. Backoffice antigo com API
+      nova apagaria as etiquetas ao salvar um produto (não envia os campos).
+
 ## Fluxo para cada produto (combinado com o dono)
 
 1. Dono manda o texto (descrição, modo de uso, preço) e a foto fica em `product_photos/site/`.
@@ -247,4 +271,5 @@ terminar. Quem faz: **eu** (código/site), **dono** (decisão ou informação), 
 | 30/10/2026 | Preços redondos terminam em ,90 (R$ 250 → R$ 249,90)                                              | Pedido do dono, para chamar atenção. Preços que já terminam em ,90 ficam como estão.                                                                                                                         |
 | 31/10/2026 | Busca de produtos no cabeçalho (lupa, atalho "/")                                                 | Pedido do dono. Revoga a decisão de 30/10 de não ter busca; tudo no navegador, sem servidor de busca.                                                                                                        |
 | 31/10/2026 | Cupons: percentual ou valor fixo, mínimo, validade; validação no servidor (/api/cupom)            | A lista de cupons nunca vai ao navegador; o cupom e o desconto vão na mensagem do WhatsApp para a Carol conferir. Cupons reais ficam vazios até a Carol criar; TESTE10/TESTE20 só com COUPONS_DEMO no local. |
+| 02/11/2026 | "Descubra sua rotina" por etiquetas do backoffice, sem IA                                         | Regra 1: só o dono diz para quem um produto serve; o site cruza respostas e etiquetas. Opção sem produto à venda não aparece. Maquiagem fora.                                                                |
 | 31/10/2026 | Backend próprio em Java no Railway (banco, produtos, cupons, imagens); backoffice com senha única | Decisão do dono. O site Next continua na Vercel e troca só `catalog/queries.ts` e `coupons/queries.ts` pela API.                                                                                             |

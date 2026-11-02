@@ -5,6 +5,7 @@ import { Hero } from "@/components/hero";
 import { HowToBuy } from "@/components/how-to-buy";
 import { CategoryChips, ProductBrowser } from "@/components/product-browser";
 import { ProductGrid } from "@/components/product-grid";
+import { RoutineInvite } from "@/components/routine/routine-invite";
 import { SellerSection } from "@/components/seller-section";
 import { countByCategory } from "@/features/catalog/filter";
 import { stockBadge } from "@/features/catalog/stock-badge";
@@ -12,12 +13,15 @@ import {
   getStoreSettings,
   getVisibleProducts,
 } from "@/features/catalog/queries";
+import { buildQuiz } from "@/features/routine/recommend";
 
 export default async function Home() {
   const [products, settings] = await Promise.all([
     getVisibleProducts(),
     getStoreSettings(),
   ]);
+
+  const quiz = buildQuiz(products);
 
   return (
     <>
@@ -35,10 +39,15 @@ export default async function Home() {
           }))}
       />
 
+      <RoutineInvite quiz={quiz} />
+
       <section
         id="produtos"
         aria-labelledby="produtos-titulo"
-        className="bg-surface-raised mt-12 scroll-mt-4 py-12 lg:mt-20 lg:py-20"
+        className={`bg-surface-raised scroll-mt-4 py-12 lg:py-20 ${
+          // Com o convite "Descubra sua rotina" acima, o respiro fica menor.
+          quiz.length > 0 ? "mt-8 lg:mt-12" : "mt-12 lg:mt-20"
+        }`}
       >
         <Container>
           <h2

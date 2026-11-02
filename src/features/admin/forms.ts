@@ -65,6 +65,8 @@ export function productInput(form: FormData): Parsed<Record<string, unknown>> {
       availableQuantity,
       volume: optional(form, "volume"),
       indication: optional(form, "indication"),
+      concerns: form.getAll("concerns").map(String),
+      routineStep: optional(form, "routineStep"),
       ingredients: lines(text(form, "ingredients")),
       usageInstructions: optional(form, "usageInstructions"),
       benefits: lines(text(form, "benefits")),

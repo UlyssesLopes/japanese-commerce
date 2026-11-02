@@ -48,6 +48,14 @@ export const productSchema = z.object({
   volume: z.string().optional(),
   /** Para quem o produto é indicado (tipo de pele, de cabelo...). */
   indication: z.string().optional(),
+  /**
+   * Etiquetas de "Indicado para" marcadas no backoffice, usadas pelo
+   * "Descubra sua rotina". Texto livre aqui: valores que o site não conhece
+   * são ignorados em `src/features/routine/`, sem derrubar o catálogo.
+   */
+  concerns: z.array(z.string()).optional(),
+  /** Passo da rotina em que o produto entra (limpeza, tratamento...). */
+  routineStep: z.string().optional(),
   ingredients: z.array(z.string()).optional(),
   /** Modo de uso; parágrafos separados por linha em branco. */
   usageInstructions: z.string().optional(),

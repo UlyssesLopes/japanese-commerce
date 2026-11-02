@@ -99,6 +99,11 @@ button {
   outline-offset: 2px;
 }
 
+/* Títulos que recebem o foco por código (ex.: nova pergunta) não são alvo do Tab. */
+[tabindex="-1"]:focus-visible {
+  outline: none;
+}
+
 /* O campo de busca mostra o foco na borda de baixo do próprio cabeçalho. */
 input[type="search"]:focus-visible {
   outline: none;
@@ -140,23 +145,16 @@ input[type="search"]:focus-visible {
 .js .reveal {
   opacity: 0;
   translate: 0 40px;
-  transition:
-    opacity 700ms cubic-bezier(0.2, 0.7, 0.2, 1),
-    translate 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
 }
-.js .reveal.is-visible {
-  opacity: 1;
-  translate: 0 0;
-}
-/* Cascata: cada coluna da grade entra um pouco depois da anterior. */
+/* Cascata: cada coluna da grade entra um pouco depois da anterior (ver RevealObserver). */
 .js li.reveal:nth-child(4n + 2) {
-  transition-delay: 90ms;
+  --reveal-delay: 90ms;
 }
 .js li.reveal:nth-child(4n + 3) {
-  transition-delay: 180ms;
+  --reveal-delay: 180ms;
 }
 .js li.reveal:nth-child(4n + 4) {
-  transition-delay: 270ms;
+  --reveal-delay: 270ms;
 }
 
 @media (prefers-reduced-motion: reduce) {
