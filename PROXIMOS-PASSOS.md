@@ -56,8 +56,10 @@ rotina"; eu proponho as etiquetas e a Carol confere. Sem IA: as etiquetas são m
       sacola" e "Tirar dúvida no WhatsApp". Conferido em 390/768/1440 e auditado.
 - [x] **5. Convites**: bloco na home logo após as categorias (some se nada estiver etiquetado), link no
       rodapé e na busca sem resultado.
-- [ ] **Dono/Carol**: responder as 4 dúvidas de `docs/rotina-etiquetas.md` e marcar as etiquetas no
-      backoffice de produção (até lá, nada da feature aparece no ar).
+- [x] Etiquetas da proposta aplicadas em produção a pedido do dono (02/11): 14 produtos, só
+      `concerns` e `routineStep` (venda, preço e estoque intactos). Feature visível no ar.
+- [ ] **Dono/Carol**: revisar as etiquetas no backoffice e responder as 4 dúvidas de
+      `docs/rotina-etiquetas.md` (TSUBAKI Moist & Repair e Devé ainda sem etiqueta).
 - [x] **No ar desde 02/11** (API com a V7 no Railway, site na Vercel, `main` dos dois repositórios).
       O GitHub já está ligado à Vercel: envio ao `main` publica em produção sozinho. As prévias de
       outros branches falham no build (sem `BACKEND_URL` no ambiente Preview).
