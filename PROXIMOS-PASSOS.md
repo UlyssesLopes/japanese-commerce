@@ -3,49 +3,47 @@
 > Documento vivo. Atualizar ao fim de cada sessão: marcar o que foi feito, mover o "Agora" e
 > registrar decisões novas no fim.
 
-**Última atualização:** 30/10/2026 (noite)
+**Última atualização:** 02/11/2026
 
 ## Onde estamos
 
-**O site funciona de ponta a ponta localmente; falta conteúdo real (fotos, preços, verificação).**
+**A loja está no ar em https://zivorastore.com.br e a Carol está configurando o backoffice e
+liberando os produtos para venda.** O produto está pronto do meu lado; o que falta é conteúdo e
+decisões do dono/Carol (seção "🚀 Lançamento" abaixo).
 
-- Visual refeito após o feedback do dono: loja clara e direta, sem história de viagem e sem
-  imagem cultural decorativa (ver `DESIGN.md` e a memória de feedback). Marinho só em botões e
-  no filtro ativo.
-- **Home** (`/`): faixa de aviso do WhatsApp, abertura com foto, quatro atalhos de categoria,
-  lista de produtos com filtro por categoria na URL (`?categoria=`), "Como comprar" e rodapé.
-- **Produto** (`/produtos/[slug]`): foto, marca, nome, preço ou "Preço em definição", botão de
-  compra só quando `isPurchasable`, ficha com o que foi verificado, accordions de benefícios,
-  modo de uso e ingredientes (só aparecem quando preenchidos) e "Você também pode gostar".
-- **Sacola**: Zustand salvo no navegador (só slug e quantidade), drawer com `<dialog>` e página
-  `/sacola`. Revalida contra o catálogo, respeita o estoque e monta o link do WhatsApp com a
-  mensagem pronta.
-- **Fotos ilustrativas**: enquanto um produto não tem foto própria, o site mostra uma foto CC0 da
-  categoria com a etiqueta "Foto ilustrativa" (`src/features/catalog/example-images.ts`).
-  **Para colocar a foto real:** salvar em `public/produtos/<slug>.jpg` e preencher `images` do
-  produto em `src/data/products.ts` (ver `docs/dados-produtos.md`). A troca é automática.
-- **Hoje nenhum produto aparece em produção**: todos estão em `draft`. Localmente aparecem por
-  causa de `CATALOG_SHOW_DRAFTS=true`. Para testar a sacola, use `/dev/estados` (produtos de
-  exemplo, só local).
-- Verificado: `pnpm check` (36 testes), `pnpm build` com e sem rascunhos, screenshots em 390 e
-  1440, link do WhatsApp conferido.
+- **Loja** (Next.js na Vercel, projeto `japanese-commerce`, conta ulysseslopes, deploy manual com
+  `vercel deploy --prod --yes`): home com abertura, atalhos de categoria, lista com filtro e busca;
+  página de produto; sacola com entrega/retirada e cupom; checkout = mensagem pronta no WhatsApp;
+  páginas de entregas, trocas e privacidade; prévia de link (Open Graph); aviso "Últimas unidades";
+  produto em mais de uma categoria; sitemap e robots (indexação liberada).
+- **API** (Java no Railway, ver "Backend" abaixo): produtos, kits, cupons, configurações e fotos.
+  Cada mudança no backoffice aparece na loja em ~5 s.
+- **Backoffice** `/admin` (senha única): Visão geral, Produtos, Kits, Cupons, Configurações.
+- **Domínio:** `zivorastore.com.br` (DNS no registro.br); `www` e `japanese-commerce.vercel.app`
+  redirecionam para ele.
+- **Feito pelo dono em 31/10–02/11:** teste da compra até o WhatsApp, backup do banco e troca da
+  senha do backoffice.
+- **Testes:** 109 no site (`pnpm check`) e 25 na API. O `pnpm build` local precisa da API local de pé
+  (sem ela, falha ao ler o catálogo).
+- **Próximo trabalho comigo:** logo oficial (descrição para o Lovable em `docs/logo-lovable.md`;
+  quando vier o SVG, trocar o `Wordmark` e o favicon "Z"), Google Search Console (opcional),
+  testes E2E e auditoria de acessibilidade.
 
-Arquivos locais que não estão no git e precisam existir para retomar: `.env.local` (WhatsApp da
-Carol e `CATALOG_SHOW_DRAFTS=true`; modelo em `.env.example`) e `product_photos/original/`.
+Arquivos locais que não estão no git e precisam existir para retomar: `.env.local` (modelo em
+`.env.example`: WhatsApp da Carol, `BACKEND_URL=http://localhost:8080`, `CATALOG_SHOW_DRAFTS=true`,
+`STOREFRONT_PREVIEW_KEY=previa-local`, `STOREFRONT_REVALIDATE_SECRET=revalidar-local`),
+`product_photos/` (fotos do dono e quadro de identidade em `product_photos/design/`).
 
-**No ar:** https://zivorastore.com.br (antes https://japanese-commerce.vercel.app, que agora redireciona; projeto `japanese-commerce` na
-Vercel, conta ulysseslopes, deploy pela CLI). A prévia de rascunhos (`CATALOG_SHOW_DRAFTS`) foi
-**desligada em produção em 31/10/2026** a pedido do dono: rascunhos e `/dev/estados` não aparecem
-mais no ar (continuam só no localhost).
+**No ar:** https://zivorastore.com.br. A prévia de rascunhos (`CATALOG_SHOW_DRAFTS`) está
+**desligada em produção** desde 31/10: rascunhos e `/dev/estados` só no localhost.
 
 ## Fluxo para cada produto (combinado com o dono)
 
-1. Dono coloca a foto em `product_photos/site/` e manda o texto (descrição, modo de uso, preço).
-2. Copiar a foto para `public/produtos/<slug>.jpg` e preencher o produto em `src/data/products.ts`
-   (texto do dono como está, sem emojis; `contentVerified: true`, `publicationStatus: "published"`).
-3. `pnpm check`, `pnpm build`, conferir a página em 390 e 1440.
-4. Commit e push.
-5. **Sempre** publicar na Vercel: `vercel deploy --prod --yes` e conferir a página no ar.
+1. Dono manda o texto (descrição, modo de uso, preço) e a foto fica em `product_photos/site/`.
+2. Cadastrar no backoffice (`/admin` → Produtos) com o texto como veio, sem emojis e sem inventar
+   nada; preço redondo termina em ,90. Avisar o dono do que parecer estranho (ex.: foto com cara de IA).
+3. Conferir a página na loja (390 e 1440). A loja atualiza sozinha; não precisa publicar o site.
+4. Mudança de código ou visual: branch separado, aprovação do dono, depois `vercel deploy --prod --yes`.
 
 ## Backend (31/10/2026)
 
@@ -115,10 +113,11 @@ terminar. Quem faz: **eu** (código/site), **dono** (decisão ou informação), 
       precisam de foto, preço e publicação.
 - [ ] Criar os kits e cupons de verdade (se houver).
 - [ ] Logo oficial da ZIVORA em arquivo (SVG/PNG) e o "Z" para o ícone da aba (**dono → eu**).
+      Descrição pronta para gerar no Lovable: `docs/logo-lovable.md`.
 
 ### 3. Qualidade (eu)
 
-- [ ] Teste do fluxo completo num celular real: vitrine → sacola → cupom → WhatsApp.
+- [x] Teste do fluxo completo num celular real até o WhatsApp (feito pelo dono, 02/11).
 - [ ] Teste automatizado (E2E, Playwright) do mesmo fluxo, rodando antes de cada publicação.
 - [ ] Auditoria de acessibilidade e textos (`web-design-guidelines`) nas telas da loja.
 
@@ -148,6 +147,7 @@ terminar. Quem faz: **eu** (código/site), **dono** (decisão ou informação), 
 
 - [x] Backoffice, API no Railway, loja lendo da API, kits e cupons (31/10).
 - [x] Configuração do Railway no painel do serviço (31/10).
+- [x] Backup do Postgres e troca da senha do backoffice (feitos pelo dono, 02/11).
 - [x] Prévia de rascunhos desligada em produção (31/10).
 - [x] Produto em mais de uma categoria: principal + "Também aparece em" no backoffice; filtro,
       contagem e busca da loja consideram todas (31/10).
