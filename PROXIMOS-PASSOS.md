@@ -58,8 +58,9 @@ rotina"; eu proponho as etiquetas e a Carol confere. Sem IA: as etiquetas são m
       rodapé e na busca sem resultado.
 - [ ] **Dono/Carol**: responder as 4 dúvidas de `docs/rotina-etiquetas.md` e marcar as etiquetas no
       backoffice de produção (até lá, nada da feature aparece no ar).
-- [ ] **Publicar juntos**: API primeiro (`railway up`), site logo em seguida. Backoffice antigo com API
-      nova apagaria as etiquetas ao salvar um produto (não envia os campos).
+- [x] **No ar desde 02/11** (API com a V7 no Railway, site na Vercel, `main` dos dois repositórios).
+      O GitHub já está ligado à Vercel: envio ao `main` publica em produção sozinho. As prévias de
+      outros branches falham no build (sem `BACKEND_URL` no ambiente Preview).
 
 ## Fluxo para cada produto (combinado com o dono)
 
